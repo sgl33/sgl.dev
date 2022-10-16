@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+
+TODO write comment here
+
+
+TODO FOR SLIDESHOW
+- Change image/video source links
+- Change URL to the popup image
+   ㄴ Delete popup URL for videos
+- Change number of images, if necessary
+   ㄴ In this case, change the number of dots
+- Change captions
+
+WHAT IS THIS
+This is a template file for slideshows.
+Slideshows are meant to showcase more information about the project.
+
+HOW TO EMBED SLIDESHOWS
+<div class="slideshow-box">
+    <iframe class="slideshow" src="slideshows/ss-template.html" marginheight="0" marginwidth="0"></iframe>
+</div>
+
+CONTENT UPLOAD GUIDELINES
+- Aspect ratio should be 16:9
+   ㄴ 1920x1080, 1600x900, 1280x720, 960x540, 720x405
+- Total file size for the entire slideshow should be 1.5 MB or less.
+- Videos MUST be embedded from YouTube to reduce disk usage.
+   ㄴ When embedding videos, don't forget to do height="304".
+- The number of images/videos should not exceed 5.
+
+This slideshow template was created by Seung-Gu Lee.
+
+-->
+<html>
+    <head>
+        <title>Slideshow</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="slideshow.css"/>
+        
+    </head>
+    <body>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <img class="slideshow-img" src="images/classchat_s1.jpg">
+            <div class="text">Caption Text</div>
+            <a href="javascript:openImagePopup('images/classchat_s1.jpg')">
+                <div class='view-popup'></div>
+            </a>
+          </div>
+
+          <div class="mySlides fade">   
+            <img class="slideshow-img" src="images/classchat_s1.jpg">
+            <div class="text">Caption Two</div>
+            <a href="javascript:openImagePopup('images/classchat_s1.jpg')">
+                <div class='view-popup'></div>
+            </a>
+          </div>
+          
+          <div class="mySlides fade">
+              
+            <img class="slideshow-img" src="images/classchat_s1.jpg">
+            <div class="text">Caption Two</div>
+            <a href="javascript:openImagePopup('images/classchat_s1.jpg')">
+                <div class='view-popup'></div>
+           </a>
+          </div>
+
+          <!-- VIDEO EXAMPLE
+          <div class="mySlides fade">
+            <iframe class='slideshow-img' height="304" src="https://www.youtube.com/embed/zlMismj3exs" frameborder="0" allowfullscreen></iframe>
+            <div class="text">Caption Three</div>
+          </div>
+          -->
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        
+        <script src="slideshow.js"></script>
+    </body>
+    
+    
+</html>
