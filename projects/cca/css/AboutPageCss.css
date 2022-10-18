@@ -1,0 +1,178 @@
+/*
+Name: Seung-Gu Lee
+Date: Oct. 7, 2019
+Summary: This page is the style sheet file for the AboutCca.html page.
+*/
+
+/* Custom fonts */
+@font-face {
+    font-family: Expressway;
+    src: url("../fonts/expressway-rg.ttf");
+}
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-Light.otf");
+}
+
+/* ---------- General ---------- */
+
+/* General */
+h1, h2, h3, h4 {
+    text-align: center;
+    font-family: Expressway, YuantiTC, Chalkboard, sans-serif;
+}
+p {
+    text-align: center;
+    font-family: Gilroy, AppleGothic, Arial, sans-serif;
+}
+body {
+    background-image: url("../images/LogoStrip.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #2ea9df;
+}
+table {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+td, tr {
+    padding: 12px;
+    font-family: Gilroy, AppleGothic, Arial, sans-serif;
+}
+th {
+    background-color: #2ea9df;
+    color: #ebe81a;
+    border-color: black;
+}
+
+/* General classes */
+.TextTiny {
+    font-size: 65%;
+}
+.TextSmall {
+    font-size: 78%;
+}
+.TextLarge {
+    font-size: 130%;
+}
+.ExpresswayFont {
+    font-family: Expressway, MicrosoftSansSerif, AppleGothic, Arial, sans-serif;
+}
+.RemoveHyperlinkDecoration {
+    text-decoration: none;
+    color: #ebe81a;
+}
+.RemoveHyperlinkDecorationAlt {
+    text-decoration: none;
+    color: #2ea9df;
+}
+.RemoveHyperlinkDecorationBlack {
+    text-decoration: none;
+    color: black;
+}
+.OverflowScroll {
+    overflow: scroll;
+}
+
+
+/* ---------- Specific ---------- */
+
+/* Navigation & Main content box */
+.ListNavigation {
+    display: inline-block; 
+    margin-right: 16px;
+    font-family: Expressway, MicrosoftSansSerif, AppleGothic, Arial, sans-serif;
+}
+#MainContent {
+    position: absolute;
+    top: 9.5%;
+    left: 7%;
+    
+    padding: 12px;
+    width: 85%;
+    background-color: white;
+    text-align: center;
+}
+#ImageInsta {
+    position: absolute;
+    height: 30px;
+    width: 102px;
+    top: 2%;
+    right: 1%;
+}
+
+/* Brief description of the club */
+#BoxBriefDescription {
+    width: 65%;
+    margin: auto;
+}
+
+/* What we do */
+.ImageWhatWeDo {
+    width: 422px;
+}
+#WhatWeDo {
+    margin: auto;
+}
+.TableWhatWeDo {
+    width: 400px;
+    padding: 4px;
+    text-align: center;
+    font-family: Gilroy, AppleGothic, Arial, sans-serif;
+}
+.TableWhatWeDoHeader {
+    font-size: 140%;
+    font-family: Expressway, sans-serif;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.TextWhatWeDoBottom {
+    font-size: 125%;
+    font-family: Gilroy, AppleGothic, Arial, sans-serif;
+}
+#TableActivities {
+    margin: auto;
+}
+
+/* Why you should join CCA */
+#BoxWhyJoin {
+    margin: auto;
+}
+#ListWhyJoin {
+    font-family: Gilroy, Arial, sans-serif;
+}
+
+/* Club info table and 'Join Now'' button */
+#ButtonApplyCca {
+    background-color: rgb(48, 169, 222);
+    color: rgb(239, 220, 5);
+    
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    
+    font-size: 116%;
+    padding: 18px 36px;
+    border-radius: 12px;
+}
+#BoxClubInfo {
+    margin: auto;
+    text-align: center;
+    overflow: scroll;
+}
+#TableClubInfo {
+    height: 200px;
+    width: 500px;
+    margin: auto;
+    border-style: solid;
+}
+.TableInformation {
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    font-family: Gilroy, AppleGothic, Arial, sans-serif;
+    padding: 4px;
+}
+
+
+

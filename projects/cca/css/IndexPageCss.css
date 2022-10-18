@@ -1,0 +1,74 @@
+/*
+Name: Seung-Gu Lee
+Date: Oct. 7, 2019
+Summary: This page is the style sheet file for the index.html webpage.
+*/
+
+/* Custom fonts */
+@font-face {
+    font-family: Expressway;
+    src: url("../fonts/expressway-rg.ttf");
+}
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-Light.otf");
+}
+
+/* General */
+body {
+    background-image: url("../images/IndexPageBackground.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #2ea9df;
+}
+
+/* Navigation */
+.ListNavigation {
+    display: inline-block; 
+    margin-right: 16px;
+    font-family: Expressway, MicrosoftSansSerif, AppleGothic, Arial, sans-serif;
+}
+#ImageInsta {
+    position: absolute;
+    height: 30px;
+    width: 102px;
+    top: 2%;
+    right: 1%;
+}
+.RemoveHyperlinkDecoration {
+    text-decoration: none;
+    color: #ebe81a;
+}
+
+/* Buttons */
+#ButtonAboutCca {
+    background-color: rgb(48, 169, 222);
+    color: rgb(239, 220, 5);
+    
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    
+    font-size: 115%;
+    padding: 14px 48px;
+    border-radius: 9px;
+    border-color: transparent;
+  
+}
+#ButtonExistingMembers {
+    background-color: transparent;
+    color: rgb(48, 210, 222);
+    
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    
+    font-size: 100%;
+    padding: 14px 36px;
+    border-radius: 9px;
+}
+.Centralize {
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+Name: Seung-Gu Lee
+Date: Nov. 27, 2019
+Summary: This is the main page of the Triangle Calculator. Users can go to the calculation page and/or explore the concept.
+-->
+
+<html>
+    <head>
+        <title>Triangle Calculator - Main Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/indexCss.css" type="text/css" rel="stylesheet">
+        <script src="MainScript.js"></script>
+    </head>
+    
+    <body>
+        <!-- Back to home -->
+        <a href="http://projects.seunggulee.com">
+            <button class="buttonBack">Home</button>
+        </a>
+        
+        <!-- Title -->
+        <h1 id="title">Triangle Calculator</h1>
+        <p id="subtitle">Lose your intelligence in seconds.</p>
+        
+        <!-- A bunch of next lines -->
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        
+        
+        <!-- Description Box -->
+        <div id="boxDescription">
+            <p id="textDescription">What this calculator can do:<br/>
+            Solving for sides, angles and area of the triangle.</p>
+        </div>
+        
+        <!-- Start Button -->
+        <div class="boxCenter">
+            <a href="calculationPage.html">
+                <button id="buttonStart"><span>Start!</span></button>
+            </a>
+        </div>
+        
+        <!-- Button to open the Concept Modal -->
+        <div class="boxCenter">
+            <button id="buttonConcept" onClick="openModal('modalConcept')">Explore Concept</button>
+        </div>
+        
+        
+        <!-- Concept Modal -->
+        <div id="modalConcept">
+            
+            <div id="modalContent">
+                <!-- Close Button -->
+                <button id="closeModal" onClick='closeModal("modalConcept")'>&times;</button>
+
+                <!-- Solving a triangle -->
+                <h3 class="conceptHeader">Solving a Triangle</h3>
+                <p>
+                    We can use the following concepts appropriately to figure out the sides and angles of a triangle.
+                    <br/>
+                </p>
+                
+                <table>
+                    <tr>
+                        <td>
+                            <b><u>1. Sum of Angles</u></b>
+                        </td>
+                        <td>
+                            <b><u>2. Law of Sines</u></b>
+                        </td>
+                        <td>
+                            <b><u>3. Law of Cosines</u></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="imageDiagram" src="images/diagram-triangle-angle.png"></>
+                        </td>
+                        <td>
+                            <img class="imageDiagram" src="images/diagram-sine-law.png"></>
+                        </td>
+                        <td>
+                            <img class="imageDiagram" src="images/diagram-cosine-law.png"></>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            The three angles within a triangle always total up to 180 degrees (or π radians).<br/>
+                            Using this, when given 2 angles, we can easily figure out the remaining angle.
+                        </td>
+                        <td>
+                            Law of Sines shows that the ratio between an angle and its opposite side is always equal within a triangle.<br/>
+                            This equation can be modified to calculate the remaining angles and sides.
+                        </td>
+                        <td>
+                            Law of Cosines allows the calculation of a side when given the other two sides and its opposite angle.<br/>
+                            This equation can also be modified to calculate the remaining angles and sides.
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+
+                <!-- Calculating Area -->
+                <h3 class="conceptHeader">Calculating the Area</h3>
+                <p>
+                    We can use the following formulas to easily calculate the area of a triangle.
+                </p>
+                
+                <table>
+                    <tr>
+                        <td>
+                            <b><u>1. Heron's Area Formula</u></b>
+                        </td>
+                        <td>
+                            <b><u>2. Oblique Triangle Formula</u></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="imageDiagram" src="images/diagram-heron.png"></>
+                        </td>
+                        <td>
+                            <img class="imageDiagram" src="images/diagram-oblique.png"></>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Heron's Area Formula can calculate the area when the three sides of a triangle are given.
+                        </td>
+                        <td>
+                            Oblique Triangle Formula can calculate the area when the two sides and its adjacent angle are given.
+                        </td>
+                    </tr>
+                </table>
+                
+                
+                <p>This may look difficult, but this calculator will do the tough things for you.<br/>
+                    Press the button below to continue to the calculator!</p>
+                
+                <a href="calculationPage.html">
+                    <button id="buttonStart2">Start! >></button>
+                </a>
+                <br/>
+                
+                <a onClick='closeModal("modalConcept")' id="closeModalBottom"><u>Click here to close this information box.</u></a>
+            </div>
+            
+            
+        </div>
+        
+    </body>
+</html>

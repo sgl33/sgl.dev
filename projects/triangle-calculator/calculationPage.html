@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--
+Name: Seung-Gu Lee
+Date: Nov. 27, 2019
+Summary: This is the page where the user interaction will occur. The user will enter inputs and receive outputs.
+-->
+<html>
+    <head>
+        <title>Triangle Calculator - Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/calcPageCss.css" type="text/css" rel="stylesheet">
+        <script src="MainScript.js"></script>
+    </head>
+    <body>
+        <!-- Back to home -->
+        <a href="http://projects.seunggulee.com">
+            <button class="buttonBack">Home</button>
+        </a>
+        
+        <!-- Button: return to main page -->
+        <a href="index.html">
+            <button class="buttonBack"><< Back</button>
+        </a>
+        
+        <!-- Title -->
+        <h1>Triangle Calculator</h1>
+        
+        
+        <!-- Main container -->
+        <div id="mainContainer">
+            
+            <table id="mainTable">
+                <tr>
+                    <!-- Advertisement #1 -->
+                    <td id="adCell1">
+                        <a href="http://hackjohnsoncomputer.com" target="_blank">
+                            <image id="imageAd" src="images/vertical-ad-1.png"></>
+                        </a>
+                    </td>
+                    
+                    <!-- Main Contents -->
+                    <td id="mainCell">
+                        
+                        <!-- Canvas for diagram -->
+                        <div>
+                            <canvas id="canvasDiagram">
+
+                            </canvas>
+                        </div>
+
+
+                        <!-- Input form -->
+                        <div id="boxInputs">
+                            <form>
+                                <h3>Inputs</h3>
+
+                                <table id="tableInput">
+                                    <tr>
+                                        <td>
+                                            <!-- Input: Sides -->
+                                            <table>
+                                                <tr>
+                                                    <td>Side A:</td>
+                                                    <td><input id="inputSideA" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputSideA')" value="C"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Side B:</td>
+                                                    <td><input id="inputSideB" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputSideB')" value="C"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Side C:</td>
+                                                    <td><input id="inputSideC" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputSideC')" value="C"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <!-- Input: Angles -->
+                                            <table>
+                                                <tr>
+                                                    <td>Angle A:</td>
+                                                    <td><input id="inputAngleA" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputAngleA')" value="C"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Angle B:</td>
+                                                    <td><input id="inputAngleB" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputAngleB')" value="C"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Angle C:</td>
+                                                    <td><input id="inputAngleC" type="text" onchange="onInputChange()"></td>
+                                                    <td><input type="button" class="buttonClear" onClick="clearOneInput('inputAngleC')" value="C"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Warning text will show up here -->
+                                <p id="textWarning"></p>
+                            </form>
+
+                            <!-- Buttons and info -->
+                            <button id="buttonCalculate" onClick="calculate()"><span>Calculate</span></button>
+                            <input id="buttonClear" type="button" onClick="clearInputs()" value="Clear">
+                            <br/>
+                            <p id="textInputInfo">Positive numbers only (no fractions or negative numbers)</p>
+
+                        </div>
+
+                        <!-- Angle Mode Selection Box -->
+                        <div id="boxAngleMode">
+                            <form>          
+                                <h4 class="headerMode">Angle Mode</h4>
+                                <input id="angleModeDeg" class="radioButton" type="radio" onchange="onInputChange()" name="angleMode" value="Degree" checked>Degrees</>
+                                <input id="angleModeRad" class="radioButton" type="radio" onchange="onInputChange()" name="angleMode" value="Radian">Radians</>
+                                <input id="angleModePiRad" class="radioButton" type="radio" onchange="onInputChange()" name="angleMode" value="π Radians">π Radians</>
+                            </form>
+                        </div>
+
+                        <!-- Help button -->
+                        <button id="buttonHelp" onClick="openModal('modalHelp')">Need help?</button>
+                        <br/>
+                        
+                        
+                        <!-- Debugging: shortcuts to open modals (uncomment to restore) -->
+                        
+                        <!--
+                        <button onClick="openModal('modalOutput')">Output Modal</button>
+                        <button onClick="openModal('modalError')">Error Modal</button>
+                        <button onClick="">Help Modal</button>
+                        -->
+                        
+                    </td>
+                    
+                    <!-- Advertisement #2 -->
+                    <td id="adCell2">
+                        <a href="http://hackjohnsoncomputer.com" target="_blank">
+                            <image id="imageAd" src="images/vertical-ad-2.png"></>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+        
+        <!-- Error Modal -->
+        <div id="modalError">
+
+            <div id="modalErrorBox">
+                <button class="closeModal" onClick="closeModal('modalError')">&times;</button>
+                <h2 class="modalHeader">Error</h2>
+
+                <div id="modalErrorContent">
+                    <p id="textError">[Error message will show up here.]</p>
+                    <button id="buttonCloseErrorModal" onClick="closeModal('modalError')">Dismiss</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Output Modal -->
+        <div id="modalOutput">
+
+            <!-- Header -->
+            <button class="closeModal" onClick="closeModal('modalOutput')">&times;</button>
+            <h2 class="modalHeader">Results</h2>
+
+            <!-- Content -->
+            <div id="modalOutputContent">
+
+                <!-- Output -->
+                <h3>Answers</h3>
+
+                <table id="tableOutput">
+                    <tr>
+                        <td>Side A:</td>
+                        <td class="cellOutput" id="outputSideA">0.0</td>
+                        <td class="cellOutputLabel">Angle A:</td>
+                        <td class="cellOutput" id="outputAngleA">0.0°</td>
+                    </tr>
+                    <tr>
+                        <td>Side B:</td>
+                        <td class="cellOutput" id="outputSideB">0.0</td>
+                        <td class="cellOutputLabel">Angle B:</td>
+                        <td class="cellOutput" id="outputAngleB">0.0°</td>
+                    </tr>
+                    <tr>
+                        <td>Side C:</td>
+                        <td class="cellOutput" id="outputSideC">0.0</td>
+                        <td class="cellOutputLabel">Angle C:</td>
+                        <td class="cellOutput" id="outputAngleC">0.0°</td>
+                    </tr>
+                    <tr>
+                        <td>Area:</td>
+                        <td colspan="3" class="cellOutput" id="outputArea">0.0</td>
+                    </tr>
+                </table>
+
+                <!-- Information regarding outputs -->
+                <p id="textOutputWarning"></p>
+
+                <p>The diagram of the triangle has been generated above, outside this box.<br/><br/>
+                    The sides were rounded to 3 decimal places, angles to 2 or 6 decimal places, and area to 4 decimal places. 
+                    The non-rounded original numbers are available at the input boxes.<br/><br/></p>
+
+                <!-- Explanation -->
+                <h3>Explanation</h3>
+                <p id="textExplanation">[Explanation will show up here.]</p>
+                
+                <!-- Donation message and close button -->
+                <p>
+                    If you found this website helpful, please consider <a href="http://paypal.me/seunggulee" target="_blank">donating us</a>! Our website is run through user donations and we highly appreciate your support. 
+                Thank you for keeping us alive!</p>
+                
+                <button id="buttonCloseModal" onClick="closeModal('modalOutput')"><span>Close</span></button>
+                
+            </div>
+        </div>
+
+
+        <!-- Help Modal -->
+        <div id='modalHelp'>
+            <!-- Header -->
+            <button class="closeModal" onClick="closeModal('modalHelp')">&times;</button>
+            <h2 class="modalHeader">Help</h2> 
+            
+            <!-- Content -->
+            <div id="modalHelpContent">
+                
+                <!-- About this website -->
+                <h3>What is this website?</h3>
+                <p>This website is a calculator that can easily solve the triangle and give the area. 
+                    If you are just given 2 sides and 1 angle or 1 side and 2 angles, this can calculate the rest for you!
+                    It can also calculate the area of the triangle as well.
+                </p>
+
+                <!-- Step-by-Step Tutorial -->
+                <h3>Step-by-Step Tutorial</h3>
+                <br/>
+                
+                <table>
+                    <tr>
+                        <td><u>1. Label your triangle</u></td>
+                        <td><u>2. Enter the values</u></td>
+                        <td><u>3. Get the outputs</u></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            If you have a triangle diagram, please label each point as A, B and C and then its inner angles as angles A, B and C.
+                            Then, please label the opposite sides of each angle with sides a, b and c.
+                        </td>
+                        <td>
+                            On the box under "Inputs", please enter the values that you are given with. 
+                            For those you do not know yet, you can leave them blank.
+                        </td>
+                        <td>
+                            When you press "Calculate", the results will be calculated and shown in a pop-up screen, with the steps and explanation. 
+                            The diagram of the triangle will be drawn on the blank space above.
+                        </td>
+                    </tr>
+                </table>
+                
+
+                <!-- FAQ -->
+                <br/>
+                <h3>FAQ (Frequently Asked Questions)</h3>
+                
+                <button onClick="collapsible('faq1')" class="faqButton">Q. How do I open this?</button>
+                <div id="faq1" class="collapsibleContent">
+                    A. Great! You just opened it. You can click it again to close it.
+                </div>
+                
+                <button onClick="collapsible('faq2')" class="faqButton">Q. What will the "C" button do?</button>
+                <div id="faq2" class="collapsibleContent">
+                    A. The "C" button will clear the value of the adjacent text field.
+                </div>
+                
+                <button onClick="collapsible('faq3')" class="faqButton">Q. I need help interpreting the diagram.</button>
+                <div id="faq3" class="collapsibleContent">
+                    A. In the generated triangle diagram, the left point is point A, the right one is point C, and the top one is point B.
+                    The sides are the opposites of the point of the corresponding alphabet.
+                </div>
+                
+                <button onClick="collapsible('faq4')" class="faqButton">Q. How do I see the non-rounded results?</button>
+                <div id="faq4" class="collapsibleContent">
+                    A. The non-rounded results are generated in the input box, where you have entered your inputs.
+                </div>
+                
+                <button onClick="collapsible('faq5')" class="faqButton">Q. I want to learn more about how this calculator works.</button>
+                <div id="faq5" class="collapsibleContent">
+                    A. To learn more about the concepts used in this calculator, please go to the <a href="index.html">main page</a> and click "Explore Concept".
+                </div>
+                
+                <button onClick="collapsible('faq6')" class="faqButton">Q. Can I use this website for my homework?</button>
+                <div id="faq6" class="collapsibleContent">
+                    A. Please consult your teacher before using this for your homework, since this calculator is so convenient that it can be considered cheating.
+                    For the best learning experience, we  suggest you to understand and learn from the results and explanations rather than just copying down the answers.
+                </div>
+                
+                <button onClick="collapsible('faq9')" class="faqButton">Q. Is hackjohnsoncomputer.com a safe website?</button>
+                <div id="faq9" class="collapsibleContent">
+                    A. Yes! Please don't worry. Try visiting it! It's fun.
+                </div>
+                
+                
+                <!-- Troubleshooting -->
+                <br/><br/>
+                <h3>Troubleshooting</h3>
+
+                <button onClick="collapsible('faq11')" class="faqButton">Q. What does it mean by "invalid entries"?</button>
+                <div id="faq11" class="collapsibleContent">
+                    A. The calculator requires all inputs to be a number. 
+                    Any non-number entries (e.g. "four4", "$5"), arithmetic operations ("5+4", "8*9") and fractions ("7/2") cannot be processed by the program.
+                    You can see which specific input is invalid by clicking the "Error" button.
+                </div>
+                
+                <button onClick="collapsible('faq12')" class="faqButton">Q. What should I do when no formula was found?</button>
+                <div id="faq12" class="collapsibleContent">
+                    A. It is likely that the given values are not enough to calculate the results. 
+                    (e.g. when only the three angles are given, the sides cannot be calculated.)
+                    Please check to see if you left out any values and try again.
+                    Or sometimes, the answer could just be "not enough information".
+                </div>
+                
+                <button onClick="collapsible('faq13')" class="faqButton">Q. What is "angles don't total up to..." and how do I solve it?</button>
+                <div id="faq13" class="collapsibleContent">
+                    A. The total of the inner angles of a triangle always equals 180 degrees or π(≈ 3.14) radians.
+                    The warning message is shown when the total angle does not equal that.
+                    To fix this error, please check if you are in correct angle mode, and that your input values are correct.
+                    You may also want to try clearing all inputs and re-entering them.
+                </div>
+                
+                <button onClick="collapsible('faq14')" class="faqButton">Q. What should I do when an "unexpected error" occurs?</button>
+                <div id="faq14" class="collapsibleContent">
+                    A. Unexpected errors are errors that even the developer did not expect to happen and therefore does not know or have a solution for.
+                    Please <a href="mailto:seung_lee@s.thevillageschool.com">contact the developer (click here)</a> for further assistance.
+                </div>
+                
+                <button onClick="collapsible('faq15')" class="faqButton">Q. I would like to report an error of this website.</button>
+                <div id="faq15" class="collapsibleContent">
+                    A. Thank you for helping us out! Please email <a href="mailto:seung_lee@s.thevillageschool.com">seung_lee@s.thevillageschool.com</a>.
+                </div>
+                
+                
+            </div>
+
+        </div>
+            
+        
+    </body>
+</html>
