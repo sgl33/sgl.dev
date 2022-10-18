@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--
+KAMS Study Logger
+https://seunggulee.dev/studylog/
+
+@author Seung-Gu Lee (admin@seunggulee.dev)
+@date Sep 11, 2021
+-->
+<html>
+    <head>
+        <title>KAMS Study Logger</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='icon' href='images/kams-logo.jpg'>
+        
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+            
+            
+            body {
+                font-family: 'Raleway', sans-serif;
+                padding: 0;
+            }
+            
+            h1, h2 {
+                font-family: 'Alata', sans-serif;
+                margin-top: 4px;
+                text-align: center;
+            }
+            
+            
+            #main-div {
+                position: fixed;
+                width: 100%; height: 100%;
+                
+            }
+            #main-div p {
+                text-align: center; margin-left: -8px;
+            }
+            #log-div {
+                position: fixed; display: none;
+                width: 100%; height: 100%; overflow-y: scroll;
+                background-color: rgba(255, 255, 255, 0.95);
+                margin: -12px; 
+                padding-top: 40px;
+            }
+            #show-log {
+                position: fixed; bottom: 25px;
+                width: 100%; text-align: center;
+            }
+            #show-log button {
+                width: 200px; height: 40px; 
+                background-color: rgba(0, 0, 0, 0); border-style: none;
+                color: gray;
+                font-family: "Raleway", sans-serif;
+            }
+            #show-log-top {
+                position: fixed; top: 10px; right: 10px;
+                
+            }
+            #show-log-top button {
+                background-color: rgba(0, 0, 0, 0); border-style: none;
+                color: gray;
+                font-family: "Raleway", sans-serif;
+            }
+            #close-log {
+                position: fixed; right: 10px; top: 10px;
+                width: 40px; height: 40px; font-size: 24pt; 
+                background-color: rgba(0, 0, 0, 0); border-style: none; color: black;
+            }
+            
+            
+            .full-img-div {
+                width: 100%;
+                margin: auto;
+                text-align: center;
+            }
+            .full-img-div img {
+                width: 40%; max-width: 240px;
+                margin: auto;
+                margin-bottom: 0px;
+            }
+            .full-img-div .full-img {
+                width: 100%; max-width: 800px;
+                margin: auto;
+                margin-bottom: 0px;
+            }
+            
+            #form-block {
+                text-align: center;
+                width: 100%;
+                margin: auto;
+            }
+            #record-button {
+                
+                
+                width: 120px; height: 120px;
+                border-radius: 60px;
+                font-size: 20pt;
+                border-style: solid;
+                background-color: #009933; color: white;
+            }
+            #cancel-button {
+                width: 90px; height: 24px;
+                font-size: 10pt;
+                border-radius: 6px; margin-top: 6px;
+                background-color: gray; color: white;
+            }
+            #form-block p {
+                margin: 6px 0;
+            }
+            
+            
+            #reset-button {
+                width: 100%; margin: auto; margin-top: 6px; text-align: center;
+                
+            }
+            #reset-button button, .export-button {
+                width: 96px; height: 24px;
+                border-radius: 6px;
+                background-color: #888888; color: white;
+                font-size: 9pt;
+            }
+            .export-button-long {
+                width: 120px; height: 24px;
+                border-radius: 6px;
+                background-color: #888888; color: white;
+                font-size: 9pt;
+            }
+            .export-button-extra-long {
+                width: 150px; height: 24px;
+                border-radius: 6px;
+                background-color: #888888; color: white;
+                font-size: 9pt;
+            }
+            
+            #log-box {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 10pt;
+                width: 90%; margin: auto;
+                border-style: solid; border-width: 1px;
+                padding: 4px;
+            }
+            #text-time {
+                margin-top: -24px; margin-bottom: 8px;
+                text-align: center;
+            }
+            
+            .small-text {
+                font-size: 8pt;
+                margin-left: 6px; margin-right: 6px;
+            }
+            
+            #div-banner-ad {
+                position: fixed; bottom: 0;
+                width: 100%; padding: 0; margin: 0;
+                text-align: center;
+                background-color: rgba(242, 242, 242, 1.0);
+            }
+            #div-banner-ad img {
+                width: 100%; height: 100%; max-width: 280px; margin: 0;
+            }
+            
+            
+            #moving {
+                max-height: 120px; background-color: #ff9900;
+                overflow-y: scroll;
+                margin: 0;
+            }
+            #moving h3 { 
+                margin: 6px 8px;
+            }
+            #moving p {
+                margin: 2px 6px; font-size: 10.5pt; text-align: left !important;
+            }
+            #moving .small-text { font-size: 8pt; margin-top: 3px; margin-bottom: 4px; color: #444444; }
+            #moving a { color: black; }
+            
+        </style>
+        
+        
+        
+    </head>
+    <body>
+        
+        <div id='main-div'>
+            
+            
+            <!-- We are moving! -->
+            <!--
+            <div id="moving">
+                <h3>Site Moving Notice</h3>
+                <p>This site is moving to <a href="https://seunggulee.dev/studylog"><b>seunggulee.dev</b>/studylog</a>.</p>
+                <p class="small-text">
+                    The current site will close after Dec. 11, 2020.
+                    Please make sure to move to the new site by that date.
+                </p>
+            </div>
+            -->
+            
+        
+            <br/>
+            
+            <div class='full-img-div'>
+                <img src='images/kams-logo.jpg'>
+            </div>
+
+            <h1>KAMS Study Logger</h1>
+            <p>
+                Record your study hours with just a click.<br/>
+                This simple logger will make your Study Logging in KAMS easier.
+            </p>
+
+            
+            
+            <div id='form-block'>
+
+                <form class='' id='main-form'>
+                    <input type='text' id='field-location' placeholder='Location'>
+                    <input type='text' id='field-subject' placeholder='Subject'>
+                    <br/>
+                    <input type='text' id='field-comments' placeholder='Comments (Optional)'>
+                </form>
+                <br/>
+                
+                <button id='record-button' onclick='record()'>Enable JavaScript!</button>
+                <br/>
+                <button id='cancel-button' onclick='cancelRecord()'>Cancel</button>
+                <p id="timer-text"></p>
+            </div>
+        
+            <div id='show-log'>
+                <button onclick='showLog()'>
+                    ^
+                    <br/>
+                    VIEW LOG
+                </button>
+            </div>
+            
+            <div id="show-log-top">
+                <button onclick="showLog()">
+                    VIEW LOG
+                </button>
+            </div>
+        </div>
+        
+        <div id="div-banner-ad">
+            
+            <a href='https://www.matlockmusicworks.com/' target='_blank' id='banner-ad-0'>
+                <img src="images/ad-1matlock.png" alt=""/>
+            </a>
+            <a href='https://www.matlockmusicworks.com/' target='_blank' id='banner-ad-1'>
+                <img src="images/ad-2matlock.png" alt=""/>
+            </a>
+            <a href='https://www.matlockmusicworks.com/' target='_blank' id='banner-ad-2'>
+                <img src="images/ad-3matlock.png" alt=""/>
+            </a>
+        </div>
+        
+        <div id='log-div'>
+            
+            <button id='close-log' onclick='hideLog()'>&times;</button>
+            
+            <h1>Study Log</h1>
+            <p id="text-time"></p>
+            <div id='log-box'>
+                <button class='export-button-long' onclick='exportPdf()'>Save as PDF</button>
+                <button class='export-button' onclick='printPdf()'>Print</button>
+                <br/>
+                <p id='text-log'>Log will show up here</p>
+            </div>
+            
+
+            <div id="reset-button">
+                <button onclick='askReset()'>Clear Log</button>
+            </div>
+
+            <br/>
+            
+            <div class='full-img-div'>
+                <h3>Updates</h3>
+                <p>
+                    New! Export your study log to PDF with a single click. Press "Save as PDF" or "Print" to try it out.
+                </p>
+                <img class='full-img' src='images/bookmark-guide.jpg'>
+                <p>Accidentally pressed "Suppress Dialogs"? No worries, just close and reopen the website.</p>
+            </div>
+            
+            <hr>
+
+            <p class='small-text'>
+                No data is sent to our servers.
+                Your study log will be <b><u>locally stored</u></b> on your device.
+                The data will NOT be deleted when you close your browser.
+                However, deleting your browser cache or cookies may delete your data.
+            </p>
+            <p class='small-text'>
+                Developed by Seung-Gu Lee (<a href='mailto:admin@seunggulee.dev' target='_blank'>admin@seunggulee.dev</a>)
+            </p>
+            <p class='small-text'>
+                This website is not affliated with Kansas Academy of Math and Science (KAMS) or Fort Hays State University (FHSU).
+                This is a student-made website.
+            </p>
+            <p class='small-text'>
+                DISCLAIMER: Although this website is not intentionally designed to delete user data (unless requested by user), 
+                the data may be lost due to technical reasons. We highly recommend you that you keep a copy of your data.
+                The developer does not take any responsibility for any losses in data. 
+            </p>
+            <br/>
+            <p>&nbsp;</p>
+        </div>
+        
+        <!-- Scripts -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/pdfmake.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.62/vfs_fonts.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='logger-v111.js'></script>
+        
+        <!-- PDF Make -->
+        <script>
+            // Ha! Seems like you're a programmer as well. Welcome!
+            // This website uses PdfMake to generate PDF files. 
+            // The main JS file is also available open-source: https://seunggulee.dev/studylog/logger-v110.js
+     
+            // Warning: I highly recommend against submitting any non-genuine document for your Junior Seminar class. It may count as academic dishonesty and can get you in serious trouble.
+            // You won't get in trouble for not studying enough anyway. No one really cares.
+            
+            var userName = "";
+            
+            function getDocDef()
+            {
+                // Empty log
+                var log = localStorage.log;
+                if(log === "" || log === null || log === undefined)
+                {
+                    alert("Your study log is empty. Come back after studying!"); return null;
+                }
+                    
+                // Name
+                var name = prompt("Please enter your name and press OK. (Your name will automatically be recorded on the paper for your convenience.)");
+                if(name === null) return null;
+                userName = name;
+                
+                // Doc definition
+                return docDefinition = {
+                    content: [
+                    {
+                            text: 'KAMS Study Log',
+                            style: 'title',
+                            alignment: 'center'
+                    },
+                    '\n',
+                    {
+                        text: 'Name: ' + name + '\nDate: ' + getTodayDate(false) + '\n\nTotal Study Time: ' + convertMinutesToString(getMinutes())
+                    },
+                    '\n',
+                    {
+                            text: 'Study Log',
+                            style: 'subheader',
+                            alignment: 'center'
+                    },
+                    '\n',
+                    {
+                            text: escNextLines(log),
+                            fontSize: 10
+                    },
+                    '\n\n',
+                    {
+                            text: 'This study log was recorded using KAMS Study Logger (https://seunggulee.dev/studylog) and was automatically exported to PDF. The web application is student-made and is not affliated with Fort Hays State University or Kansas Academy of Math and Science (KAMS). For any inquiries regarding this service, please email admin@seunggulee.dev.',
+                            style: ['quote', 'small']
+                    },
+                    {
+                            text: "\nMade with KAMS Study Logger (https://seunggulee.dev/studylog)",
+                            fontSize: 10
+                    }
+                ],
+                styles: {
+                    title: {
+                        fontSize: 20,
+                        bold: true,
+                    },
+                    subheader: {
+                            fontSize: 16,
+                            bold: true
+                    },
+                    quote: {
+                            italics: true
+                    },
+                    small: {
+                            fontSize: 8
+                    }
+                }};
+            }
+            
+            function exportPdf()
+            {
+                var dd = getDocDef();
+                if(dd === null) return;
+                pdfMake.createPdf(dd).download('KAMS Study Log ' + getTodayDate(true) + ' (' + userName + ').pdf');
+            }
+            
+            function printPdf()
+            {
+                var dd = getDocDef();
+                if(dd === null) return;
+                pdfMake.createPdf(dd).print();
+            }
+        </script>
+        
+    </body>
+    
+    
+</html>
+
