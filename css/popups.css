@@ -1,0 +1,107 @@
+/* Pop-up */
+.popup {
+    position: fixed; top: 0%; width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.94);
+    display: none;
+    
+    overflow-y: scroll;
+    
+}
+.popup .close-popup {
+    position: fixed; right: 20px; top: 6px;
+    font-size: 48px; cursor: pointer; transition: 0.3s;
+    z-index: 999;
+}
+.popup .close-popup:hover { opacity: 0.6; }
+
+.popup .container {
+    width: 640px; max-width: 90%;
+    margin: auto; margin-top: 60px !important; margin-bottom: 20px;
+    
+}
+.popup .container-sp {
+    width: 900px; max-width: 90%;
+    margin: auto; margin-top: 60px !important; margin-bottom: 20px;
+    
+}
+.popup .container-sp h1,h2 { text-align: center; border-radius: 4px; padding: 4px; }
+
+.popup .container h1,h2 { text-align: center; border-radius: 4px; padding: 4px; }
+.popup .container h3 { color: #295943; font-size: 125%; }
+.popup .container h4 { color: #3b5981; font-size: 110%;  }
+.popup .container p { font-size: 90%; line-height: 1.32; }
+.popup .container p b { font-family: "GmarketBold", sans-serif; padding-bottom: 4px; }
+.popup .container a { font-family: "GmarketMedium", sans-serif; text-decoration: none; color: #3b5981; transition: 0.2s; }
+.popup .container a:hover { opacity: 0.7; }
+.popup .container .emphasis { color: #295943; }
+.popup .container .reflection { font-size: 10pt; color: #3b5981; }
+.popup .container .dev-story { color: #555555; margin-top: 8px; }
+.popup .container .mini-description { font-size: 8pt; color: #666666;  }
+.footnotes { font-size: 6.5pt !important; line-height: 8pt !important; color: #777777; opacity: 60%; }
+
+.popup .container-narrow {
+    width: 420px; margin: auto; max-width: 80%;
+    margin-top: 150px;
+}
+.popup .container-narrow h1 {
+    text-align: center;
+}
+.popup .container-narrow .menu-item {
+    font-family: "GmarketMedium", sans-serif;
+    margin: 1.5px 0px; padding: 2.5px 0px;
+    display: inline-block;
+    width: 100%;
+}
+.popup .container-narrow .menu-item img {
+    height: 20px; 
+    display: inline-block;
+    float: left;
+    margin-left: 4px;
+}
+.popup .container-narrow .menu-item span {
+    margin-left: 12px;
+}
+.popup .container-narrow a {
+    text-decoration: none; color: #333333;
+    transition: 0.2s;
+}
+.popup .container-narrow a:hover {
+    opacity: 75%;
+}
+
+
+.green-link { color: #295943 !important; }
+
+.popup ul { margin-top: 2px; }
+.popup li { font-family: "GmarketMedium", sans-serif; font-size: 10pt; margin-left: -24px; margin-bottom: 2px; }
+
+.popup .list-skills { margin-top: 8px;}
+.popup .list-skills li { font-family: "GmarketMedium", sans-serif; font-size: 10pt; color: #3b5981; margin-left: -30px; margin-bottom: 3px; }
+
+.img-fg-popup { width: 100%; max-width: 100%; border-radius: 12px; margin-bottom: 12px; }
+.img-proj-download { width: 200px; height: 61px;  }
+
+.slideshow-box { text-align: center; height: 430px; }
+.slideshow {
+    width: 100%; max-width: 100%; height: 100%; overflow: hidden;
+    border-style: none;
+}
+
+.div-info-1, .div-info-2, .div-info-3 {
+    width: 90%;
+    border-style: solid; border-radius: 6px; border-width: 1px;
+    padding: 6px; padding-left: 10px !important;
+    margin-top: 10px;
+}
+.div-info-1 {
+    border-color: #cccccc; 
+    background-color: #eeeeee;
+}
+.div-info-2 {
+    border-color: #b8bc65; 
+    background-color: #fdffdb;
+}
+.div-info-3 {
+    border-color: rgb(255, 169, 169); 
+    background-color: rgb(255, 226, 226);
+}

@@ -11,7 +11,10 @@
         <meta name="keywords" content="Seung-Gu Lee, 이승구">
         <meta name="author" content="Seung-Gu Lee">
         
-        <link rel="stylesheet" type="text/css" href="css/main.css?v=1.0.9"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css?v=1.1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/infobox.css?v=1.1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/buttons.css?v=1.1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/popups.css?v=1.1.0"/>
         <link rel='icon' href='images/emoji.png'>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -272,6 +275,8 @@
                     <a onclick='openMenu("p-hd")'>
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
+                            <p class="hover-description">Innovative arcade game published on Nintendo Switch and Android</p>
+                            <p class="hover-stack">Nintendo Switch, Android | Unity, C#</p>
                         </div>
                     </a>
                     <div class="portfolio-icons">
@@ -279,6 +284,7 @@
                         <img src="images/icons/android_black.png" alt="Android">
                         <img src="images/icons/separator_black.png" alt="Separator">
                         <img src="images/icons/unity_black.png" alt="Unity">
+                        <img src="images/icons/csharp_icon.png" alt="C#">
                     </div>
                 </div>
 
@@ -290,6 +296,8 @@
                     <a onclick='openMenu("p-kamshub")'>
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
+                            <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
                         </div>
                     </a>
 
@@ -311,6 +319,8 @@
                     <a onclick='openMenu("p-sam")'>
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
+                            <p class="hover-description">Automatic sauce dispensing machine with text-printing capabilities</p>
+                            <p class="hover-stack">Robot | Arduino, Android Studio (Java)</p>
                         </div>
                     </a>
 
@@ -320,6 +330,7 @@
                         <img src="images/icons/separator_black.png" class='separator' alt="Separator">
                         <img src="images/icons/arduino_icon.png" alt="Arduino">
                         <img src="images/icons/android_studio_logo.png" alt="Android Studio">
+                        <img src="images/icons/java_icon.png" alt="Java">
                     </div>
                 </div>
             </div>
@@ -353,6 +364,8 @@
                         <a onclick='openMenu("p-sam")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Automatic sauce dispensing machine with text-printing capabilities</p>
+                                <p class="hover-stack">Robot | Arduino, Android Studio (Java)</p>
                             </div>
                         </a>
 
@@ -362,8 +375,31 @@
                             <img src="images/icons/separator_black.png" class='separator' alt="Separator">
                             <img src="images/icons/arduino_icon.png" alt="Arduino">
                             <img src="images/icons/android_studio_logo.png" alt="Android Studio">
+                            <img src="images/icons/java_icon.png" alt="Java">
                         </div>
                     </div>
+
+                    <!-- EECS 280 -->
+                    <!--
+                    <div class='portfolio-item'>
+                        <h4>EECS 280 Projects</h4>
+                        <img src='images/projects/eecs280_fg.png' alt='EECS 280'>
+
+                        <a onclick='openMenu("p-eecs280")'>
+                            <div class='hover-over'>
+                                <button onclick=''>Learn More</button>
+                                <p class="hover-description">Course Projects for EECS 280 at the University of Michigan</p>
+                                <p class="hover-stack">Terminal | C++</p>
+                            </div>
+                        </a>
+
+                        <div class="portfolio-icons">
+                            <img src="images/icons/terminal_black.png" alt="Terminal">
+                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                            <img src="images/icons/cpp_icon.png" alt="C++">
+                        </div>
+                    </div>
+                    -->
                     
                     <!-- KAMS Hub -->
                     <div class='portfolio-item'>
@@ -373,6 +409,8 @@
                         <a onclick='openMenu("p-kamshub")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
+                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
                             </div>
                         </a>
 
@@ -386,6 +424,26 @@
                         </div>
                     </div>
 
+                    <!-- Vex Robotics -->
+                    <div class='portfolio-item'>
+                        <h4>Vex Robot (KAMS, 2022)</h4>
+                        <img src='images/projects/vex22_fg.png' alt='Vex Robotics'>
+
+                        <a onclick='openMenu("p-vex22")'>
+                            <div class='hover-over'>
+                                <button onclick=''>Learn More</button>
+                                <p class="hover-description">Robot created for ITEEA National Robotics Competition (2022)</p>
+                                <p class="hover-stack">Robot | C++ (Vex)</p>
+                            </div>
+                        </a>
+
+                        <div class="portfolio-icons">
+                            <img src="images/icons/robot_black.png" alt="Robot">
+                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                            <img src="images/icons/cpp_icon.png" alt="C++">
+                        </div>
+                    </div>
+
                     <!-- ClassChat -->
                     <div class='portfolio-item'>
                         <h4>ClassChat</h4>
@@ -394,6 +452,8 @@
                         <a onclick='openMenu("p-classchat")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Real-time online chat service<br/>(Hackathon Winner)</p>
+                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
                             </div>
                         </a>
 
@@ -416,6 +476,8 @@
                         <a onclick='openMenu("p-hd")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Innovative arcade game published on Nintendo Switch and Android</p>
+                                <p class="hover-stack">Nintendo Switch, Android | Unity, C#</p>
                             </div>
                         </a>
 
@@ -424,6 +486,7 @@
                             <img src="images/icons/android_black.png" alt="Android">
                             <img src="images/icons/separator_black.png" alt="Separator">
                             <img src="images/icons/unity_black.png" alt="Unity">
+                            <img src="images/icons/csharp_icon.png" alt="C#">
                         </div>
                     </div>
 
@@ -436,6 +499,8 @@
                         <a onclick='openMenu("p-studylog")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Simple web app that can record study hours and export it to PDF</p>
+                                <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
                             </div>
                         </a>
 
@@ -456,6 +521,8 @@
                         <a onclick='openMenu("p-studycore")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Online platform for students to exchange their study materials</p>
+                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS</p>
                             </div>
                         </a>
 
@@ -476,6 +543,8 @@
                         <a onclick='openMenu("p-tricalc")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Easy-to-use calculator to solve for sides and angles of a triangle</p>
+                                <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
                             </div>
                         </a>
 
@@ -495,6 +564,8 @@
                         <a onclick='openMenu("p-fc")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Physics equations calculator made with<br/>Java Swing GUI</p>
+                                <p class="hover-stack">Desktop | Java</p>
                             </div>
                         </a>
 
@@ -513,6 +584,8 @@
                         <a onclick='openMenu("p-vector")'>
                             <div class='hover-over'>
                                 <button onclick=''>Learn More</button>
+                                <p class="hover-description">Simple command-line application that calculates the sum of vectors</p>
+                                <p class="hover-stack">Terminal | Java</p>
                             </div>
                         </a>
 
@@ -531,6 +604,123 @@
 
 
             <!-- POP UPS -->
+
+
+            <!-- Vex 2022 Pop-up -->
+            <div id='p-vex22' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-vex22");'>&times;</a>
+
+                <div class="container">
+                    <h1 style='font-family: "GmarketBold", sans-serif; color: black; background-color: white; font-size: 20pt'>
+                        Vex Robot (KAMS, 2022)
+                    </h1>
+                    <br/>
+
+                    <div class="slideshow-box">
+                        <iframe class="slideshow" src="slideshows/ss-vex22.html" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+
+                    <p>
+                        The student team at Kansas Academy of Math and Science (KAMS) designed a robot for
+                        the 2022 ITEEA national competitions based on Vex's "Tipping Point". 
+                        
+                    </p><br/>
+                    <p>
+                        The robot was designed to be able to grab the "mobile goals" and carry them towards 
+                        the team's side, scoring points. It also had a custom-made 3D print model attached at
+                        its back that would push down the "elevated platforms" to score bonus points.
+                    </p><br/>
+                        
+                    <p>
+                        <b>My Role:</b><br/>
+                        - Programmed the robot's manual and autonomous code using C++<br/>
+                        - Designed the 3D print model using Autodesk Sketchup<br/>
+                        - Controlled the robot in the competition<br/>
+                        - Designed the research poster<br/>
+                    </p>
+                    <br/>
+                    <p class='emphasis'>
+                        The robot placed in <b>1st place</b> in the individual battles, 
+                        defeating universities around the country including Purdue University.
+                        Overall, the robot placed in 3rd place. 
+                    </p>
+                    <br/>
+                    
+                    <a href='https://docs.google.com/presentation/d/1093fb9EnZyoxUDg33VJ5eIZjyqivieDus-DAzym4q5c/edit?usp=sharing' target='_blank'>
+                        <img class='img-proj-download' alt='View Slides' src='images/view-presentation.png'/>
+                    </a>
+                    <br/><br/>
+
+                    <h4>Skills Acquired</h4>
+                    <ul class='list-skills'>
+                        <li>Engineering the code for physical robots</li>
+                        <li>Intro to autonomous vehicle design</li>
+                        <li>Working with a project team</li>
+                        <li>Presenting the project at a professional research exhibition</li>
+                    </ul>
+
+                    <br/>
+                    <p class='mini-description'>
+                        - Development: Jan. 2022 - Apr. 2022<br/>
+                        - Platform: Robot<br/>
+                        - Made with: Vex (C++)
+                        <br/><br/>
+                    </p>
+                    <br/>
+                </div>
+            </div>
+
+             <!-- EECS 280 Pop-up -->
+             <!--
+             <div id='p-eecs280' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-eecs280");'>&times;</a>
+
+                <div class="container">
+                    <h1 style='font-family: "GmarketBold", sans-serif; color: black; background-color: white; font-size: 20pt'>
+                        EECS 280 Projects
+                    </h1>
+                    <br/><br/>
+
+                    <h3>Project 2: Computer Vision</h3>
+                    <br/>
+                    <p>
+                        Developed a C++ program that can resize images using seam carving
+                        (removing pixels while maintaining the image's content).
+                        <br/>
+                        · Skills used: C-structs, basic data structures, testing<br/>
+                        · Grade Received: 100.0%
+                    </p><br/><br/>
+
+                    <h3>Project 3: Euchre</h3>
+                    <br/>
+                    <p>
+                        Simulated the card game (Euchre) with C++, allowing multiple
+                        human players as well as with the "AI" players.
+                        <br/>
+                        · Skills used: ADTs, Inheritance, Polymorphism, OOP<br/>
+                        · Grade Received: 100.0%
+                    </p><br/>
+
+                    <h3>Project 4: Office Hours Queue</h3>
+                    <br/>
+                    <p>
+                        Implemented the backend of the Office Hours Queue server
+                        using linked list.
+                        <br/>
+                        · Skills used: C-structs, basic data structures, testing<br/>
+                        · Grade Received: 100.0%
+                    </p><br/><br/>
+                    
+                    <div class="div-info-3">
+                        <p>
+                            ⚠️ &nbsp;The project code cannot be shared in compliance with the College of Engineering's academic integrity policy.
+                        </p>
+                    </div>
+                    <br/><br/>
+
+                    <br/>
+                </div>
+            </div>-->
 
             <!-- SAM Pop-up -->
             <div id='p-sam' class='popup'>
