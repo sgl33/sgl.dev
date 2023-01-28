@@ -362,10 +362,11 @@ sup {
 /* Pop-up: iframe */
 .popup-iframe {
     width: 100%; min-height: 100%;
-    margin: 0; 
+    margin: 0; margin-left: -8px;
     border-style: none;
     background-color: rgb(255, 255, 255, 0);
     overflow: block;
+    
 }
 /* Pop-up: special container */
 .container-sp {
