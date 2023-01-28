@@ -1,20 +1,72 @@
-@font-face { font-family: "GmarketBold"; src: url("../fonts/GmarketSansTTFBold.ttf");}
-@font-face { font-family: "GmarketMedium"; src: url("../fonts/GmarketSansTTFMedium.ttf"); }
-@font-face { font-family: "GmarketLight"; src: url("../fonts/GmarketSansTTFLight.ttf"); }
+/* Font Declarations */
+@font-face { 
+    font-family: "GmarketBold"; 
+    src: url("../fonts/GmarketSansTTFBold.ttf");
+}
+@font-face { 
+    font-family: "GmarketMedium"; 
+    src: url("../fonts/GmarketSansTTFMedium.ttf"); 
+}
+@font-face { 
+    font-family: "GmarketLight"; 
+    src: url("../fonts/GmarketSansTTFLight.ttf");
+ }
+@font-face { 
+    font-family: "SquaresBold"; 
+    src: url("../fonts/squares_bold.otf");
+ }
+@font-face { 
+    font-family: "Acuta"; 
+    src: url("http://db.onlinewebfonts.com/c/f1fb66a43cb92f1308580741725258e1?family=Acuta"); 
+    font-weight: 700; 
+}
+@font-face { 
+    font-family: "Gilroy"; 
+    src: url("../fonts/Gilroy-ExtraBold.otf"); 
+}
+@font-face { 
+    font-family: "RobotoMono"; 
+    src: url("../fonts/RobotoMono.ttf"); 
+    font-weight: 500; 
+}
+@font-face { 
+    font-family: "Alata"; 
+    src: url('../fonts/Alata-Regular.ttf'); 
+}
+@font-face { 
+    font-family: "LatoLight"; 
+    src: url('../fonts/Lato-Light.ttf'); 
+}
+@font-face { 
+    font-family: "LatoRegular"; 
+    src: url('../fonts/Lato-Regular.ttf'); 
+}
 
-@font-face { font-family: "SquaresBold"; src: url("../fonts/squares_bold.otf"); }
-@font-face { font-family: "Acuta"; src: url("http://db.onlinewebfonts.com/c/f1fb66a43cb92f1308580741725258e1?family=Acuta"); font-weight: 700; }
-@font-face { font-family: "Gilroy"; src: url("../fonts/Gilroy-ExtraBold.otf"); }
-@font-face { font-family: "RobotoMono"; src: url("../fonts/RobotoMono.ttf"); font-weight: 500; }
-@font-face { font-family: "Alata"; src: url('../fonts/Alata-Regular.ttf'); }
+/* General Style */
+h1, h2, h3, h4 { 
+    font-family: "GmarketBold", sans-serif; 
+    color: #295943; 
+    margin: 0; 
+}
+p { 
+    margin: 0; 
+    font-family: "GmarketMedium"; 
+}
+html { 
+    scroll-behavior: smooth; 
+    padding: 0; 
+}
+body { 
+    background-color: #fffff5; 
+}
+.tiny { 
+    font-size: 55%; 
+    color: #999999; 
+}
+sup {
+    font-size: 5.5pt; opacity: 70%;
+}
 
-
-
-h1, h2, h3, h4 { font-family: "GmarketBold", sans-serif; color: #295943; margin: 0; }
-p { margin: 0; font-family: "GmarketMedium"; }
-html { scroll-behavior: smooth; }
-body { background-color: #fffff5; }
-.tiny { font-size: 55%; color: #999999; }
 
 #main { transition: 0.5s; }
 
@@ -59,108 +111,7 @@ body { background-color: #fffff5; }
 .button-view-all button:hover { color: #295943; background-color: white; }
 
 
-/* More Info Selection Box */
-#selection-nav-box {
-    width: 620px; max-width: 90%; min-height: 20px; max-height: 96px;
-    margin: auto; margin-top: 12px;
-    border-style: solid; border-width: 1px; border-color: #295943;
-    background-color: #295943; color: white;
-    font-family: "GmarketMedium", sans-serif;
-    
-    
-    padding: 3px 12px;
-}
-#selection-nav-box a {
-    text-decoration: none; color: white;
-    transition: 0.15s;
-}
-#selection-nav-box a:hover {
-    opacity: 90%;
-}
-.nav-item {
-    display: inline-block;
-    padding: 0 4px;
-    margin-right: 6px; margin-top: 6px;
-    max-height: 20px;
-}
-.nav-item .left-float-image {
-    max-height: 20px; margin-right: 10px;
-    display: inline-block;
-    float: left;
-}
-.nav-item .right-float-image {
-    max-height: 20px; margin-right: 10px;
-    display: inline-block;
-    float: right !important;
-}
-.nav-item .nav-name {
-    float: right;
-    line-height: 16pt;
-}
 
-
-#resume-box {
-    width: 620px; max-width: 90%;
-    max-height: 450px; overflow-y: scroll;
-    
-    margin: auto;
-    font-family: "GmarketMedium", sans-serif;
-    padding: 12px;
-    border-style: solid; border-width: 1px; border-color: #999999; border-top-style: none;
-    
-    background-color: #fefefe;
-    
-    transition: 0.4s ease-out;
-}
-.resume-content {
-    margin-left: 4px;
-    display: none;
-    
-}
-.resume-content h1, .resume-content h2 {
-    margin-top: 4px; margin-bottom: 16px;
-}
-.resume-content h3 {
-    margin-top: 24px; margin-bottom: 12px;
-}
-.resume-content h4 {
-    margin-top: 16px; margin-bottom: 8px;
-}
-.resume-content p, .resume-content span {
-    margin-top: 5px; margin-bottom: 8px;
-    font-size: 10.5pt;
-    line-height: 15pt;
-}
-.resume-content b { font-family: "GmarketBold", sans-serif; color: #333333; }
-.resume-content a {
-    text-decoration: none; color: #3b5981;
-}
-.resume-content h4 { font-size: 12pt; color: #263959 !important; }
-.resume-content h4 a { color: #263959 !important; }
-.resume-content h4 span { font-family: "GmarketMedium", sans-serif; font-size: 9pt; color: #444444; }
-
-.resume-content ul { margin-top: 12px; margin-bottom: 16px; margin-left: -16px; }
-.resume-content li {
-    font-size: 10.5pt; margin-bottom: 4px; line-height: 14pt;
-}
-.resume-content 
-.small-text {
-    font-size: 7.5pt !important; color: #666666; line-height: 11pt;
-}
-.expandable-box {
-    display: none;
-}
-
-.skill-level {
-    font-family: "GmarketLight", sans-serif; font-size: 8pt !important; color: #444444;
-}
-
-
-.popup-description { 
-    position: fixed; left: 0%; right: 0%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-style: solid;
-}
 
 /* Footer */
 #footer { margin-top: 8px; margin-bottom: 6px;  color: #999999; text-align: center; }
@@ -176,28 +127,45 @@ body { background-color: #fffff5; }
 }
 
 
-/* Moving Notice */
+
+/* Top Alert
+-------------------------------------------------- */
+
 #top-alert {
     width: 100%;
-    background-color: #ff9966; border-style: solid; border-color: #ff9900; color: black;
+    background-color: #ff9966; 
+    border-style: solid; border-color: #ff9900; 
+    color: black;
     padding: 7px 0;
 }
 #top-alert h4 {
-    color: black; margin: 0; margin-left: 18px; margin-top: 4px; font-size: 14pt; display: inline-block; margin-right: 6px;
-    margin-bottom: 4px;
+    color: black; 
+    margin: 0; margin-left: 18px; margin-top: 4px; margin-right: 6px; margin-bottom: 4px;
+    font-size: 14pt;
+    display: inline-block; 
 }
 #top-alert p {
-    font-size: 10.5pt; display: inline-block; margin-left: 18px; margin-bottom: 4px; margin-top: 4px;
+    font-size: 10.5pt;
+    display: inline-block; 
+    margin-left: 18px; margin-bottom: 4px; margin-top: 4px;
 }
-#top-alert p b { font-family: "GmarketBold", sans-serif; }
-#top-alert .small-text { font-size: 7.5pt; margin-bottom: 3px !important; color: #444444; }
+#top-alert p b { 
+    font-family: "GmarketBold", sans-serif; 
+}
+#top-alert .small-text { 
+    font-size: 7.5pt; 
+    margin-bottom: 3px !important; 
+    color: #444444; 
+}
 #top-alert .close-alert {
-    text-decoration: none; color: white; 
+    text-decoration: none; 
+    color: white; 
     position: absolute; top: 8px; right: 24px;
     font-size: 20pt;
 }
 #top-alert a {
-    text-decoration: underline; color: black;
+    text-decoration: underline; 
+    color: black;
 }
 
 /* Side Menu */
@@ -297,7 +265,7 @@ body { background-color: #fffff5; }
 #main-contaner h1, h2 { text-align: center; }
 
 .pdf-iframe { 
-    width: 960px; max-width: 90%; height: 540px; max-height: 80%; text-align: center; margin: auto; margin-bottom: 32px; position: relative; 
+    width: 1080px; max-width: 95%; height: 720px; max-height: 80%; text-align: center; margin: auto; margin-bottom: 32px; position: relative; 
 }
 .pdf-iframe iframe {
     width: 100%; height: 100%;
@@ -334,6 +302,7 @@ body { background-color: #fffff5; }
 
 
 
+
 #apps-container { 
      width: 1080px; max-width: 95%;
     margin: auto; text-align: center;
@@ -367,37 +336,45 @@ body { background-color: #fffff5; }
 }
 
 
-sup {
-    font-size: 5.5pt; opacity: 70%;
-}
 
 
+/* Pop-up
+-------------------------------------------------- */
 
-.div-school div {
-    border-radius: 10px; border-style: solid; border-color: rgba(41, 89, 67, 0.6);
-    width: 500px; max-width: 95%; 
-    background-color: rgba(255, 255, 255, 0.6);
-    transition: 0.1s;
-    text-align: left;
-    display: inline-block;
-    margin: 6px;
+/* Pop-up: background */
+.popup {
+    position: fixed; top: 0%; 
+    width: 100%; height: 100%;
+    background-color: rgba(255, 255, 255, 0.94);
+    display: none;
 }
-.div-school { text-decoration: none; }
-.div-school:hover div {
-    background-color: white;
-    border-color: rgba(41, 89, 67, 1);
+/* Pop-up: close button */
+.popup .close-popup {
+    position: fixed; right: 20px; top: 6px;
+    font-size: 48px; 
+    cursor: pointer; 
+    transition: 0.3s;
+    z-index: 999;
 }
-.div-school img {
-    float: left; margin: 10px; max-width: 40px;
+.popup .close-popup:hover { 
+    opacity: 0.6; 
 }
-.div-school h3 {
-    margin-top: 13px; margin-bottom: 2px !important;
-    margin-left: 76px; margin-right: 8px;
-    font-size: 11pt;
-    color: #263959;
+/* Pop-up: iframe */
+.popup-iframe {
+    width: 100%; min-height: 100%;
+    margin: 0; 
+    border-style: none;
+    background-color: rgb(255, 255, 255, 0);
+    overflow: block;
 }
-.div-school p {
-    margin-top: 0px; margin-left: 76px; margin-right: 8px; margin-bottom: 8px !important;
-    color: black;
-    font-size: 9pt;
+/* Pop-up: special container */
+.container-sp {
+    width: 900px; max-width: 90%;
+    margin: auto; margin-top: 60px !important; margin-bottom: 20px;
 }
+.container-sp h1,h2 { 
+    text-align: center; 
+    border-radius: 4px; 
+    padding: 4px; 
+}
+

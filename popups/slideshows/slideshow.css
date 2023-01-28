@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : seunggulee
 */
 
-@font-face { font-family: "GmarketMedium"; src: url("../fonts/GmarketSansTTFMedium.ttf"); }
+@font-face { font-family: "GmarketMedium"; src: url("../../fonts/GmarketSansTTFMedium.ttf"); }
 * {box-sizing:border-box}
 
 /* Slideshow container */

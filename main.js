@@ -1,20 +1,10 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
+/**
+ * Detects if the user is on a mobile device and if so, changes the height 
+ * of the slideshow boxes
  */
-
-
 function detectMobileDevice()
 {
-    /*
-    if(typeof window.orientation !== 'undefined') {
-        var slideshows = document.getElementsByClassName("slideshow-box");
-
-        for(i=0; i<slideshows.length; i++) {
-            slideshows[i].style.height = '285px';
-        }
-    }*/
     if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
     {
         var slideshows = document.getElementsByClassName("slideshow-box");
@@ -24,6 +14,9 @@ function detectMobileDevice()
         }
     }
 }
+/**
+ * @returns {Boolean} true if the user is on a mobile device
+ */
 function isMobile() 
 {
     let check = false;
@@ -31,8 +24,11 @@ function isMobile()
     return check;
 }
 
-detectMobileDevice();
 
+/**
+ * Enables id with fade in animation
+ * @param {*} id element to be enabled
+ */
 function openMenu(id)
 {
     var box = $('#' + id);
@@ -41,20 +37,29 @@ function openMenu(id)
     
     closeSideMenu();
 }
+/**
+ * Enables id with fade in animation
+ * @param {*} id element to be enabled
+ */
 function openMenuAndCollapseSideMenu(id)
 {
-    var box = $('#' + id);
-
-    box.fadeIn(200);
-    
-    closeSideMenu();
+    openMenu(id);
 }
+/**
+ * Disables id with fade in animation
+ * @param {*} id element to be disabled
+ */
 function closeMenu(id)
 {
     var box = $('#' + id);
 
     box.fadeOut(200);
 }
+
+/**
+ * Navigates the info box to the specified id
+ * @param {*} id of the element to be shown
+ */
 function resumeNavigate(id)
 {
     var contentIds = ['r-default', 'r-bio', 'r-education', 'r-skills', 
@@ -76,9 +81,12 @@ function resumeNavigate(id)
         }
     }
 
-
+    parent.resizeIframe(this.frameElement); 
 }
 
+/**
+ * Opens side menu
+ */
 function openSideMenu()
 {
     if(!isMobile()) // PC or tablet
@@ -111,6 +119,10 @@ function openSideMenu()
             y[i].style.display = "inline-block";
     }
 }
+
+/**
+ * Closes side menu
+ */
 function closeSideMenu()
 {
     if(!isMobile()) // PC or tablet
@@ -142,9 +154,4 @@ function closeSideMenu()
 }
 
 closeSideMenu(); // init
-
-
-function partyMode()
-{
-    
-}
+detectMobileDevice();

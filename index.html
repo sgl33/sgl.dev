@@ -14,7 +14,6 @@
         <link rel="stylesheet" type="text/css" href="css/main.css?v=1.1.0"/>
         <link rel="stylesheet" type="text/css" href="css/infobox.css?v=1.1.0"/>
         <link rel="stylesheet" type="text/css" href="css/buttons.css?v=1.1.0"/>
-        <link rel="stylesheet" type="text/css" href="css/popups.css?v=1.1.0"/>
         <link rel='icon' href='images/emoji.png'>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -44,229 +43,214 @@
             </div>
             <br/><br/>
 
-            <!-- ABOUT -->
+            <!-- ABOUT ME info box
+            ------------------------------------------------------------->
 
             <h2>About Me</h2>
 
-            <!-- Navigation bar -->
-            <div id="selection-nav-box">
+            <div>
+                <!-- Navigation bar -->
+                <div id="selection-nav-box">
 
-                <a href="javascript:resumeNavigate('r-bio')">
-                    <div class="nav-item">
-                        <img class='left-float-image' src='images/icons/profile_icon.png'>
-                        <span class='nav-name'>Bio</span>
+                    <a href="javascript:resumeNavigate('r-bio')">
+                        <div class="nav-item">
+                            <img class='left-float-image' src='images/icons/profile_icon.png'>
+                            <span class='nav-name'>Bio</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:resumeNavigate('r-skills')">
+                        <div class="nav-item">
+                            <img class='left-float-image' src='images/icons/code_icon.png'>
+                            <span class='nav-name'>Skills</span>
+                        </div>
+                    </a>
+
+                    <!-- Resume -->
+                    <a href="javascript:resumeNavigate('r-education')">
+                        <div class="nav-item">
+                            <img class='left-float-image' src='images/icons/education_icon.png'>
+                            <span class='nav-name'>Education</span>
+                        </div>
+                    </a>
+
+                    <!-- Links -->
+                    <a href="javascript:resumeNavigate('r-links')">
+                        <div class="nav-item">
+                            <img class='left-float-image' src='images/icons/link_icon.png'>
+                            <span class='nav-name'>Links</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Resume -->
+                    <a href="/resume" target="_blank">
+                        <div class="nav-item" style="margin-right: 0px !important">
+                            <img class='left-float-image' src='images/icons/file_icon.png'>
+                            <span class='nav-name'>Resume&nbsp;
+                                <img class='right-float-image' src='images/icons/small_popup_icon.png'>
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/seunggulee/" target="_blank">
+                        <div class="nav-item" style="background-color: #0077b5; border-radius: 4px; 
+                            padding-left: 12px; padding-right: 0px; margin-right: 0px !important; margin-left: -6px !important">
+                            <img class='left-float-image' src='images/icons/linkedin_icon.png' alt="LinkedIn" style='max-height: 16px !important; margin-top: 2px'>
+                            <img class='right-float-image' src='images/icons/small_popup_icon.png' style="margin-left: -6px">
+                        </div>
+                    </a>
+                </div>
+
+
+                <div id="resume-box">
+                    <span id='r-default'>Please select a category!</span>
+
+                    <!-- Bio -->
+                    <div class='resume-content' id='r-bio'>
+                        <h2>Bio</h2>
+                        <p>
+                            Hi! I'm Seung-Gu Lee, and I'm a computer
+                            science student at University of Michigan, College of Engineering.
+                        </p>
+                        <p>
+                            I am interested in computer science and software engineering. 
+                            I really enjoy writing code to make my imaginations come true.
+                        </p>
+
+                        <p>
+                            If you have any questions, please email me at 
+                            <a href="mailto:seunggu@sgl.dev" target='_blank'>seunggu@sgl.dev</a>!
+                        </p>
+                        <p class="footnotes">
+                            
+                        </p>
                     </div>
-                </a>
 
-                <a href="javascript:resumeNavigate('r-skills')">
-                    <div class="nav-item">
-                        <img class='left-float-image' src='images/icons/code_icon.png'>
-                        <span class='nav-name'>Skills</span>
-                    </div>
-                </a>
-
-                <a href="javascript:resumeNavigate('r-education')">
-                    <div class="nav-item">
-                        <img class='left-float-image' src='images/icons/education_icon.png'>
-                        <span class='nav-name'>Education</span>
-                    </div>
-                </a>
-
-
-                <a href="javascript:resumeNavigate('r-links')">
-                    <div class="nav-item">
-                        <img class='left-float-image' src='images/icons/link_icon.png'>
-                        <span class='nav-name'>Links</span>
-                    </div>
-                </a>
-                
-                <!--
-                <a href="javascript:resumeNavigate('r-awards')">
-                    <div class="nav-item">
-                        <img class='left-float-image' src='images/icons/awards_icon.png'>
-                        <span class='nav-name'>Awards</span>
-                    </div>
-                </a>
-                -->
-
-                <a href="/resume" target="_blank">
-                    <div class="nav-item" style="margin-right: 0px !important">
-                        <img class='left-float-image' src='images/icons/file_icon.png'>
-                        <span class='nav-name'>Resume&nbsp;
-                            <img class='right-float-image' src='images/icons/small_popup_icon.png'>
-                        </span>
-                    </div>
-                </a>
-                
-                
-                <a href="https://www.linkedin.com/in/seunggulee/" target="_blank">
-                    <div class="nav-item" style="background-color: #0077b5; border-radius: 4px; 
-                         padding-left: 12px; padding-right: 0px; margin-right: 0px !important; margin-left: -6px !important">
-                        <img class='left-float-image' src='images/icons/linkedin_icon.png' alt="LinkedIn" style='max-height: 16px !important; margin-top: 2px'>
-                        <img class='right-float-image' src='images/icons/small_popup_icon.png' style="margin-left: -6px">
-                    </div>
-                </a>
-                
-                <!--
-                <a href="javascript:resumeNavigate('r-default')">
-                    <div class="nav-item">
-                        <img src='images/icons/repeat_icon.png'>
-                    </div>
-                </a>
-                -->
-
-            </div>
-
-
-            <div id="resume-box">
-                <span id='r-default'>Please select a category!</span>
-
-                <!-- Bio -->
-                <div class='resume-content' id='r-bio'>
-                    <h2>Bio</h2>
-                    <p>
-                        Hi! I'm Seung-Gu Lee, and I'm a computer
-                        science student at University of Michigan, College of Engineering.
-                    </p>
-                    <p>
-                        I am interested in computer science and software engineering. 
-                        I really enjoy writing code to make my imaginations come true.
-                    </p>
-
-                    <p>
-                        If you have any questions, please email me at 
-                        <a href="mailto:seunggu@sgl.dev" target='_blank'>seunggu@sgl.dev</a>!
-                    </p>
-                    <p class="footnotes">
+                    <!-- Education -->
+                    <div class='resume-content' id='r-education'>
+                        <h2>Education</h2>
                         
-                    </p>
-                </div>
+                        <p>
+                            <b>University of Michigan</b> - Ann Arbor<br/>
+                            B.S.E. in Computer Science
+                        </p>
+                        <ul>
+                            <li>Major GPA: 4.00 &nbsp;|&nbsp; Cumulative GPA: 3.93</li>
+                            <li>Aug. 2022 - Apr. 2025 (Current Standing: Junior)</li>
+                            <li>Minor in Civil Engineering (Mobility Systems Engineering)</li>
+                        </ul>
 
-                <!-- Education -->
-                <div class='resume-content' id='r-education'>
-                    <h2>Education</h2>
-                    
-                    <p>
-                        <b>University of Michigan</b> - Ann Arbor<br/>
-                        B.S.E. in Computer Science
-                    </p>
-                    <ul>
-                        <li>Major GPA: 4.00 &nbsp;|&nbsp; Cumulative GPA: 3.93</li>
-                        <li>Aug. 2022 - Apr. 2025 (Current Standing: Junior)</li>
-                        <li>Minor in Civil Engineering (Mobility Systems Engineering)</li>
-                    </ul>
+                        <p>
+                            <b>Kansas Academy of Math and Science (KAMS)</b><br/>
+                            HS Diploma, Early College Program at FHSU
+                        </p>
+                        <ul>
+                            <li>Aug. 2020 - May 2022</li>
+                            <li>GPA: 4.00</li>
+                        </ul>
+                        
+                        <hr/>
 
-                    <p>
-                        <b>Kansas Academy of Math and Science (KAMS)</b><br/>
-                        HS Diploma, Early College Program at FHSU
-                    </p>
-                    <ul>
-                        <li>Aug. 2020 - May 2022</li>
-                        <li>GPA: 4.00</li>
-                    </ul>
-                    
-                    <hr/>
+                        <h3 style="margin-bottom: 16px">Coursework</h3>
+                        <p style="margin-bottom: -6px"><b>Computer Science:</b></p>
+                        <ul>
+                            <li>Data Structures and Algorithms (EECS 281)</li>
+                            <li>Foundations of Computer Science (EECS 376)</li>
+                            <li>Computer Science Pragmatics (EECS 201)</li>
+                            <li>Programming & Data Structures (EECS 280)</li>
+                            <li>Discrete Math (EECS 203)</li>
+                            <li>Taken 4 years of CS courses in high school</li>
+                        </ul>
+                        <p style="margin-bottom: -6px"><b>Math & Engineering:</b></p>
+                        <ul>
+                            <li>Differential Equations (MATH 216)</li>
+                            <li>Linear Algebra (KAMS)</li>
+                            <li>Intro to Engineering: Robotics Mechanisms (ENGR 100)</li>
+                        </ul>
+                        <p class='small-text'>* As of Jan. 2023</p>
 
-                    <h3 style="margin-bottom: 16px">Coursework</h3>
-                    <p style="margin-bottom: -6px"><b>Computer Science:</b></p>
-                    <ul>
-                        <li>Data Structures and Algorithms (EECS 281)</li>
-                        <li>Foundations of Computer Science (EECS 376)</li>
-                        <li>Computer Science Pragmatics (EECS 201)</li>
-                        <li>Programming & Data Structures (EECS 280)</li>
-                        <li>Discrete Math (EECS 203)</li>
-                        <li>Taken 4 years of CS courses in high school</li>
-                    </ul>
-                    <p style="margin-bottom: -6px"><b>Math & Engineering:</b></p>
-                    <ul>
-                        <li>Differential Equations (MATH 216)</li>
-                        <li>Linear Algebra (KAMS)</li>
-                        <li>Intro to Engineering: Robotics Mechanisms (ENGR 100)</li>
-                    </ul>
-                    <p class='small-text'>* As of Jan. 2023</p>
+                    </div>
 
-                </div>
+                    <!-- Skills -->
+                    <div class="resume-content" id="r-skills">
+                        <h2>Skills</h2>
 
-                <!-- Skills -->
-                <div class="resume-content" id="r-skills">
-                    <h2>Skills</h2>
+                        <h4>Programming</h4>
+                        <ul>
+                            <li><b>C-style Languages</b>: C++, Java</li>
+                            <li><b>Web</b>: HTML*, CSS, JavaScript, Java Web</li>
+                            <li><b>Mobile</b>: Android (Java), Flutter (Dart)</li>
+                            <li><b>Game Development</b>: Unity (C#)</li>
+                            <li><b>Robotics</b>: Arduino, Vex</li>
+                            <li>Misc: Git, Unix shell</li>
+                        </ul>
+                        <h4>Tools</h4>
+                        <ul>
+                            <li>Notion</li>
+                            <li>Microsoft Office (Word, PowerPoint, Excel)</li>
+                            <li>Google Workspace (Docs, Slides, Sheets)</li>
+                        </ul>
+                        <h4>Interpersonal</h4>
+                        <ul>
+                            <li>Teamwork & Communication</li>
+                            <li>Leadership</li>
+                            <li>Problem-solving</li>
+                            <li>Fast-learner</li>
+                        </ul>
+                        <h4>Design</h4>
+                        <ul>
+                            <li>Adobe Photoshop / InDesign</li>
+                            <li>Affinity Photo / Publisher</li>
+                            <li>Figma</li>
+                        </ul>
+                        <p class='small-text'>* HTML is not a programming language</p>
+                    </div>
 
-                    <h4>Programming</h4>
-                    <ul>
-                        <li><b>C-style Languages</b>: C++, Java</li>
-                        <li><b>Web</b>: HTML*, CSS, JavaScript, Java Web</li>
-                        <li><b>Mobile</b>: Android (Java), Flutter (Dart)</li>
-                        <li><b>Game Development</b>: Unity (C#)</li>
-                        <li><b>Robotics</b>: Arduino, Vex</li>
-                        <li>Misc: Git, Unix shell</li>
-                    </ul>
-                    <h4>Tools</h4>
-                    <ul>
-                        <li>Notion</li>
-                        <li>Microsoft Office (Word, PowerPoint, Excel)</li>
-                        <li>Google Workspace (Docs, Slides, Sheets)</li>
-                    </ul>
-                    <h4>Interpersonal</h4>
-                    <ul>
-                        <li>Teamwork & Communication</li>
-                        <li>Leadership</li>
-                        <li>Problem-solving</li>
-                        <li>Fast-learner</li>
-                    </ul>
-                    <h4>Design</h4>
-                    <ul>
-                        <li>Adobe Photoshop / InDesign</li>
-                        <li>Affinity Photo / Publisher</li>
-                        <li>Figma</li>
-                    </ul>
-                    <p class='small-text'>* HTML is not a programming language</p>
-                </div>
+                    <!-- Awards -->
+                    <div class="resume-content" id="r-awards">
+                        <h2>Awards</h2>
+                        <p>ITEEA National Robotics Competition: 3rd place</p>
+                        <ul>
+                            <li>Java</li>
+                        </ul>
+                    </div>
 
-                <!-- Awards -->
-                <div class="resume-content" id="r-awards">
-                    <h2>Awards</h2>
-                    <p>ITEEA National Robotics Competition: 3rd place</p>
-                    <ul>
-                        <li>Java</li>
-                    </ul>
-                </div>
+                    <!-- Links -->
+                    <div class="resume-content" id="r-links">
+                        <h2>Links</h2>
 
-                <!-- Links -->
-                <div class="resume-content" id="r-links">
-                    <h2>Links</h2>
-
-                    <ul>
-                        <li>LinkedIn 
-                            <a href="https://www.linkedin.com/in/seunggulee/" target="_blank">Profile</a>
-                        </li>
-                        <li>
-                            Developer Profiles: 
-                            <a href='https://github.com/awesomeguy4k/' target='_blank'>Github</a> | 
-                            <a href='http://devpost.com/awesomeguy4k' target='_blank'>Devpost</a> |
-                            <a href='https://nether-yoshi.itch.io/' target='_blank'>itch.io</a> |
-                            <a href='https://play.google.com/store/apps/dev?id=7666948543367299688' target='_blank'>Google Play</a>
-                        </li>
-                        <li>
-                            Nether Yoshi Studios 
-                            (<a href='http://netheryoshi.com/' target='_blank'>netheryoshi.com</a>)
-                        </li>
-                        <li>Email: <a href="mailto:seunggu@sgl.dev" target='_blank'>seunggu@sgl.dev</a></li>
-                    </ul>
+                        <ul>
+                            <li>LinkedIn 
+                                <a href="https://www.linkedin.com/in/seunggulee/" target="_blank">Profile</a>
+                            </li>
+                            <li>
+                                Developer Profiles: 
+                                <a href='https://github.com/awesomeguy4k/' target='_blank'>Github</a> | 
+                                <a href='http://devpost.com/awesomeguy4k' target='_blank'>Devpost</a> |
+                                <a href='https://nether-yoshi.itch.io/' target='_blank'>itch.io</a> |
+                                <a href='https://play.google.com/store/apps/dev?id=7666948543367299688' target='_blank'>Google Play</a>
+                            </li>
+                            <li>
+                                Nether Yoshi Studios 
+                                (<a href='http://netheryoshi.com/' target='_blank'>netheryoshi.com</a>)
+                            </li>
+                            <li>Email: <a href="mailto:seunggu@sgl.dev" target='_blank'>seunggu@sgl.dev</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-
-
+            <!-- END about me info box
+            -------------------------------------------------------------->
 
             <br/><br/>
-            <!-- PORTFOLIO -->
-
-            <!-- Showcase -->
+            <!-- PORTFOLIO SHOWCASE
+            -------------------------------------------------------------->
 
             <div id='box-portfolio'>
                 <h2>Portfolio</h2>
-
-                <br/>
+                <br>
                 <!-- Hexagon Defense -->
                 <div class='portfolio-item'>
                     <h4>Hexagon Defense</h4>
@@ -338,1082 +322,14 @@
                 </div>
             </div>
 
-            <!-- Menu Button -->
-            <a href='javascript:openSideMenu()' id="menu-button">
-                <img src="images/icons/menu_icon.png"/>
-            </a>
-
-
-            <!-- Portfolio - View All Button -->
-
+            <!-- View All Button -->
             <div class="button-view-all">
                 <button onclick="openMenu('p-portfolio')">View All</button>
             </div>
 
-            <!-- All Portfolio Projects -->
-
-            <div id="p-portfolio" class="popup">
-                <a class='close-popup' onclick='closeMenu("p-portfolio");'>&times;</a>
-
-                <div class="container-sp">
-                    <h1>Portfolio</h1>
-                    <br/>
-
-                    <!-- SAM -->
-                    <div class='portfolio-item'>
-                        <h4>Sauce Applicator Machine</h4>
-                        <img src='images/projects/sam_fg.png' alt='SAM'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/robot_black.png" alt="Robot">
-                            <img src="images/icons/android_black.png" alt="Android">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/arduino_icon.png" alt="Arduino">
-                            <img src="images/icons/android_studio_logo.png" alt="Android Studio">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                        </div>
-
-                        <a onclick='openMenu("p-sam")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Automatic sauce dispensing machine with text-printing capabilities</p>
-                                <p class="hover-stack">Robot | Arduino, Android Studio (Java)</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- EECS 280 -->
-                    <!--
-                    <div class='portfolio-item'>
-                        <h4>EECS 280 Projects</h4>
-                        <img src='images/projects/eecs280_fg.png' alt='EECS 280'>
-
-                        <a onclick='openMenu("p-eecs280")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Course Projects for EECS 280 at the University of Michigan</p>
-                                <p class="hover-stack">Terminal | C++</p>
-                            </div>
-                        </a>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/terminal_black.png" alt="Terminal">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/cpp_icon.png" alt="C++">
-                        </div>
-                    </div>
-                    -->
-                    
-                    <!-- KAMS Hub -->
-                    <div class='portfolio-item'>
-                        <h4>KAMS Hub</h4>
-                        <img src='images/projects/kamshub_fg.png' alt='KAMS Hub'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/web_black.png" alt="Web">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                            <img src="images/icons/mysql_icon.png" alt="MySQL">
-                            <img src="images/icons/html_icon.png" alt="HTML">
-                            <img src="images/icons/js_icon.png" alt="JavaScript">
-                        </div>
-
-                        <a onclick='openMenu("p-kamshub")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
-                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Vex Robotics -->
-                    <div class='portfolio-item'>
-                        <h4>Vex Robot (KAMS, 2022)</h4>
-                        <img src='images/projects/vex22_fg.png' alt='Vex Robotics'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/robot_black.png" alt="Robot">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/cpp_icon.png" alt="C++">
-                        </div>
-
-                        <a onclick='openMenu("p-vex22")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Robot created for ITEEA National Robotics Competition (2022)</p>
-                                <p class="hover-stack">Robot | C++ (Vex)</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- ClassChat -->
-                    <div class='portfolio-item'>
-                        <h4>ClassChat</h4>
-                        <img src='images/projects/classchat_fg.png' alt='ClassChat'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/web_black.png" alt="Web">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                            <img src="images/icons/mysql_icon.png" alt="MySQL">
-                            <img src="images/icons/html_icon.png" alt="HTML">
-                            <img src="images/icons/js_icon.png" alt="JavaScript">
-                        </div>
-
-                        <a onclick='openMenu("p-classchat")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Real-time online chat service<br/>(Hackathon Winner)</p>
-                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-
-                    <!-- Hexagon Defense -->
-                    <div class='portfolio-item'>
-                        <h4>Hexagon Defense</h4>
-                        <img src='images/projects/hd_fg_nx.png' alt='Hexagon Defense'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/nintendo_switch_black.png" alt="Nintendo Switch">
-                            <img src="images/icons/android_black.png" alt="Android">
-                            <img src="images/icons/separator_black.png" alt="Separator">
-                            <img src="images/icons/unity_black.png" alt="Unity">
-                            <img src="images/icons/csharp_icon.png" alt="C#">
-                        </div>
-
-                        <a onclick='openMenu("p-hd")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Innovative arcade game published on Nintendo Switch and Android</p>
-                                <p class="hover-stack">Nintendo Switch, Android | Unity, C#</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-
-                    <!-- KAMS Study Log -->
-                    <div class='portfolio-item'>
-                        <h4>KAMS Study Logger</h4>
-                        <img src='images/projects/studylog_fg.jpg' alt='KAMS Study Logger'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/web_black.png" alt="Web">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/html_icon.png" alt="HTML">
-                            <img src="images/icons/js_icon.png" alt="JavaScript">
-                        </div>
-
-                        <a onclick='openMenu("p-studylog")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Simple web app that can record study hours and export it to PDF</p>
-                                <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-
-                    <!-- StudyCore -->
-                    <div class='portfolio-item'>
-                        <h4>StudyCore™</h4>
-                        <img src='images/projects/studycore_fg.png' alt='StudyCore'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/web_black.png" alt="Web">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                            <img src="images/icons/mysql_icon.png" alt="MySQL">
-                            <img src="images/icons/html_icon.png" alt="HTML">
-                        </div>
-
-                        <a onclick='openMenu("p-studycore")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Online platform for students to exchange their study materials</p>
-                                <p class="hover-stack">Web | Java, MySQL, HTML/CSS</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-                    <!-- Triangle Calculator -->
-                    <div class='portfolio-item'>
-                        <h4>Triangle Calculator</h4>
-                        <img src='images/projects/tricalc_fg.png' alt='Triangle Calculator'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/web_black.png" alt="Web">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/html_icon.png" alt="HTML">
-                            <img src="images/icons/js_icon.png" alt="JavaScript">
-                        </div>
-
-                        <a onclick='openMenu("p-tricalc")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Easy-to-use calculator to solve for sides and angles of a triangle</p>
-                                <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-                    <!-- Force Calculator -->
-                    <div class='portfolio-item'>
-                        <h4>Force Calculator</h4>
-                        <img src='images/projects/fc_fg.png' alt='Force Calculator'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/desktop_black.png" alt="Desktop">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                        </div>
-
-                        <a onclick='openMenu("p-fc")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Physics equations calculator made with<br/>Java Swing GUI</p>
-                                <p class="hover-stack">Desktop | Java</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-
-                    <!-- Vector Calculator -->
-                    <div class='portfolio-item'>
-                        <h4>Vector Calculator</h4>
-                        <img src='images/projects/vector_fg.png' alt='Vector Calculator'>
-
-                        <div class="portfolio-icons">
-                            <img src="images/icons/terminal_black.png" alt="Command Line">
-                            <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                            <img src="images/icons/java_icon.png" alt="Java">
-                        </div>
-
-                        <a onclick='openMenu("p-vector")'>
-                            <div class='hover-over'>
-                                <button onclick=''>Learn More</button>
-                                <p class="hover-description">Simple command-line application that calculates the sum of vectors</p>
-                                <p class="hover-stack">Terminal | Java</p>
-                            </div>
-                        </a>
-
-                        
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-            <!-- POP UPS -->
-
-
-            <!-- Vex 2022 Pop-up -->
-            <div id='p-vex22' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-vex22");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: black; background-color: white; font-size: 20pt'>
-                        Vex Robot (KAMS, 2022)
-                    </h1>
-                    <br/>
-
-                    <div class="slideshow-box">
-                        <iframe class="slideshow" src="slideshows/ss-vex22.html" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-
-                    <p>
-                        The student team at Kansas Academy of Math and Science (KAMS) designed a robot for
-                        the 2022 ITEEA national competitions based on Vex's "Tipping Point". 
-                        
-                    </p><br/>
-                    <p>
-                        The robot was designed to be able to grab the "mobile goals" and carry them towards 
-                        the team's side, scoring points. It also had a custom-made 3D print model attached at
-                        its back that would push down the "elevated platforms" to score bonus points.
-                    </p><br/>
-                        
-                    <p>
-                        <b>My Role:</b><br/>
-                        - Programmed the robot's manual and autonomous code using C++<br/>
-                        - Designed the 3D print model using Autodesk Sketchup<br/>
-                        - Controlled the robot in the competition<br/>
-                        - Designed the research poster<br/>
-                    </p>
-                    <br/>
-                    <p class='emphasis'>
-                        The robot placed in <b>1st place</b> in the individual battles, 
-                        defeating universities around the country including Purdue University.
-                        Overall, the robot placed in 3rd place. 
-                    </p>
-                    <br/>
-                    
-                    <a href='https://docs.google.com/presentation/d/1093fb9EnZyoxUDg33VJ5eIZjyqivieDus-DAzym4q5c/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='View Slides' src='images/view-presentation.png'/>
-                    </a>
-                    <br/><br/>
-
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Engineering the code for physical robots</li>
-                        <li>Intro to autonomous vehicle design</li>
-                        <li>Working with a project team</li>
-                        <li>Presenting the project at a professional research exhibition</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Jan. 2022 - Apr. 2022<br/>
-                        - Platform: Robot<br/>
-                        - Made with: Vex (C++)
-                        <br/><br/>
-                    </p>
-                    <br/>
-                </div>
-            </div>
-
-             <!-- EECS 280 Pop-up -->
-             <!--
-             <div id='p-eecs280' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-eecs280");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: black; background-color: white; font-size: 20pt'>
-                        EECS 280 Projects
-                    </h1>
-                    <br/><br/>
-
-                    <h3>Project 2: Computer Vision</h3>
-                    <br/>
-                    <p>
-                        Developed a C++ program that can resize images using seam carving
-                        (removing pixels while maintaining the image's content).
-                        <br/>
-                        · Skills used: C-structs, basic data structures, testing<br/>
-                        · Grade Received: 100.0%
-                    </p><br/><br/>
-
-                    <h3>Project 3: Euchre</h3>
-                    <br/>
-                    <p>
-                        Simulated the card game (Euchre) with C++, allowing multiple
-                        human players as well as with the "AI" players.
-                        <br/>
-                        · Skills used: ADTs, Inheritance, Polymorphism, OOP<br/>
-                        · Grade Received: 100.0%
-                    </p><br/>
-
-                    <h3>Project 4: Office Hours Queue</h3>
-                    <br/>
-                    <p>
-                        Implemented the backend of the Office Hours Queue server
-                        using linked list.
-                        <br/>
-                        · Skills used: C-structs, basic data structures, testing<br/>
-                        · Grade Received: 100.0%
-                    </p><br/><br/>
-                    
-                    <div class="div-info-3">
-                        <p>
-                            ⚠️ &nbsp;The project code cannot be shared in compliance with the College of Engineering's academic integrity policy.
-                        </p>
-                    </div>
-                    <br/><br/>
-
-                    <br/>
-                </div>
-            </div>-->
-
-            <!-- SAM Pop-up -->
-            <div id='p-sam' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-sam");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketLight", sans-serif; color: white; background-color: black; font-size: 20pt'>
-                        Sauce Applicator Machine (SAM)
-                    </h1>
-                    <br/>
-
-                    <iframe class='img-fg-popup' width="560" height="340" src="https://www.youtube.com/embed/jbGNatt3X3M" frameborder="0" allowfullscreen></iframe>
-
-                    <p>
-                        No need to get your hands dirty with SAM! SAM is a state-of-the-art 
-                        sauce dispensing machine that automatically detects a food item and
-                        dispenses sauce onto it.
-                    </p>
-                    <br/>
-                    <p>
-                        Users can choose from a variety of sauces using the Android tablet,
-                        which will be dispensed simultaneously. Equipped with two perpendicular
-                        rail actuators, SAM also allows users to print their
-                        name on the food with sauce.
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://docs.google.com/document/d/1l2yRymlX4XOcCzeBfzJAmnOtYUBQf7cvGnGEdUvqaN0/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='View Documentation' src='images/view-documentation.png'/>
-                    </a>
-                    <a href='https://docs.google.com/presentation/d/18x6WnHfweiHCcJviWOT6jEaWyL0sgH5d/edit?usp=sharing&ouid=114557412470073702021&rtpof=true&sd=true' target='_blank'>
-                        <img class='img-proj-download' alt='View Presentation' src='images/view-presentation.png'/>
-                    </a>
-
-                    <div class="div-info-1">
-                        <p>
-                            📢 &nbsp;This is a prototype of the robot. We could not implement some features due to time constraints.
-                        </p>
-                    </div>
-
-                    
-
-                    <br/><br/>
-
-                    <h4 class='dev-story'>Development</h4>
-                    <p class='dev-story'>
-                        This was project was for ENGR 100-850 (Robotics Mechanisms)
-                        class at the University of Michigan. The team of four worked
-                        hard to design and build the robot in an extremely short 
-                        timeframe of ~5 weeks.<br/><br/>
-                        My role included:<br/>
-                        - Engineering and coding the software for the robot and the Android app<br/>
-                        - Communicating with stakeholders to ensure the robot met their needs<br/>
-                        - Contributing to team's discussion and presentation<br/>
-                        - Designing the presentation slides and editing the video
-                    </p>
-                    <br/><br/>
-
-
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Working with a team of different areas of interest to build a product</li>
-                        <li>Technical Communication: effective communication with stakeholders and writing engineering reports</li>
-                        <li>Using Arduino to code for physically moving parts</li>
-                        <li>Android app development (with Android Studio)</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Oct. 2022 - Dec. 2022<br/>
-                        - Platform: Robot<br/>
-                        - Made with: Arduino, Android Studio
-                        <br/><br/><br/>
-                    </p>
-                </div>
-            </div>
+            <!-- END portfolio showcase
+            ------------------------------------------------------------->
             
-            <!-- KAMS Hub Pop-up -->
-            <div id='p-kamshub' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-kamshub");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: black; background-color: #f6a81c; font-size: 20pt'>
-                        KAMS Hub
-                    </h1>
-                    <br/>
-
-                    <!--
-                    <img class='img-fg-popup' src='images/projects/classchat_fg.png'>
-                    -->
-                    <div class="slideshow-box">
-                        <iframe class="slideshow" src="slideshows/ss-kamshub.html" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-
-                    <p>
-                        KAMS Hub is a student learning management portal for KAMS/AMS students
-                        to help with their academic success.
-                    </p><br/>
-                        
-                    <p>
-                        <b>Features:</b><br/>
-                        - Keep track of study sessions and time (& share with your advisor)<br/>
-                        - Record and verify tutoring sessions (& share with your advisor)<br/>
-                        - View student announcements<br/>
-                        - Quick access to student and wellness resources<br/>
-                    </p>
-                    <br/>
-                    <p class='emphasis'>
-                        This application is officially used within KAMS.
-                    </p>
-                    <br/>
-                    
-                    <a href='https://docs.google.com/presentation/d/12auJBLl3WyBV4CmqO05tV9UaJzbjVCTjx-boZ9QhO-w/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='View Slides' src='images/view-presentation.png'/>
-                    </a>
-
-                    <a href='http://kamshub.net' target='_blank'>
-                        <img class='img-proj-download' alt='View On Web' src='images/view-web.png'/>
-                    </a>
-                    <div class="div-info-3">
-                        <p>
-                            ⚠️ &nbsp;KAMS Hub is for current KAMS students and advisors only. Email verification is required.
-                        </p>
-                    </div>
-                    <br/><br/>
-
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Further experience on web & Java development</li>
-                        <li>Working with external clients</li>
-                        <li>Web application deployment on servers</li>
-                        <li>Web app management & maintenance</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Nov. 2021 - Mar. 2022<br/>
-                        - Published: March 2022<br/>
-                        - Platform: Web<br/>
-                        - Made with: Java Web, MySQL, JavaScript
-                        <br/><br/>
-                    </p>
-                    <p class="footnotes">
-                        Terms & Conditions and Privacy Policy apply when using this application.
-                        Not guaranteed to be fully functional.
-                    </p>
-                    <br/>
-                </div>
-            </div>
-
-            <!-- ClassChat Pop-up -->
-            <div id='p-classchat' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-classchat");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: white; background-color: #4F86C8; font-size: 20pt'>
-                        ClassChat
-                    </h1>
-                    <br/>
-
-                    <!--
-                    <img class='img-fg-popup' src='images/projects/classchat_fg.png'>
-                    -->
-                    <div class="slideshow-box">
-                        <iframe class="slideshow" src="slideshows/ss-classchat.html" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-
-                    <p>
-                        (Please 
-                        <a href="https://docs.google.com/presentation/d/1Gmg74aqaubvgd07zNHfOpGac55eSaCy9G2GbApo2T0Q/edit?usp=sharing" target="_blank">
-                            click here
-                        </a>
-                         to view our Google Slides presentation.)
-                        <br/><br/>
-                        ClassChat is an open-invitation online chat service that allows 
-                        anyone to seamlessly communicate with anyone in their school.
-                        <br/><br/>
-                        The COVID-19 pandemic forced schools worldwide to online remote
-                        learning, but this is causing some problems in students. Many
-                        are unable to ask classmates questions, find tutoring support,
-                        or make new friends. It's also not just during the COVID-19 pandemic;
-                        the lack of communication between students has been a chronic issue.
-                        <br/><br/>
-                        ClassChat allows anyone to seamlessly join any group chat within 
-                        their school. It allows better connection among the students, 
-                        provides easy access to support, and bridges the gap between students.
-                    </p>
-                    <br/>
-                    <p class='emphasis'>
-                        <b>&starf; Our project got into the TOP 15</b> of approx. 270 participants!
-                    </p>
-                    <br/><br/>
-                    
-                    <a href='https://docs.google.com/presentation/d/1Gmg74aqaubvgd07zNHfOpGac55eSaCy9G2GbApo2T0Q/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='View Slides' src='images/view-presentation.png'/>
-                    </a>
-
-                    <a href='http://classchat.tech' target='_blank'>
-                        <img class='img-proj-download' alt='View On Web' src='images/view-web.png'/>
-                    </a>
-
-                    <a href='https://devpost.com/software/classchat-ojbmcz' target='_blank'>
-                        <img class='img-proj-download' alt='Official Website' src='images/official-website.png'/>
-                    </a>
-                    <div class="div-info-2">
-                        <p>
-                            ⚠️ &nbsp;We do not actively monitor this app; use at your own risk.
-                        </p>
-                    </div>
-                    <br/><br/>
-
-                    <h4 class='dev-story'>Development</h4>
-                    <p class='dev-story'>
-                        This project was developed as a team for the WWPHacks2020 hackathon
-                        within the 24-hour time limit.
-                        I worked as a full-stack developer, designing the entire frontend visual components
-                        as well as writing most of the functioning Java Servlets for the backend.
-                        I was also the one who came up with the idea.
-                        <br/><br/>
-                        The project got into the <b>Top 15</b> out of approximately
-                        270 participants from around the world!
-                    </p>
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Collaborating with teammates using Github</li>
-                        <li>Team management skills in programming projects</li>
-                        <li>Further experience in Servlets</li>
-                        <li>Introduction to using WebSocket</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Nov. 21-22, 2020<br/>
-                        - Published: Nov. 22, 2020<br/>
-                        - Platform: Web (Desktop)<br/>
-                        - Made with: JSP, Servlet, Java, WebSocket, MySQL, JavaScript, CSS
-                        <br/><br/>
-                    </p>
-                    <p class="footnotes">
-                        WARNING: While ClassChat offers live service, the service is
-                        not intended for real-life usage besides testing the program out
-                        for the hackathon. Therefore, we cannot guarantee any protection 
-                        from offensive messages or data breaches. 
-                    </p>
-                </div>
-            </div>
-
-            <!-- Study Log Pop-up -->
-            <div id='p-studylog' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-studylog");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "Alata", sans-serif; color: black; background-color: #FFA507; font-size: 20pt'>
-                        KAMS Study Logger
-                    </h1>
-                    <br/>
-
-                    <img class='img-fg-popup' src='images/projects/studylog_fg.jpg'>
-
-                    <p>
-                        Record your study hours with just a click. 
-                        <br/><br/>
-                        In KAMS, all juniors are required to log their study hours for their Research/Seminar class.
-                        However, using a paper can be inconvenient and difficult in some cases.
-                        With this simple web application, it is easier than ever.
-                        <br/><br/>
-                        - UPDATE (Sept 2021): We have contracted with KAMS/AMS so that
-                        the study logs generated using this application are accepted.
-                        Students may now export their study log to PDF and submit the 
-                        file directly on Blackboard.
-                    </p>
-                    <br/><br/>
-
-                    <a href='https://seunggulee.dev/studylog' target='_blank'>
-                        <img class='img-proj-download' alt='View On Web' src='images/view-web.png'/>
-                    </a>
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Further skills of JavaScript</li>
-                        <li>Efficient programming within a short time</li>
-                        <li>Google Ads implementation</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Aug. 19, 2020 (3 hours)<br/>
-                        - Published: Aug. 19, 2020<br/>
-                        - Platform: Web (Mobile)<br/>
-                        - Made with: HTML, CSS, JavaScript
-                    </p>
-                </div>
-            </div>
-
-            <!-- Hexagon Defense Pop-up -->
-            <div id='p-hd' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-hd");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "SquaresBold", "GmarketBold", sans-serif; color: #b8f8fa; background-color: black; font-size: 20pt'>
-                        Hexagon Defense
-                    </h1>
-                    <br/>
-
-                    <iframe class='img-fg-popup' width="560" height="340" src="https://youtube.com/embed/h9QBhsHmu1g" frameborder="0" allowfullscreen></iframe>
-
-                    <p>
-                        Hexagon Defense is an arcade defense shooter game. 
-                        Rotate the hexagon and shoot the enemies!
-                        <br/><br/>
-                        There are a variety of stages with different themes and difficulty that you can enjoy.
-                        Also, you can level-up powerful items to slaughter the enemies!
-                        <br/><br/>
-                        Survive, score high points, and put your name on the prestigious leaderboard.<sup>1</sup> Download and play now!
-                    </p>
-                    <br/>
-
-                    <p class='emphasis'>
-                        &starf; Over <b>1,000 copies sold</b><sup>2</sup> worldwide!<br/>
-                        &starf; Released on the <b>Nintendo Switch</b> console!<br/>
-                        &starf; Average rating of &star;5.0 (20+ reviews) on Google Play<br/>
-                        <span style='font-size: 70%'></span>
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://www.nintendo.com/games/detail/hexagon-defense-switch/' target='_blank'>
-                        <img class='img-proj-download' alt='Nintendo eShop' src='images/nintendo-eshop-2.png'/>
-                    </a>
-                    <a href='https://play.google.com/store/apps/details?id=com.NetherYoshi.HexagonDefense&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target='_blank'>
-                        <img class='img-proj-download' alt='Get it on Google Play' src='images/btn-googleplay.png'/>
-                    </a>
-                    <a href='http://netheryoshi.com/hexagon-defense' target='_blank'>
-                        <img class='img-proj-download' alt='Official Website' src='images/official-website.png'/>
-                    </a>
-
-                    <div class="div-info-1">
-                        <p>
-                            📢 Please do not pay for the game!
-                            Please reach out to <a href='mailto:admin@sgl.dev' target='_blank'>admin@sgl.dev</a>
-                            for a free download code.
-                        </p>
-                    </div>
-
-                    
-
-                    <br/><br/>
-
-                    <h4 class='dev-story'>Development</h4>
-                    <p class='dev-story'>
-                        Hexagon Defense has been self-published on Google Play (July 2020) and on <b>Nintendo Switch</b> (February 2021). 
-                        It has sold over 1,000 copies so far!
-                        I am happy to be able to release my game on a selective console platform with high quality standards.
-                    </p>
-                    <br/><br/>
-
-
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Using Unity and C# for game development</li>
-                        <li>Game design and UI/UX design</li>
-                        <li>Further understanding of OOP</li>
-                        <li>Self-publishing experience, business interactions</li>
-                        <li>Marketing for user acquisition</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Feb. 2020 - July 2020 / Oct. 2020 - May 2021<br/>
-                        - Published: July 2020 (Android), February 2021 (Switch)<br/>
-                        - Platform: Nintendo Switch, Android<br/>
-                        - Made with: Unity, C#
-                        <br/><br/><br/>
-                        
-                        
-                    </p>
-                    <p class="footnotes">
-                        Nintendo Switch and Nintendo eShop is a trademark of Nintendo.<br/>
-                        Google Play is a trademark of Google.
-                        <br/><br/>
-                        1) Leaderboard features available on Android devices only. A free Google Play Games account is required.<br/>
-                        2) Data as of September 2021. Includes number of downloads on Nintendo eShop and Google Play combined.
-                    </p>
-                </div>
-            </div>
-
-            <!-- StudyCore Pop-up -->
-            <div id='p-studycore' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-studycore");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: #68b9ce; background-color: #ebd2a4;'>
-                        StudyCore&trade;
-                    </h1>
-                    <br/>
-
-                    <div class="slideshow-box">
-                        <iframe class="slideshow" src="slideshows/ss-studycore.html" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-
-                    <p>
-                        StudyCore&trade; is an online platform for students to exchange their study materials, such as handmade study guides and worksheets.
-                        <br/><br/>
-                        In StudyCore&trade; each school have its own community. 
-                        Students can choose to access relevant study material made by other students in their school, 
-                        or they can view posts uploaded from around the world!
-                        <br/><br/>
-                        StudyCore&trade; features a unique point and rank system to encourage students to actively participate.
-                        Share more, view more, and become famous!
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <!--
-                    <a href='https://seunggulee.dev/projects/studycore' target='_blank'>
-                        <img class='img-proj-download' alt='View On Web' src='images/view-web.png'/>
-                    </a>
-                    -->
-                    <a href='https://docs.google.com/presentation/d/10Q-MKzHiKVSbaUFciO5SiduaRfJ0kH_fsT4e-twNdrI/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='View Slides' src='images/view-presentation.png'/>
-                    </a>
-                    <a href='https://seunggulee.dev/downloads/StudyCore.war' target='_blank'>
-                        <img class='img-proj-download' alt='Download' src='images/download-src.png'/>
-                    </a>
-                    <div class="div-info-3">
-                        <p>
-                            ⚠️ &nbsp;StudyCore™ is not available for live service due to hosting service restrictions. 
-                            Please <a href='https://docs.google.com/presentation/d/10Q-MKzHiKVSbaUFciO5SiduaRfJ0kH_fsT4e-twNdrI/edit?usp=sharing' target='_blank'>click here</a> to view the PowerPoint presentation instead.
-                        </p>
-                    </div>
-                    <div class="div-info-2">
-                        <p>
-                            ⚠️ &nbsp;This app is not optimized for mobile devices.
-                        </p>
-                    </div>
-
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Basics of backend development with Servlet</li>
-                        <li>Utilizing the MVC model</li>
-                        <li>Database access and modification with MySQL</li>
-                        <li>Further skills of JSP(HTML) and CSS</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Mar. 2020 - May 2020<br/>
-                        - Completed: May 2020<br/>
-                        - Platform: Web (Desktop)<br/>
-                        - Made with: JSP, Servlet, MySQL<br/>
-                        - Term project for Web Applications course (Grade received: 100/100)
-                        <br/><br/>
-                    </p>
-                    <p class="footnotes">
-                        StudyCore&trade; is not a registered trademark. The &trade; symbol is attached for aesthetic purposes.
-                        <br/><br/>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Triangle Calculator Pop-up -->
-            <div id='p-tricalc' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-tricalc");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "Acuta", sans-serif; color: black; background-color: #b7ddec;'>
-                        <i>Triangle Calculator</i>
-                    </h1>
-                    <br/>
-
-                    <img class='img-fg-popup' src='images/projects/tricalc_fg.png'>
-
-                    <p>
-                        Triangle Calculator is a website that can calculate for the remaining sides and angles of a triangle.
-                        It can also calculate for the area of a triangle.
-                        <br/><br/>
-                        The calculator utilizes various trigonometry formulas: Law of Sines, Law of Cosines, Heron's Area Formula, and Oblique Triangle Formula.
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://seunggulee.dev/projects/triangle-calculator' target='_blank'>
-                        <img class='img-proj-download' alt='View On Web' src='images/view-web.png'/>
-                    </a>
-                    <div class="div-info-2">
-                        <p>
-                            ⚠️ &nbsp;This app is not optimized for mobile devices.
-                        </p>
-                    </div>
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Basics of front-end development with HTML and CSS</li>
-                        <li>Website and UI/UX design</li>
-                        <li>Basics of JavaScript</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Oct. 2019 - Dec. 2019<br/>
-                        - Completed: December 2019<br/>
-                        - Platform: Web (Desktop)<br/>
-                        - Made with: HTML, CSS, JavaScript<br/>
-                        - Term project for Web Applications course (Grade received: 100/100)
-                    </p>
-                </div>
-            </div>
-
-            <!-- CCA Pop-up -->
-            <div id='p-cca' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-cca");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "GmarketBold", sans-serif; color: #ece651; background-color: #54a8da; font-size: 16pt'>
-                        Creative Collaboration Association (CCA)
-                    </h1>
-                    <br/>
-
-                    <img class='img-fg-popup' src='images/projects/cca_s1.jpg'>
-
-                    <p>
-                        Creative Collaboration Association (CCA) is an officially recognized club of The Village School.
-                        The purpose of CCA is for the members to get out of their "comfort zones" and socialize with various students from around the world.
-                        <br/><br/>
-                        In the club, we come up with new ideas for the whole club to play. Then, we share it, and we actually play it as a club!
-                        We sometimes have community service trips to local organizations as team-bonding activities.
-                        <br/><br/>
-                        As the president (student leader) of the club, I made this website to introduce the club to students.
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://seunggulee.dev/projects/cca' target='_blank'>
-                        <img class='img-proj-download' alt='View on Web' src='images/view-web.png'/>
-                    </a>
-                    <div class="div-info-2">
-                        <p>
-                            ⚠️ &nbsp;This app is not optimized for mobile devices.
-                        </p>
-                    </div>
-
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Basics of front-end development with HTML and CSS</li>
-                        <li>(For the club: leadership, cooperation, volunteerism, etc.)</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Sept. 2019<br/>
-                        - Completed: September 2018<br/>
-                        - Platform: Web (Desktop)<br/>
-                        - Made with: HTML, CSS<br/>
-                        - Formative project for Web Applications course (Grade received: 100/100)
-                    </p>
-                </div>
-            </div>
-
-            <!-- Force Calculator Pop-up -->
-            <div id='p-fc' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-fc");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "Gilroy", sans-serif; color: white; background-color: #5964C5;'>
-                        Force Calculator
-                    </h1>
-                    <br/>
-
-                    <div class="slideshow-box">
-                        <iframe class="slideshow" src="slideshows/ss-fc.html" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-
-                    <p>
-                        Force Calculator is an application that can calculate for any force-related formula from high school physics.
-                        For each formula, users can choose any variable to get a result in.
-                        The application also features a user-friendly UI design.
-                        <br/><br/>
-                        Some formulas include: Centripetal Force, Newton's Second Law, and Hooke's Law.
-                        There are 11 force-related formulas in total.
-
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://seunggulee.dev/downloads/ForceCalculator.jar' target='_blank'>
-                        <img class='img-proj-download' alt='Download Executable' src='images/download.png'/>
-                    </a>
-                    <a href='https://docs.google.com/document/d/1YNzHphSpTLY5cvoPanrX8fuk6YfgBiwScs070XROyow/edit?usp=sharing' target='_blank'>
-                        <img class='img-proj-download' alt='Learn More' src='images/official-website.png'/>
-                    </a>
-                    <div class="div-info-2">
-                        <p>
-                            ⚠️ &nbsp;Java is required to run the application. Download it
-                            <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">here</a> if not already installed.
-                        </p>
-                    </div>
-
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Object Oriented Programming (OOP)</li>
-                        <li>GUI with Java Swing</li>
-                        <li>Further understanding of Java</li>
-                        <li>UI/UX design</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Feb. 2019 - Apr. 2019<br/>
-                        - Completed: Apr. 2019<br/>
-                        - Platform: Java (Desktop)<br/>
-                        - Made with: Java<br/>
-                        - Term project for Intro to Computer Science course (Grade received: 100/100)
-                    </p>
-                </div>
-            </div>
-
-            <!-- Vector Calculator Pop-up -->
-            <div id='p-vector' class='popup'>
-                <a class='close-popup' onclick='closeMenu("p-vector");'>&times;</a>
-
-                <div class="container">
-                    <h1 style='font-family: "RobotoMono", sans-serif; color: white; background-color: #143b5d;'>
-                        Vector Calculator
-                    </h1>
-                    <br/>
-
-                    <img class='img-fg-popup' src='images/projects/vector_fg.png'>
-
-                    <p>
-                        Vector Calculator is a Java application that can add the vectors.
-                        <br/><br/>
-                        The application receives each vector in form of magnitude, direction, and angle.
-                        Then, the calculator adds them and returns the resultant vector.
-                        It has the ability to print the average and the x/y components of each component as well.
-                    </p>
-                    <br/>
-
-                    <!-- Download -->
-                    <a href='https://onlinegdb.com/BJED04R0I' target='_blank'>
-                        <img class='img-proj-download' alt='View on Web' src='images/view-web.png'/>
-                    </a>
-                    <a href='https://seunggulee.dev/downloads/VectorCalculator_SupportingDocument.pdf' target='_blank'>
-                        <img class='img-proj-download' alt='Official Website' src='images/official-website.png'/>
-                    </a>
-
-
-                    <br/><br/>
-                    <h4>Skills Acquired</h4>
-                    <ul class='list-skills'>
-                        <li>Basics of Java: variables, conditionals, itierations, arrays, methods, etc.</li>
-                        <li>Basic knowledge of computer science</li>
-                    </ul>
-
-                    <br/>
-                    <p class='mini-description'>
-                        - Development: Nov. 2018 - Dec. 2018<br/>
-                        - Completed: December 2018<br/>
-                        - Platform: Java (Desktop)<br/>
-                        - Made with: Java<br/>
-                        - Term project for Intro to Computer Science course (Grade received: 100/100)
-                    </p>
-                </div>
-            </div>
-
-
             <!-- Footer -->
             <div id='footer'>
                 <br/>
@@ -1423,111 +339,387 @@
                     <a href='/library'>Library</a> | 
                     <a href='/resume'>Resume</a>
                 </p>
-                
-                <p>
-                    <br/>
+                <p><br/>
                     Website designed and created by Seung-Gu Lee<br/>
-                    Contact email: <a href='mailto:admin@sgl.dev'>admin@sgl.dev</a>
+                    Contact email: <a href='mailto:seunggu@sgl.dev'>seunggu@sgl.dev</a>
                 </p>
                 <br/>
             </div>
+
+            <!-- Menu Button -->
+            <a href='javascript:openSideMenu()' id="menu-button">
+                <img src="images/icons/menu_icon.png"/>
+            </a>
         </div>
-        
-        <!-- Sidebar Nav Menu (Classic) -->
-        <div id="p-menu" class="popup">
-            <a class='close-popup' onclick='closeMenu("p-menu");'>&times;</a>
-            
-            <div class="container-narrow">
-                <p>* This feature is currently in development. *</p><br/>
-                
-                <a href="">
-                    <div class="menu-item">
-                        <img src="images/icons/menu_icon.png"/>
-                        <span>Apps</span>
+
+        <!-- VIEW ALL POPUP
+        ----------------------------------------------------------------->
+
+        <!-- All Portfolio Projects -->
+        <div id="p-portfolio" class="popup" style="overflow-y: scroll">
+            <a class='close-popup' onclick='closeMenu("p-portfolio");'>&times;</a>
+            <div class="container-sp">
+                <h1>Portfolio</h1>
+                <br/>
+    
+                <!-- SAM -->
+                <div class='portfolio-item'>
+                    <h4>Sauce Applicator Machine</h4>
+                    <img src='images/projects/sam_fg.png' alt='SAM'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/robot_black.png" alt="Robot">
+                        <img src="images/icons/android_black.png" alt="Android">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/arduino_icon.png" alt="Arduino">
+                        <img src="images/icons/android_studio_logo.png" alt="Android Studio">
+                        <img src="images/icons/java_icon.png" alt="Java">
                     </div>
-                </a><hr/>
-                
-                <a href="https://seunggulee.dev/blog">
-                    <div class="menu-item">
-                        <img src="images/icons/menu_icon.png"/>
-                        <span>Blog</span>
+    
+                    <a onclick='openMenu("p-sam")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Automatic sauce dispensing machine with text-printing capabilities</p>
+                            <p class="hover-stack">Robot | Arduino, Android Studio (Java)</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- EECS 280 -->
+                <!--
+                <div class='portfolio-item'>
+                    <h4>EECS 280 Projects</h4>
+                    <img src='images/projects/eecs280_fg.png' alt='EECS 280'>
+    
+                    <a onclick='openMenu("p-eecs280")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Course Projects for EECS 280 at the University of Michigan</p>
+                            <p class="hover-stack">Terminal | C++</p>
+                        </div>
+                    </a>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/terminal_black.png" alt="Terminal">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/cpp_icon.png" alt="C++">
                     </div>
-                </a><hr/>
+                </div>
+                -->
                 
-                <a href="">
-                    <div class="menu-item">
-                        <img src="images/icons/menu_icon.png"/>
-                        <span>Archives</span>
+                <!-- KAMS Hub -->
+                <div class='portfolio-item'>
+                    <h4>KAMS Hub</h4>
+                    <img src='images/projects/kamshub_fg.png' alt='KAMS Hub'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/java_icon.png" alt="Java">
+                        <img src="images/icons/mysql_icon.png" alt="MySQL">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                        <img src="images/icons/js_icon.png" alt="JavaScript">
                     </div>
-                </a><hr/>
-                
-                <a href="">
-                    <div class="menu-item">
-                        <img src="images/icons/menu_icon.png"/>
-                        <span>Party Mode</span>
+    
+                    <a onclick='openMenu("p-kamshub")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Vex Robotics -->
+                <div class='portfolio-item'>
+                    <h4>Vex Robot (KAMS, 2022)</h4>
+                    <img src='images/projects/vex22_fg.png' alt='Vex Robotics'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/robot_black.png" alt="Robot">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/cpp_icon.png" alt="C++">
                     </div>
-                </a><hr/>
-                
-                <a href="">
-                    <div class="menu-item">
-                        <img src="images/icons/menu_icon.png"/>
-                        <span>Sitemap</span>
+    
+                    <a onclick='openMenu("p-vex22")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Robot created for ITEEA National Robotics Competition (2022)</p>
+                            <p class="hover-stack">Robot | C++ (Vex)</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- ClassChat -->
+                <div class='portfolio-item'>
+                    <h4>ClassChat</h4>
+                    <img src='images/projects/classchat_fg.png' alt='ClassChat'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/java_icon.png" alt="Java">
+                        <img src="images/icons/mysql_icon.png" alt="MySQL">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                        <img src="images/icons/js_icon.png" alt="JavaScript">
                     </div>
-                </a>
-                
+    
+                    <a onclick='openMenu("p-classchat")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Real-time online chat service<br/>(Hackathon Winner)</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
+                        </div>
+                    </a>
+                </div>
+    
+    
+                <!-- Hexagon Defense -->
+                <div class='portfolio-item'>
+                    <h4>Hexagon Defense</h4>
+                    <img src='images/projects/hd_fg_nx.png' alt='Hexagon Defense'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/nintendo_switch_black.png" alt="Nintendo Switch">
+                        <img src="images/icons/android_black.png" alt="Android">
+                        <img src="images/icons/separator_black.png" alt="Separator">
+                        <img src="images/icons/unity_black.png" alt="Unity">
+                        <img src="images/icons/csharp_icon.png" alt="C#">
+                    </div>
+    
+                    <a onclick='openMenu("p-hd")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Innovative arcade game published on Nintendo Switch and Android</p>
+                            <p class="hover-stack">Nintendo Switch, Android | Unity, C#</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- KAMS Study Log -->
+                <div class='portfolio-item'>
+                    <h4>KAMS Study Logger</h4>
+                    <img src='images/projects/studylog_fg.jpg' alt='KAMS Study Logger'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                        <img src="images/icons/js_icon.png" alt="JavaScript">
+                    </div>
+    
+                    <a onclick='openMenu("p-studylog")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Simple web app that can record study hours and export it to PDF</p>
+                            <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- StudyCore -->
+                <div class='portfolio-item'>
+                    <h4>StudyCore™</h4>
+                    <img src='images/projects/studycore_fg.png' alt='StudyCore'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/java_icon.png" alt="Java">
+                        <img src="images/icons/mysql_icon.png" alt="MySQL">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                    </div>
+    
+                    <a onclick='openMenu("p-studycore")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Online platform for students to exchange their study materials</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Triangle Calculator -->
+                <div class='portfolio-item'>
+                    <h4>Triangle Calculator</h4>
+                    <img src='images/projects/tricalc_fg.png' alt='Triangle Calculator'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                        <img src="images/icons/js_icon.png" alt="JavaScript">
+                    </div>
+    
+                    <a onclick='openMenu("p-tricalc")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Easy-to-use calculator to solve for sides and angles of a triangle</p>
+                            <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Force Calculator -->
+                <div class='portfolio-item'>
+                    <h4>Force Calculator</h4>
+                    <img src='images/projects/fc_fg.png' alt='Force Calculator'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/desktop_black.png" alt="Desktop">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/java_icon.png" alt="Java">
+                    </div>
+    
+                    <a onclick='openMenu("p-fc")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Physics equations calculator made with<br/>Java Swing GUI</p>
+                            <p class="hover-stack">Desktop | Java</p>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Vector Calculator -->
+                <div class='portfolio-item'>
+                    <h4>Vector Calculator</h4>
+                    <img src='images/projects/vector_fg.png' alt='Vector Calculator'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/terminal_black.png" alt="Command Line">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/java_icon.png" alt="Java">
+                    </div>
+    
+                    <a onclick='openMenu("p-vector")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Simple command-line application that calculates the sum of vectors</p>
+                            <p class="hover-stack">Terminal | Java</p>
+                        </div>
+                    </a>
+                </div>
                 
             </div>
         </div>
+
+        <!-- END view all popup
+        ----------------------------------------------------------------->
+
+        <!-- PROJECT POPUPS
+        ----------------------------------------------------------------->
+
+        <div>
+            <!-- Vex 2022 -->
+            <div id='p-vex22' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-vex22");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-vex22.html"></iframe>
+            </div>
+
+            <!-- SAM -->
+            <div id='p-sam' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-sam");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-sam.html"></iframe>
+            </div>
+            
+            <!-- KAMS Hub -->
+            <div id='p-kamshub' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-kamshub");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-kamshub.html"></iframe>
+            </div>
+
+            <!-- ClassChat -->
+            <div id='p-classchat' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-classchat");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-classchat.html"></iframe>
+            </div>
+
+            <!-- Study Log -->
+            <div id='p-studylog' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-studylog");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-studylog.html"></iframe>
+            </div>
+
+            <!-- Hexagon Defense -->
+            <div id='p-hd' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-hd");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-hd.html"></iframe>
+            </div>
+
+            <!-- StudyCore -->
+            <div id='p-studycore' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-studycore");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-studycore.html"></iframe>
+            </div>
+
+            <!-- Triangle Calculator -->
+            <div id='p-tricalc' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-tricalc");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-tricalc.html"></iframe>
+            </div>
+
+            <!-- CCA -->
+            <div id='p-cca' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-cca");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-cca.html"></iframe>
+            </div>
+
+            <!-- Force Calculator -->
+            <div id='p-fc' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-fc");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-forcecalc.html"></iframe>
+            </div>
+
+            <!-- Vector Calculator Pop-up -->
+            <div id='p-vector' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-vector");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-vector.html"></iframe>
+            </div>
+        </div>
+
+        <!-- END project popups
+        ----------------------------------------------------------------->
+
+        <!-- SIDEBAR NAVIGATION MENU
+        ----------------------------------------------------------------->
         
-        <!-- Sidebar Nav Menu (New) -->
+        <!-- Desktop -->
         <div id="p-sidemenu" class="side-menu">
             <a href="javascript:closeSideMenu()" class="side-menu-close">&times;</a>
-            
             <h2>Menu</h2>
             <br/>
-            
             <a href="/apps">
                 <div class="menu-item">
-                    <img src="images/icons/app_icon.png"/>
-                    <span>Apps</span>
+                    <img src="images/icons/app_icon.png"/><span>Apps</span>
                 </div>
             </a>
-
             <a href="/blog">
                 <div class="menu-item">
-                    <img src="images/icons/chat_icon.png"/>
-                    <span>Blog</span>
+                    <img src="images/icons/chat_icon.png"/><span>Blog</span>
                 </div>
             </a>
-
             <a href="/library">
                 <div class="menu-item">
-                    <img src="images/icons/archives_icon.png"/>
-                    <span>Library</span>
+                    <img src="images/icons/archives_icon.png"/><span>Library</span>
                 </div>
             </a>
-
             <a href="javascript:openMenuAndCollapseSideMenu('p-portfolio')">
                 <div class="menu-item">
-                    <img src="images/icons/code_icon.png"/>
-                    <span>Projects</span>
+                    <img src="images/icons/code_icon.png"/><span>Projects</span>
                 </div>
             </a>
-
             <a href="/resume">
                 <div class="menu-item">
-                    <img src="images/icons/file_icon.png"/>
-                    <span>Resume</span>
+                    <img src="images/icons/file_icon.png"/><span>Resume</span>
                 </div>
             </a>
-            
             <div class="menu-item-small">
                 <a href="sitemap.html">Sitemap</a> | 
                 <a href="mailto:admin@seunggulee.dev">Contact</a>
             </div>
         </div>
         
-        <!-- Sidebar Nav Menu (New, Mobile) -->
+        <!-- Mobile -->
         <div id="p-sidemenu-mobile" class="side-menu-mobile">
             <a href="javascript:closeSideMenu()" class="side-menu-close">&times;</a>
             
@@ -1574,36 +766,8 @@
             </div>
         </div>
 
-
-
-        <!-- UMich Pop-up -->
-        <!--
-        <div id='p-umich' class='popup'>
-            <a class='close-popup' onclick='closeMenu("p-umich");'>&times;</a>
-
-            <div class="container">
-                <h1 style='font-family: "Montserrat", "GmarketBold", sans-serif; color: #FFCB05; background-color: #00274C;'>
-                    University of Michigan
-                </h1>
-                <br/>
-                <p>
-                    Located in Ann Arbor, MI, the University of Michigan is one of the best universities
-                    in the world for computer science.
-                </p>
-                <br/>
-                <ul>
-                    <li>Majoring Computer Science @ College of Engineering</li>
-                    <li>Aug. 2022 - (May 2025)</li>
-                    <li>Expected Graduation: May 2025</li>
-                </ul>
-
-                <p class="footnotes">
-                    StudyCore&trade; is not a registered trademark. The &trade; symbol is attached for aesthetic purposes.
-                    <br/><br/>
-                </p>
-            </div>
-        </div>
-    -->
+        <!-- END sidebar navigation menu
+        ----------------------------------------------------------------->
         
         <script src="main.js?v=1.0"></script>
     </body>

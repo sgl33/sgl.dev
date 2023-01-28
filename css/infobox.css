@@ -1,0 +1,106 @@
+@font-face { font-family: "GmarketBold"; src: url("../fonts/GmarketSansTTFBold.ttf");}
+@font-face { font-family: "GmarketMedium"; src: url("../fonts/GmarketSansTTFMedium.ttf"); }
+@font-face { font-family: "GmarketLight"; src: url("../fonts/GmarketSansTTFLight.ttf"); }
+
+/* More Info Selection Box */
+#selection-nav-box {
+    width: 620px; max-width: 90%; min-height: 20px; max-height: 96px;
+    margin: auto; margin-top: 12px;
+    border-style: solid; border-width: 1px; border-color: #295943;
+    background-color: #295943; color: white;
+    font-family: "GmarketMedium", sans-serif;
+    
+    
+    padding: 3px 12px;
+}
+#selection-nav-box a {
+    text-decoration: none; color: white;
+    transition: 0.15s;
+}
+#selection-nav-box a:hover {
+    opacity: 90%;
+}
+.nav-item {
+    display: inline-block;
+    padding: 0 4px;
+    margin-right: 6px; margin-top: 6px;
+    max-height: 20px;
+}
+.nav-item .left-float-image {
+    max-height: 20px; margin-right: 10px;
+    display: inline-block;
+    float: left;
+}
+.nav-item .right-float-image {
+    max-height: 20px; margin-right: 10px;
+    display: inline-block;
+    float: right !important;
+}
+.nav-item .nav-name {
+    float: right;
+    line-height: 16pt;
+}
+
+
+#resume-box {
+    width: 620px; max-width: 90%;
+    max-height: 450px; overflow-y: scroll;
+    
+    margin: auto;
+    font-family: "GmarketMedium", sans-serif;
+    padding: 12px;
+    border-style: solid; border-width: 1px; border-color: #999999; border-top-style: none;
+    
+    background-color: #fefefe;
+    
+    transition: 0.4s ease-out;
+}
+.resume-content {
+    margin-left: 4px;
+    display: none;
+    
+}
+.resume-content h1, .resume-content h2 {
+    margin-top: 4px; margin-bottom: 16px;
+}
+.resume-content h3 {
+    margin-top: 24px; margin-bottom: 12px;
+}
+.resume-content h4 {
+    margin-top: 16px; margin-bottom: 8px;
+}
+.resume-content p, .resume-content span {
+    margin-top: 5px; margin-bottom: 8px;
+    font-size: 10.5pt;
+    line-height: 15pt;
+}
+.resume-content b { font-family: "GmarketBold", sans-serif; color: #333333; }
+.resume-content a {
+    text-decoration: none; color: #3b5981;
+}
+.resume-content h4 { font-size: 12pt; color: #263959 !important; }
+.resume-content h4 a { color: #263959 !important; }
+.resume-content h4 span { font-family: "GmarketMedium", sans-serif; font-size: 9pt; color: #444444; }
+
+.resume-content ul { margin-top: 12px; margin-bottom: 16px; margin-left: -16px; }
+.resume-content li {
+    font-size: 10.5pt; margin-bottom: 4px; line-height: 14pt;
+}
+.resume-content 
+.small-text {
+    font-size: 7.5pt !important; color: #666666; line-height: 11pt;
+}
+.expandable-box {
+    display: none;
+}
+
+.skill-level {
+    font-family: "GmarketLight", sans-serif; font-size: 8pt !important; color: #444444;
+}
+
+
+.popup-description { 
+    position: fixed; left: 0%; right: 0%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-style: solid;
+}
