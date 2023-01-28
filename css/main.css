@@ -265,7 +265,7 @@ sup {
 #main-contaner h1, h2 { text-align: center; }
 
 .pdf-iframe { 
-    width: 1080px; max-width: 95%; height: 720px; max-height: 80%; text-align: center; margin: auto; margin-bottom: 32px; position: relative; 
+    width: 1080px; max-width: 90%; height: 720px; max-height: 80%; text-align: center; margin: auto; margin-bottom: 32px; position: relative; 
 }
 .pdf-iframe iframe {
     width: 100%; height: 100%;
