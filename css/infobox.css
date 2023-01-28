@@ -20,26 +20,7 @@
 #selection-nav-box a:hover {
     opacity: 90%;
 }
-.nav-item {
-    display: inline-block;
-    padding: 0 4px;
-    margin-right: 6px; margin-top: 6px;
-    max-height: 20px;
-}
-.nav-item .left-float-image {
-    max-height: 20px; margin-right: 10px;
-    display: inline-block;
-    float: left;
-}
-.nav-item .right-float-image {
-    max-height: 20px; margin-right: 10px;
-    display: inline-block;
-    float: right !important;
-}
-.nav-item .nav-name {
-    float: right;
-    line-height: 16pt;
-}
+
 
 
 #resume-box {
