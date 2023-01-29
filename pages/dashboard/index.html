@@ -3,22 +3,126 @@
         <title>Custom Dashboard</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
         <link rel='icon' href='../../images/emoji.png'>
         <meta name="robots" content="noindex">
+        <style>
+            @font-face { 
+                font-family: "GmarketBold"; 
+                src: url("../../fonts/GmarketSansTTFBold.ttf");
+            }
+            @font-face { 
+                font-family: "GmarketMedium"; 
+                src: url("../../fonts/GmarketSansTTFMedium.ttf"); 
+            }
+            @font-face { 
+                font-family: "GmarketLight"; 
+                src: url("../../fonts/GmarketSansTTFLight.ttf"); 
+            }
+            body {
+                background-color: #333333;
+            }
+            .main-container {
+                position: relative;
+            }
+            .main-container div {
+                display: inline-block;
+            }
+            .main-container iframe {
+                display: inline-block;
+            }
+            #current-time {
+                display: inline-block;
+                margin-bottom: 8px; margin-left: 12px;
+            }
+            #current-time-hm {
+                font-family: "GmarketBold", sans-serif;
+                font-size: 24pt;
+                color: white;
+            }
+            #current-time-sec {
+                font-family: "GmarketMedium", sans-serif;
+                font-size: 12pt;
+                color: #dddddd;
+                margin-left: 3px;
+            }   
+            #current-time-date {
+                font-family: "GmarketMedium", sans-serif;
+                color: yellow;
+                margin-left: 12px;
+            }
+            #time-left-1 {
+                font-family: "GmarketMedium", sans-serif;
+                color: #dddddd;
+                font-size: 10pt;
+                margin-bottom: 6px;
+            }
+            #time-left-2 {
+                font-family: "GmarketBold", sans-serif;
+                color: #ffffff;
+                font-size: 18pt;
+                margin-top: 0;
+            }
+        </style>
     </head>
     <body style='margin: 8px'>
+        <div class="main-container">
+            <div>
+                <div id="current-time">
+                    <span id="current-time-hm"></span><span id="current-time-sec"></span>
+                    <span id="current-time-date"></span>
+                </div>
+                <br/>
+                <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FDetroit&showTitle=0&mode=AGENDA&showCalendars=0&showTabs=0&showNav=1&showDate=1&showPrint=0&showTz=0&src=YXdlc29tZWd1eTRrQGdtYWlsLmNvbQ&src=OGtoNXBjcm5ubzg5Mm43ODRvYmZsY2ZwMXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=azd1N2ZkMmhlZ3A0MjRnNm1qMDM0YzF0Mm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a2toa25iaXRoanVsODRoOWZkamlhMmRpYThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4uc291dGhfa29yZWEub2ZmaWNpYWwjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4udXNhLm9mZmljaWFsI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73&color=%23F6BF26&color=%2333B679&color=%234285F4&color=%2333B679&color=%23039BE5" 
+                    style="border-style: none" width="300" height="240" frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+            <div>
+                <div id="time-left">
+                    <p id="time-left-1">Time until 1:00 AM:</p>
+                    <p id="time-left-2">00 hr 00 min</p>
+                </div>
+            </div>
+            
+        </div>
         
-        <br/><br/>
-        <h1 style='text-align: center;'>
-            Dashboard
-        </h1>
-        <br/>
-        <iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%23ffffff&ctz=America%2FDetroit&showTitle=0&mode=AGENDA&showCalendars=0&showTabs=0&showNav=1&showDate=1&showPrint=0&showTz=0&src=YXdlc29tZWd1eTRrQGdtYWlsLmNvbQ&src=OGtoNXBjcm5ubzg5Mm43ODRvYmZsY2ZwMXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=azd1N2ZkMmhlZ3A0MjRnNm1qMDM0YzF0Mm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=a2toa25iaXRoanVsODRoOWZkamlhMmRpYThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4uc291dGhfa29yZWEub2ZmaWNpYWwjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4udXNhLm9mZmljaWFsI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23E67C73&color=%23F6BF26&color=%2333B679&color=%234285F4&color=%2333B679&color=%23039BE5" 
-            style="border-style: none" width="300" height="300" frameborder="0" scrolling="no">
-        </iframe>
 
         <script defer src="https://dagammla.gitlab.io/keep-silk-open/keep.js">
+        </script>
+        <script type="text/javascript">
+
+            function updateTime() 
+            {
+                const date = new Date();
+
+                // Hr:min
+                if(date.getMinutes() < 10) {
+                    document.getElementById("current-time-hm").innerHTML 
+                        = date.getHours() + ":0" + date.getMinutes();
+                }
+                else {
+                    document.getElementById("current-time-hm").innerHTML 
+                        = date.getHours() + ":" + date.getMinutes();
+                }
+
+                // Seconds
+                if(date.getSeconds() < 10) {
+                    document.getElementById("current-time-sec").innerHTML 
+                        = "0" + date.getSeconds();
+                }
+                else {
+                    document.getElementById("current-time-sec").innerHTML 
+                        = date.getSeconds();
+                }
+                
+                // Date
+                const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                document.getElementById("current-time-date").innerHTML 
+                        = (date.getMonth()+1) + "/" + date.getDate() + " ("
+                        + weekday[date.getDay()].substring(0, 3) + ")";
+                
+                setTimeout(updateTime, 1000);
+            }
+            updateTime();
         </script>
     </body>
 </html>
