@@ -15,12 +15,12 @@
             function refreshPage()
             {
                 const date = new Date();
-                // Refresh every 10 min
-                if(date.getMinutes() % 10 == 0 && date.getSeconds() == 0) {
+                // Refresh every 20 min
+                if(date.getMinutes() % 20 == 0 && date.getSeconds() == 0) {
                     location.reload();
                 }
                 else {
-                    setTimeout(refreshPage, 500);
+                    setTimeout(refreshPage, 800);
                 }
             }
             refreshPage();

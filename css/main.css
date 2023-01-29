@@ -110,7 +110,31 @@ sup {
 }
 .button-view-all button:hover { color: #295943; background-color: white; }
 
-
+.current-projects {
+    background-color: #ffffff; border-style: solid; border-color: #e0e0e0; border-width: 1px; border-radius: 6px;
+    width: 390px; max-width: 90%; max-height: 323px;
+    padding: 10px 18px;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    margin: auto; margin-bottom: 8px;
+    font-family: "GmarketMedium", sans-serif;
+}
+.current-projects h3 {
+    margin-top: 2px; font-size: 130%;
+    margin-bottom: 8px;
+}
+.current-projects h4 {
+    color: #263959;  margin-top: 2px;
+}
+.current-projects ul {
+    margin: 0; margin-top: 6px; margin-bottom: 9px;
+}
+.current-projects li {
+    font-size: 10pt;
+    margin-left: -24px;
+    margin-bottom: 3px;
+}
 
 
 /* Footer */

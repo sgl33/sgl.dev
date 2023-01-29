@@ -17,16 +17,19 @@
 
 
 .portfolio-item h4 { font-size: 130%; color: #263959; margin-bottom: 4px; margin-top: 6px; margin-left: 2px; }
-.portfolio-item img { width: 100%; max-height: 190px; margin: 0; margin-top: 6px; margin-bottom: 6px; backface-visibility: hidden; border-radius: 8px; }
+.portfolio-item img { 
+    width: 100%; max-height: 190px; margin: 0; margin-top: 6px; margin-bottom: 6px; 
+    backface-visibility: hidden; border-radius: 8px; 
+}
 .portfolio-item p { font-size: 83%; color: #263959;  }
 .portfolio-item .small { margin-top: 8px; font-size: 55%; color: #666666; }
 
 .portfolio-icons {
     display: inline-block;
-    height: 24px; 
+    height: 24px; margin-top: 2px;
 }
 .portfolio-icons img {
-    height: 22px; width: 22px; margin: 2px 0 0 3px;
+    height: 22px; width: 22px; margin: 0 0 0 3px;
 }
 .portfolio-icons .separator {
     width: 13px;
