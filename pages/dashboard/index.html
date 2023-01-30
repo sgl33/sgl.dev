@@ -18,6 +18,14 @@
                 font-family: "GmarketLight"; 
                 src: url("../../fonts/GmarketSansTTFLight.ttf"); 
             }
+            @font-face { 
+                font-family: "Gilroy"; 
+                src: url("../../fonts/Gilroy-ExtraBold.otf"); 
+            }
+            @font-face { 
+                font-family: "Alata"; 
+                src: url('../../fonts/Alata-Regular.ttf'); 
+            }
             body {
                 background-color: #111111;
             }
@@ -35,16 +43,16 @@
                 margin-bottom: 8px;
             }
             #current-time-hm {
-                font-family: "GmarketBold", sans-serif;
+                font-family: "Gilroy", sans-serif;
                 font-size: 24pt;
                 color: white;
                 margin-left: 12px;
             }
             #current-time-sec {
-                font-family: "GmarketMedium", sans-serif;
+                font-family: "Alata", sans-serif;
                 font-size: 12pt;
                 color: #dddddd;
-                margin-left: 3px;
+                margin-left: 4px;
             }   
             #current-time-date {
                 font-family: "GmarketMedium", sans-serif;
@@ -87,7 +95,7 @@
             </div>
         </div>
 
-        <a onclick="hide()" 
+        <a onclick="hide()" id="hide-btn"
             style="width: 24px; position: absolute; bottom: -48px; right: 16px; color: white">
                 ●
         </a>
@@ -127,7 +135,7 @@
                         = (date.getMonth()+1) + "/" + date.getDate() + " ("
                         + weekday[date.getDay()].substring(0, 3) + ")";
 
-                setTimeout(updateTime, 500);
+                setTimeout(updateTime, 200);
             }
             updateTime();
 
@@ -137,10 +145,12 @@
                 if(!isHidden) {
                     document.getElementsByClassName("main-container")[0].style.display = "none";
                     isHidden = true;
+                    document.getElementById("hide-btn").innerHTML = "○";
                 }
                 else {
                     document.getElementsByClassName("main-container")[0].style.display = "block";
                     isHidden = false;
+                    document.getElementById("hide-btn").innerHTML = "●";
                 }
             }
         </script>
