@@ -69,33 +69,30 @@
     <body style='margin-top: 12px; margin-left: 12px' id="body">
         <div class="main-container">
             <div>
+                <!-- Current Time -->
                 <div id="current-time" style="border-style: none; width: 290px; height: 44px; border-radius: 8px; background-color: #222222; padding-top: 4px; padding-left: 10px; position: relative">
                     <span id="current-time-hm"></span><span id="current-time-sec"></span>
                     <span id="current-time-date" style="position: absolute; bottom: 10px; left: 120px"></span>
                 </div>
                 <br/>
+                <!-- Calendar -->
                 <iframe style="border-style: none; width: 300px; height: 240px; border-radius: 5px;" scrolling='no' src="calendar.html"></iframe>
             </div>
             <div style="margin-left: 12px;">
                 <!-- Stopwatch -->
-                <iframe style="width: 300px; height: 60px; border-radius: 8px; border-style: none; margin-bottom: 8px" src="stopwatch.html">
-
-                </iframe>
+                <iframe style="width: 300px; height: 60px; border-radius: 8px; border-style: none; margin-bottom: 8px" src="stopwatch.html"></iframe>
                 <br/>
-                <iframe style="border-style: none; width: 300px; height: 185px; border-radius: 8px; margin-bottom: 4px" src="weather.html">
-
-                </iframe>
+                <!-- Weather -->
+                <iframe style="border-style: none; width: 300px; height: 185px; border-radius: 8px; margin-bottom: 4px" src="weather.html"></iframe>
                 <br/>
-                <iframe style="width: 250px; height: 40px; border-radius: 8px; border-style: none;" src="timer.html">
-
-                </iframe>
-
-                
-                <!--                <img src="../../images/icons/refresh_icon.png" alt="Refresh"
-                    onclick="location.reload()" 
-                    style="width: 24px; position: absolute; bottom: 10px; right: 16px;">
-                -->
+                <!-- Timer -->
+                <iframe style="width: 250px; height: 40px; border-radius: 8px; border-style: none;" src="timer.html"></iframe>
             </div>
+        </div>
+
+        <!-- Focus Mode Clock -->
+        <div id="position: absolute; display: none;">
+            <span id="current-time-focus" style="font-size: 24pt; font-family: 'Gilroy', sans-serif; color: #dddddd; margin: 12px;"></span>
         </div>
 
         <a onclick="hide()" id="hide-btn"
@@ -116,9 +113,13 @@
                 if(date.getMinutes() < 10) {
                     document.getElementById("current-time-hm").innerHTML 
                         = date.getHours() + ":0" + date.getMinutes();
+                    document.getElementById("current-time-focus").innerHTML 
+                        = date.getHours() + ":0" + date.getMinutes();
                 }
                 else {
                     document.getElementById("current-time-hm").innerHTML 
+                        = date.getHours() + ":" + date.getMinutes();
+                    document.getElementById("current-time-focus").innerHTML 
                         = date.getHours() + ":" + date.getMinutes();
                 }
 
@@ -148,11 +149,13 @@
             {
                 if(!isHidden) {
                     document.getElementsByClassName("main-container")[0].style.display = "none";
+                    document.getElementById('current-time-focus').style.display = "block";
                     isHidden = true;
                     document.getElementById("hide-btn").innerHTML = "○";
                 }
                 else {
                     document.getElementsByClassName("main-container")[0].style.display = "block";
+                    document.getElementById('current-time-focus').style.display = "none";
                     isHidden = false;
                     document.getElementById("hide-btn").innerHTML = "●";
                 }
