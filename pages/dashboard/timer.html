@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/popups.css"/>
+        <style>
+            body {
+                margin: 0;
+                padding: 10px 12px 0 12px;
+                background-color: #222222 !important;
+            }
+            h4 {
+                color: #dddddd;
+                font-family: "GmarketMedium", sans-serif;
+                font-size: 12pt;
+            }
+            h3 {
+                color: white;
+                font-family: "Gilroy", "GmarketBold", sans-serif;
+                font-size: 16pt;
+            }
+            #time-left-1 {
+                font-family: "GmarketMedium", sans-serif;
+                color: #dddddd;
+                font-size: 10pt;
+                margin-left: 4px;
+            }
+            #time-left-2 {
+                font-family: "GmarketBold", sans-serif;
+                color: #ffffff;
+                font-size: 16pt;
+                margin-top: 0; margin-bottom: -16px;
+            }
+        </style>
+    </head>
+    <body id="body" >
+        <div id="time-left">
+            <span id="time-left-2"></span>
+            <span id="time-left-1">until 1 AM</span>
+        </div>
+
+        <script type="text/javascript">
+            function updateTimer()
+            {
+                const date = new Date();
+                // Time left until 1 AM
+                var until = new Date();
+                var min_left = 60 - date.getMinutes() + 60 * (24 - date.getHours());
+                
+                document.getElementById("time-left-2").innerHTML = 
+                    (Math.floor(min_left / 60) % 24) + " hr " + Math.floor(min_left % 60) + " min";
+                setTimeout(updateTimer, 200);
+            }
+            updateTimer();
+        </script>
+    </body>
+</html>

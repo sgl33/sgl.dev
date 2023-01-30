@@ -52,21 +52,10 @@
                 margin-left: 12px;
                 
             }
-            #time-left-1 {
-                font-family: "GmarketMedium", sans-serif;
-                color: #dddddd;
-                font-size: 10pt;
-                margin-bottom: 4px;
-            }
-            #time-left-2 {
-                font-family: "GmarketBold", sans-serif;
-                color: #ffffff;
-                font-size: 18pt;
-                margin-top: 0; margin-bottom: -16px;
-            }
+            
         </style>
     </head>
-    <body style='margin-top: 24px; margin-left: 12px'>
+    <body style='margin-top: 12px; margin-left: 12px'>
         <div class="main-container">
             <div>
                 <div id="current-time">
@@ -74,21 +63,26 @@
                     <span id="current-time-date"></span>
                 </div>
                 <br/>
-                <iframe style="border-style: none; width: 300px; height: 240px; border-radius: 5px" src="calendar.html"></iframe>
+                <iframe style="border-style: none; width: 300px; height: 250px; border-radius: 5px" src="calendar.html"></iframe>
             </div>
             <div style="margin-left: 12px;">
-                <iframe style="border-style: none; width: 300px; height: 220px; border-radius: 8px;" src="weather.html">
+                <!-- Stopwatch -->
+                <iframe style="width: 300px; height: 60px; border-radius: 8px; border-style: none; margin-bottom: 8px" src="stopwatch.html">
 
                 </iframe>
                 <br/>
-                <div id="time-left">
-                    <p id="time-left-1">Time until 1:00 AM:</p>
-                    <p id="time-left-2">0 hr 0 min</p>
-                    <br/>
-                </div>
+                <iframe style="border-style: none; width: 300px; height: 185px; border-radius: 8px; margin-bottom: 4px" src="weather.html">
+
+                </iframe>
+                <br/>
+                <iframe style="width: 250px; height: 42px; border-radius: 8px; border-style: none;" src="timer.html">
+
+                </iframe>
+
+                
                 <img src="../../images/icons/refresh_icon.png" alt="Refresh"
                     onclick="location.reload()" 
-                    style="width: 24px; position: absolute; bottom: 8px; right: 20px;">
+                    style="width: 24px; position: absolute; bottom: 10px; right: 16px;">
             </div>
         </div>
         
@@ -127,14 +121,6 @@
                         = (date.getMonth()+1) + "/" + date.getDate() + " ("
                         + weekday[date.getDay()].substring(0, 3) + ")";
 
-                // Time left until 1 AM
-                var until = new Date();
-                var min_left = 60 - date.getMinutes() + 60 * (24 - date.getHours());
-                
-                document.getElementById("time-left-2").innerHTML = 
-                    (Math.floor(min_left / 60) % 24) + " hr " + Math.floor(min_left % 60) + " min";
-
-                
                 setTimeout(updateTime, 500);
             }
             updateTime();

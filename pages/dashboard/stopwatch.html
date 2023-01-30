@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/popups.css"/>
+        <style>
+            body {
+                margin: 0;
+                padding: 10px 12px 0 12px;
+                background-color: #222222 !important;
+            }
+            h4 {
+                color: #dddddd;
+                font-family: "GmarketMedium", sans-serif;
+                font-size: 12pt;
+            }
+            h3 {
+                color: white;
+                font-family: "Gilroy", "GmarketBold", sans-serif;
+                font-size: 16pt;
+                display: inline-block;
+            }
+            p {
+                display: inline-block;
+                font-family: "Alata", sans-serif;
+                font-size: 12pt;    
+                color: #dddddd;
+            }
+        </style>
+    </head>
+    <body id="body" >
+        <h4>Stopwatch</h4>
+        <h3 id="hm">
+            0 hr 0 min
+        </h3>
+        <p id="sec">00</p>
+
+
+        <a onclick="resetStopwatch()">
+            <img src="../../images/icons/refresh_icon.png" alt="Reset"
+                style="width: 20px; position: absolute; bottom: 10px; right: 20px;">
+        </a>
+        <a id='main-button' onclick="stopwatchButton()" style="width: 20px; position: absolute; bottom: 10px; right: 45px; color: white; cursor: pointer">
+            ●
+        </a>
+
+        <script type="text/javascript">
+            var isRunning = false;
+            var interval;
+
+            function stopwatchButton()
+            {
+                if(!isRunning)
+                {
+                    interval = setInterval(updateStopwatch, 100);
+                    isRunning = true;
+                    document.getElementById('main-button').innerHTML = "𓊕";
+                }
+                else {
+                    clearInterval(interval);
+                    isRunning = false;
+                    document.getElementById('main-button').innerHTML = "●";
+                }
+            }
+
+            var seconds = 0;
+            function updateStopwatch()
+            {
+                seconds++;
+                document.getElementById("hm").innerHTML = Math.floor(seconds / 36000) + " hr " + Math.floor(seconds / 600) + " min";
+
+                var s = Math.floor((seconds % 600) / 10);
+                if(s < 10)
+                    document.getElementById("sec").innerHTML = "0" + s;
+                else
+                    document.getElementById("sec").innerHTML = s;
+            }
+
+            function resetStopwatch()
+            {
+                location.reload();
+            }
+            refreshPage();
+        </script>
+    </body>
+</html>
