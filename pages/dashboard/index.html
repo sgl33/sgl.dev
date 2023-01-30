@@ -56,7 +56,7 @@
             }   
             #current-time-date {
                 font-family: "GmarketMedium", sans-serif;
-                color: yellow;
+                color: rgb(255, 255, 200);
                 margin-left: 12px;
                 
             }
@@ -66,12 +66,12 @@
     <body style='margin-top: 12px; margin-left: 12px' id="body">
         <div class="main-container">
             <div>
-                <div id="current-time">
+                <div id="current-time" style="border-style: none; width: 290px; height: 44px; border-radius: 8px; background-color: #222222; padding-top: 4px; padding-left: 10px; position: relative">
                     <span id="current-time-hm"></span><span id="current-time-sec"></span>
-                    <span id="current-time-date"></span>
+                    <span id="current-time-date" style="position: absolute; bottom: 10px; left: 120px"></span>
                 </div>
                 <br/>
-                <iframe style="border-style: none; width: 300px; height: 250px; border-radius: 5px;" scrolling='no' src="calendar.html"></iframe>
+                <iframe style="border-style: none; width: 300px; height: 240px; border-radius: 5px;" scrolling='no' src="calendar.html"></iframe>
             </div>
             <div style="margin-left: 12px;">
                 <!-- Stopwatch -->
@@ -83,7 +83,7 @@
 
                 </iframe>
                 <br/>
-                <iframe style="width: 250px; height: 42px; border-radius: 8px; border-style: none;" src="timer.html">
+                <iframe style="width: 250px; height: 40px; border-radius: 8px; border-style: none;" src="timer.html">
 
                 </iframe>
 
@@ -96,7 +96,7 @@
         </div>
 
         <a onclick="hide()" id="hide-btn"
-            style="width: 24px; position: absolute; bottom: -48px; right: 16px; color: white">
+            style="width: 24px; position: absolute; bottom: -47px; right: 16px; color: white">
                 ●
         </a>
         
@@ -131,9 +131,10 @@
                 
                 // Date
                 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+                const month = ["Jan.","Feb.","Mar.","Apr.","May","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."]
                 document.getElementById("current-time-date").innerHTML 
-                        = (date.getMonth()+1) + "/" + date.getDate() + " ("
-                        + weekday[date.getDay()].substring(0, 3) + ")";
+                        = weekday[date.getDay()].substring(0, 3) + ", " + 
+                        month[date.getMonth()] + " " + date.getDate();
 
                 setTimeout(updateTime, 200);
             }
