@@ -301,7 +301,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
-                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML, CSS, JavaScript</p>
                         </div>
                     </a>
                 </div>
@@ -393,12 +393,32 @@
         <!-- VIEW ALL POPUP
         ----------------------------------------------------------------->
 
-        <!-- All Portfolio Projects -->
         <div id="p-portfolio" class="popup" style="overflow-y: scroll">
             <a class='close-popup' onclick='closeMenu("p-portfolio");'>&times;</a>
             <div class="container-sp">
                 <h1>Portfolio</h1>
                 <br/>
+
+                <!-- Echo Dashboard -->
+                <div class='portfolio-item'>
+                    <h4>Custom Dashboard</h4>
+                    <img src='images/projects/dashboard_fg.jpg' alt='Dashboard'>
+    
+                    <div class="portfolio-icons">
+                        <img src="images/icons/web_black.png" alt="Web">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/html_icon.png" alt="HTML">
+                        <img src="images/icons/js_icon.png" alt="JavaScript">
+                    </div>
+    
+                    <a onclick='openMenu("p-dashboard")'>
+                        <div class='hover-over'>
+                            <button onclick=''>Learn More</button>
+                            <p class="hover-description">Custom web-based dashboard for Amazon Echo Show 5</p>
+                            <p class="hover-stack">Web | HTML, CSS, JavaScript</p>
+                        </div>
+                    </a>
+                </div>
     
                 <!-- SAM -->
                 <div class='portfolio-item'>
@@ -463,7 +483,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Student learning management portal for KAMS/AMS students</p>
-                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML, CSS, JavaScript</p>
                         </div>
                     </a>
                 </div>
@@ -506,7 +526,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Real-time online chat service<br/>(Hackathon Winner)</p>
-                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS, JavaScript</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML, CSS, JavaScript</p>
                         </div>
                     </a>
                 </div>
@@ -550,7 +570,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Simple web app that can record study hours and export it to PDF</p>
-                            <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
+                            <p class="hover-stack">Web | HTML, CSS, JavaScript</p>
                         </div>
                     </a>
                 </div>
@@ -572,7 +592,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Online platform for students to exchange their study materials</p>
-                            <p class="hover-stack">Web | Java, MySQL, HTML/CSS</p>
+                            <p class="hover-stack">Web | Java, MySQL, HTML, CSS</p>
                         </div>
                     </a>
                 </div>
@@ -593,7 +613,7 @@
                         <div class='hover-over'>
                             <button onclick=''>Learn More</button>
                             <p class="hover-description">Easy-to-use calculator to solve for sides and angles of a triangle</p>
-                            <p class="hover-stack">Web | HTML/CSS, JavaScript</p>
+                            <p class="hover-stack">Web | HTML, CSS, JavaScript</p>
                         </div>
                     </a>
                 </div>
@@ -648,6 +668,12 @@
         ----------------------------------------------------------------->
 
         <div>
+            <!-- Dashboard -->
+            <div id='p-dashboard' class='popup'>
+                <a class='close-popup' onclick='closeMenu("p-dashboard");'>&times;</a>
+                <iframe class="popup-iframe" src="popups/popup-dashboard.html"></iframe>
+            </div>
+
             <!-- Vex 2022 -->
             <div id='p-vex22' class='popup'>
                 <a class='close-popup' onclick='closeMenu("p-vex22");'>&times;</a>
