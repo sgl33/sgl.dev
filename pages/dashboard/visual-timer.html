@@ -106,10 +106,10 @@
                 ></path>
             </g>
             </svg>
-            <span id="base-timer-label">
+            <a id="base-timer-label" onclick="toggleShowTime()">
                 <span id="base-timer-min">0</span>
                 <span id="base-timer-sec">00</span>
-            </span>
+            </a>
         </div>
 
 
@@ -204,12 +204,8 @@
                             audio.play(); 
                         }, 1500);
                     }
-                    
                     return;
                 }
-                    
-
-                
 
                 document.getElementById("base-timer-min").innerHTML 
                 = Math.floor(timeLeft / 600);
@@ -295,6 +291,13 @@
                 else {
                     localStorage.sound = "on";
                 }
+
+                if(localStorage.showTimer == "off") {
+                    document.getElementById('base-timer-label').style.opacity = '0';
+                }
+                else {
+                    document.getElementById("base-timer-label").style.opacity = '1';
+                }
             }
 
 
@@ -312,6 +315,18 @@
                     localStorage.sound = "on";
                     document.getElementById("toggle-sound").style.opacity = '1';
                     document.getElementById("toggle-sound").src = '../../images/icons/sound_icon.png';
+                }
+            }
+
+            function toggleShowTime()
+            {
+                if(localStorage.showTimer == "off") {
+                    localStorage.showTimer = "on";
+                    document.getElementById('base-timer-label').style.opacity = '1';
+                }
+                else {
+                    localStorage.showTimer = "off";
+                    document.getElementById("base-timer-label").style.opacity = '0';
                 }
             }
 
