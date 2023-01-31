@@ -59,7 +59,7 @@
             }
             #base-timer-sec {
                 font-family: "Alata", sans-serif;
-                font-size: 12pt; margin-left: 3px;
+                font-size: 12pt; margin-left: 4px;
             }
 
             .base-timer__path-remaining {
@@ -74,7 +74,7 @@
                 transform-origin: center;
 
                 /* One second aligns with the speed of the countdown timer */
-                transition: 1s linear all;
+                transition: 0.3s linear all;
 
                 /* Allows the ring to change color when the color value updates */
                 stroke: currentColor;
@@ -86,6 +86,7 @@
             }
             </style>
     </head>
+    <!-- Credits: https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/ -->
     <body id="body" >
         <h4>Visual Timer</h4>
         <div class="base-timer">
@@ -95,7 +96,7 @@
                 <path
                     id="base-timer-path-remaining"
                     stroke-dasharray="283"
-                    class="base-timer__path-remaining" style="color: red"
+                    class="base-timer__path-remaining" style="color: gray"
                     d="
                     M 50, 50
                     m -45, 0
@@ -151,6 +152,7 @@
                     interval = setInterval(updateTimer, 100);
                     isRunning = true;
                     document.getElementById('main-button').innerHTML = "○";
+                    document.getElementById('base-timer-path-remaining').style.color = 'red';
                 }
                 else {
                     stopTimer();
@@ -161,9 +163,21 @@
             {
                 if(isRunning)
                     stopTimer();
+                timeLeft = 0;
+                setCircleDasharray();
                 timeLeft = timeLimit;
-                updateTimer();
-                timeLeft++;
+
+                document.getElementById("base-timer-min").innerHTML 
+                    = Math.floor(timeLimit / 600);
+
+                let sec = Math.floor((timeLimit % 600) / 10);
+                
+                if(sec < 10)
+                    document.getElementById("base-timer-sec").innerHTML =
+                    "0" + sec;
+                else
+                    document.getElementById("base-timer-sec").innerHTML =
+                    sec;
             }
 
             function stopTimer()
@@ -171,6 +185,7 @@
                 clearInterval(interval);
                 isRunning = false;
                 document.getElementById('main-button').innerHTML = "●";
+                document.getElementById('base-timer-path-remaining').style.color = 'gray';
             }
 
 
@@ -180,6 +195,8 @@
             {
                 if(timeLeft <= 0)
                     stopTimer();
+
+                
 
                 document.getElementById("base-timer-min").innerHTML 
                 = Math.floor(timeLeft / 600);
@@ -223,7 +240,7 @@
 
             function setTimer()
             {
-                let newLimit = prompt("For how many minutes?");
+                let newLimit = prompt("For how many minutes?", timeLimit/600);
                 if(newLimit != null)
                 {
                     timeLimit = newLimit * 600;
@@ -234,6 +251,11 @@
 
             function init()
             {
+                if(localStorage.savedTimeLimit == undefined)
+                {
+                    localStorage.savedTimeLimit = 6000;
+                }
+
                 timeLimit = localStorage.savedTimeLimit;
                 setCircleDasharray();
                 
