@@ -117,6 +117,10 @@
             <img src="../../images/icons/refresh_icon.png" alt="Reset"
                 style="width: 20px; position: absolute; bottom: 10px; right: 20px;">
         </a>
+        <a onclick="toggleSound()">
+            <img src="../../images/icons/sound_icon.png" alt="Sound"  id="toggle-sound"
+                style="width: 20px; position: absolute; bottom: 10px; left: 14px;">
+        </a>
         <a id='main-button' onclick="stopwatchButton()" style="width: 20px; position: absolute; bottom: 10px; right: 45px; color: white; cursor: pointer">
             ●
         </a>
@@ -133,13 +137,7 @@
 
             var timeLimit = 30;
             var timeLeft = 0;
-
-            const COLOR_CODES = {
-                info: {
-                    color: "green"
-                }
-            };
-            let remainingPathColor = COLOR_CODES.info.color;
+            var soundOn = false;
 
             function stopwatchButton()
             {
@@ -194,7 +192,22 @@
             function updateTimer()
             {
                 if(timeLeft <= 0)
+                {
                     stopTimer();
+                    if(soundOn) {
+                        setTimeout(() => { 
+                            var audio = new Audio('timer.flac');
+                            audio.play(); 
+                        }, 0);
+                        setTimeout(() => { 
+                            var audio = new Audio('timer.flac');
+                            audio.play(); 
+                        }, 1500);
+                    }
+                    
+                    return;
+                }
+                    
 
                 
 
@@ -270,6 +283,36 @@
                 else
                     document.getElementById("base-timer-sec").innerHTML =
                     sec;
+
+                if(localStorage.sound == "off") {
+                    document.getElementById("toggle-sound").style.opacity = '0.5';
+                    document.getElementById("toggle-sound").src = '../../images/icons/mute_icon_shifted.png';
+                }
+                else if(localStorage.sound == "on") {
+                    document.getElementById("toggle-sound").style.opacity = '1';
+                    document.getElementById("toggle-sound").src = '../../images/icons/sound_icon.png';
+                }
+                else {
+                    localStorage.sound = "on";
+                }
+            }
+
+
+
+            function toggleSound()
+            {
+                if(localStorage.sound == "on") {
+                    soundOn = false;
+                    localStorage.sound = "off";
+                    document.getElementById("toggle-sound").style.opacity = '0.5';
+                    document.getElementById("toggle-sound").src = '../../images/icons/mute_icon_shifted.png';
+                }
+                else if(localStorage.sound == "off") {
+                    soundOn = true;
+                    localStorage.sound = "on";
+                    document.getElementById("toggle-sound").style.opacity = '1';
+                    document.getElementById("toggle-sound").src = '../../images/icons/sound_icon.png';
+                }
             }
 
            
