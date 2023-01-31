@@ -37,27 +37,31 @@
             }
             .main-container div {
                 display: inline-block;
+                justify-content: flex-start;
             }
             .main-container iframe {
                 display: inline-block;
             }
-            #current-time {
+            .current-time {
                 display: inline-block;
                 margin-bottom: 8px;
+                border-style: none; width: 290px; height: 44px; 
+                border-radius: 8px; background-color: #222222; 
+                padding-top: 4px; padding-left: 10px; position: relative
             }
-            #current-time-hm {
+            .current-time-hm {
                 font-family: "Gilroy", sans-serif;
                 font-size: 24pt;
                 color: white;
                 margin-left: 12px;
             }
-            #current-time-sec {
+            .current-time-sec {
                 font-family: "Alata", sans-serif;
                 font-size: 12pt;
                 color: #dddddd;
                 margin-left: 4px;
             }   
-            #current-time-date {
+            .current-time-date {
                 font-family: "GmarketMedium", sans-serif;
                 color: rgb(255, 255, 200);
                 margin-left: 12px;
@@ -67,12 +71,14 @@
         </style>
     </head>
     <body style='margin-top: 12px; margin-left: 12px' id="body">
+
+        <!-- Mode 0 (default) -->
         <div class="main-container">
             <div>
                 <!-- Current Time -->
-                <div id="current-time" style="border-style: none; width: 290px; height: 44px; border-radius: 8px; background-color: #222222; padding-top: 4px; padding-left: 10px; position: relative">
-                    <span id="current-time-hm"></span><span id="current-time-sec"></span>
-                    <span id="current-time-date" style="position: absolute; bottom: 10px; left: 140px"></span>
+                <div class="current-time">
+                    <span class="current-time-hm"></span><span class="current-time-sec"></span>
+                    <span class="current-time-date" style="position: absolute; bottom: 10px; left: 140px"></span>
                 </div>
                 <br/>
                 <!-- Calendar -->
@@ -90,11 +96,47 @@
             </div>
         </div>
 
-        <!-- Focus Mode Clock -->
-        <div id="current-time-focus" style="position: absolute; display: none; font-size: 24pt; font-family: 'Gilroy', sans-serif; color: #dddddd; margin-left: 8px;">
+        <!-- Mode 1 -->
+        <div class="main-container">
+            <div>
+                <!-- Current Time -->
+                <div class="current-time">
+                    <span class="current-time-hm"></span><span class="current-time-sec"></span>
+                    <span class="current-time-date" style="position: absolute; bottom: 10px; left: 140px"></span>
+                </div>
+                <br/>
+                <!-- Calendar -->
+                <iframe style="border-style: none; width: 300px; height: 240px; border-radius: 5px;" scrolling='no' src="calendar.html"></iframe>
+            </div>
+            <div style="margin-left: 12px;">
+                <!-- Visual Timer -->
+                <iframe style="width: 300px; height: 250px; border-radius: 8px; border-style: none; margin-bottom: 8px" src="visual-timer.html"></iframe>
+                <br/>
+                <!-- Timer -->
+                <iframe style="width: 250px; height: 40px; border-radius: 8px; border-style: none;" src="timer.html"></iframe>
+            </div>
         </div>
 
-        <a onclick="hide()" id="hide-btn"
+        <!-- Mode 2 -->
+        <div class="main-container">
+            <div>
+                <!-- Current Time -->
+                <div class="current-time">
+                    <span class="current-time-hm"></span><span class="current-time-sec"></span>
+                    <span class="current-time-date" style="position: absolute; bottom: 10px; left: 140px"></span>
+                </div>
+                <br/>
+                <!-- Timer -->
+                <iframe style="width: 250px; height: 40px; border-radius: 8px; border-style: none;" src="timer.html"></iframe>
+            </div>
+            <div style="margin-left: 12px;">
+                
+            </div>
+        </div>
+
+        
+
+        <a onclick="updateScreenMode()" id="hide-btn"
             style="width: 24px; position: absolute; bottom: -47px; right: 16px; color: white">
                 ●
         </a>
@@ -107,58 +149,64 @@
             function updateTime() 
             {
                 const date = new Date();
+                var hm = document.getElementsByClassName("current-time-hm");
+                var sec = document.getElementsByClassName("current-time-sec");
+                var d = document.getElementsByClassName("current-time-date");
 
                 // Hr:min
                 if(date.getMinutes() < 10) {
-                    document.getElementById("current-time-hm").innerHTML 
-                        = date.getHours() + ":0" + date.getMinutes();
-                    document.getElementById("current-time-focus").innerHTML 
-                        = date.getHours() + ":0" + date.getMinutes();
-                }
-                else {
-                    document.getElementById("current-time-hm").innerHTML 
-                        = date.getHours() + ":" + date.getMinutes();
-                    document.getElementById("current-time-focus").innerHTML 
-                        = date.getHours() + ":" + date.getMinutes();
+                    for(var i=0; i < hm.length; i++) {
+                        hm[i].innerHTML = date.getHours() + ":0" + date.getMinutes();
+                    }
+                } else {
+                    for(var i=0; i < hm.length; i++) {
+                        hm[i].innerHTML = date.getHours() + ":" + date.getMinutes();
+                    }
                 }
 
                 // Seconds
                 if(date.getSeconds() < 10) {
-                    document.getElementById("current-time-sec").innerHTML 
-                        = "0" + date.getSeconds();
-                }
-                else {
-                    document.getElementById("current-time-sec").innerHTML 
-                        = date.getSeconds();
+                    for(var i=0; i < sec.length; i++) {
+                        sec[i].innerHTML = "0" + date.getSeconds();
+                    }
+                } else {
+                    for(var i=0; i < sec.length; i++) {
+                        sec[i].innerHTML = date.getSeconds();
+                    }
                 }
                 
                 // Date
                 const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                 const month = ["Jan.","Feb.","Mar.","Apr.","May","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."]
-                document.getElementById("current-time-date").innerHTML 
-                        = weekday[date.getDay()].substring(0, 3) + ", " + 
+                for(var i=0; i < d.length; i++) {
+                    d[i].innerHTML = weekday[date.getDay()].substring(0, 3) + ", " + 
                         month[date.getMonth()] + " " + date.getDate();
+                }
 
                 setTimeout(updateTime, 200);
             }
             updateTime();
 
-            var isHidden = false;
-            function hide()
+            var screenMode = 0;
+            const numModes = 3;
+            var arrBtn = ["●", "●", "○"];
+
+            function updateScreenMode()
             {
-                if(!isHidden) {
-                    document.getElementsByClassName("main-container")[0].style.display = "none";
-                    document.getElementById('current-time-focus').style.display = "block";
-                    isHidden = true;
-                    document.getElementById("hide-btn").innerHTML = "○";
+                var mode = screenMode % numModes;
+                var containers = document.getElementsByClassName("main-container");
+                
+                for(var i=0; i < containers.length; i++) {
+                    if(i === mode)
+                        containers[i].style.display = "block";
+                    else
+                        containers[i].style.display = "none";
                 }
-                else {
-                    document.getElementsByClassName("main-container")[0].style.display = "block";
-                    document.getElementById('current-time-focus').style.display = "none";
-                    isHidden = false;
-                    document.getElementById("hide-btn").innerHTML = "●";
-                }
+                document.getElementById("hide-btn").innerHTML = arrBtn[screenMode % numModes];
+                screenMode++;
             }
+
+            updateScreenMode();
         </script>
     </body>
 </html>
