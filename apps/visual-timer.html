@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>Visual Timer Online</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Visual Timer (Time Timer) online. Simple, ad-free.">
+        <meta name="keywords" content="Visual Timer, Time Timer, Timer, Online, Web, Free">
+
+        <link rel='icon' href='../images/icons/code_icon.png'>
+        <meta name="robots" content="noindex">
+        <style>
+            @font-face { 
+                font-family: "GmarketBold"; 
+                src: url("../fonts/GmarketSansTTFBold.ttf");
+            }
+            @font-face { 
+                font-family: "GmarketMedium"; 
+                src: url("../fonts/GmarketSansTTFMedium.ttf"); 
+            }
+            @font-face { 
+                font-family: "GmarketLight"; 
+                src: url("../fonts/GmarketSansTTFLight.ttf"); 
+            }
+            @font-face { 
+                font-family: "Gilroy"; 
+                src: url("../fonts/Gilroy-ExtraBold.otf"); 
+            }
+            @font-face { 
+                font-family: "Alata"; 
+                src: url('../fonts/Alata-Regular.ttf'); 
+            }
+            body {
+                background-image: url("../pages/dashboard/background.jpg");
+                background-size: 100%;
+            }
+            h3 {
+                font-family: "Gilroy", sans-serif;
+                font-size: 16pt;
+                color: white;
+                margin-left: 0; margin-bottom: 8px;
+            }
+            div {
+                padding: 0;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 7pt;
+            }
+            p {
+                font-family: "GmarketMedium", sans-serif;
+                font-size: 8pt;
+                margin-left: 0; margin-top: 0;
+            }
+            ul {
+                margin-top: 4px;
+            }
+            li {
+                color: white;
+                font-family: "GmarketMedium", sans-serif;
+                margin-left: -16px;
+                font-size: 10pt; margin-bottom: 2px;
+            }
+            a {
+                color: rgba(255, 255, 255, 0.6);
+                font-family: "GmarketLight", sans-serif;
+                font-size: 7pt; margin-bottom: 2px;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body style='margin-top: 24px; margin-left: 24px' id="body">
+        <div>
+            <a onclick="toggleInfo()" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: -1;">
+            </a>
+            <div style="text-align: center">
+                <iframe style="width: 400px; max-width: 95%; height: 250px; border-radius: 8px; border-style: none; margin: auto;" src="../pages/dashboard/visual-timer.html"></iframe>
+            </div>
+            
+
+            <div id="info" style="width: 400px; max-width: 95%; margin: auto;">
+                
+                <h3>Visual Timer <a onclick="toggleInfo()" style="font-size: 14pt; margin-left: 12px; cursor: pointer">&times;</a></h3>
+                <ul>
+                    <li>Tap anywhere in the circle to start/stop timer</li>
+                    <li>■: set time</li>
+                    <li>● / ○: toggle remaining time text</li>
+                    <li>⟳: reset timer</li>
+                    <li>🔊: toggle sound when time's up</li>
+                </ul>
+                
+                
+                <a href="https://css-tricks.com/how-to-create-an-animated-countdown-timer-with-html-css-and-javascript/" target="_blank">Credit: CSS-Tricks</a> &nbsp;|&nbsp; <a href="mailto:seunggu@sgl.dev" target="_blank">Contact: seunggu@sgl.dev</a>
+                <br/>
+                <a onclick='prompt(`Copy:`, `\n<iframe style="width: 300px; height: 250px; border-radius: 8px; border-style: none;" src="https://sgl.dev/pages/dashboard/visual-timer.html"></iframe>`)' style="cursor: pointer; z-index: 2">Embed it in your website!</a>
+            </div>
+        </div>  
+        
+
+        <!-- Always on -->
+        <script>
+            var AlwaysUseSilk = true;
+        </script>        
+        <script defer src="https://dagammla.gitlab.io/keep-silk-open/keep.js">
+        </script>
+        <script>
+            function toggleInfo() 
+            {
+                var info = document.getElementById("info");
+                if (info.style.display === "none") {
+                    info.style.display = "block";
+                    localStorage.showInfo = true;
+                } else {
+                    info.style.display = "none";
+                    localStorage.showInfo = false;
+                }
+            }
+
+            function init()
+            {
+                var info = document.getElementById("info");
+                if (localStorage.showInfo == "true" || localStorage.showInfo == undefined) {
+                    info.style.display = "block";
+                } else {
+                    info.style.display = "none";
+                }
+            }
+
+            //init();
+        </script>
+        
+    </body>
+</html>
