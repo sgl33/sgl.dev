@@ -106,7 +106,7 @@
                 ></path>
             </g>
             </svg>
-            <a id="base-timer-label" onclick="toggleShowTime()">
+            <a id="base-timer-label"  onclick="stopwatchButton()">
                 <span id="base-timer-min">0</span>
                 <span id="base-timer-sec">00</span>
             </a>
@@ -121,7 +121,7 @@
             <img src="../../images/icons/sound_icon.png" alt="Sound"  id="toggle-sound"
                 style="width: 20px; position: absolute; bottom: 10px; left: 14px;">
         </a>
-        <a id='main-button' onclick="stopwatchButton()" style="width: 20px; position: absolute; bottom: 10px; right: 45px; color: white; cursor: pointer">
+        <a id='main-button' onclick="toggleShowTime()" style="width: 20px; position: absolute; bottom: 10px; right: 45px; color: white; cursor: pointer">
             ●
         </a>
         <a id='main-button' onclick="setTimer()" style="width: 20px; position: absolute; top: 10px; right: 12px; color: white; cursor: pointer">
@@ -149,7 +149,6 @@
                     updateTimer();
                     interval = setInterval(updateTimer, 100);
                     isRunning = true;
-                    document.getElementById('main-button').innerHTML = "○";
                     document.getElementById('base-timer-path-remaining').style.color = 'red';
                 }
                 else {
@@ -182,7 +181,6 @@
             {
                 clearInterval(interval);
                 isRunning = false;
-                document.getElementById('main-button').innerHTML = "●";
                 document.getElementById('base-timer-path-remaining').style.color = 'gray';
             }
 
@@ -196,11 +194,11 @@
                     stopTimer();
                     if(soundOn) {
                         setTimeout(() => { 
-                            var audio = new Audio('timer.flac');
+                            var audio = new Audio('timer_2.flac');
                             audio.play(); 
                         }, 0);
                         setTimeout(() => { 
-                            var audio = new Audio('timer.flac');
+                            var audio = new Audio('timer_2.flac');
                             audio.play(); 
                         }, 1500);
                     }
@@ -281,22 +279,27 @@
                     sec;
 
                 if(localStorage.sound == "off") {
+                    soundOn = false;
                     document.getElementById("toggle-sound").style.opacity = '0.5';
                     document.getElementById("toggle-sound").src = '../../images/icons/mute_icon_shifted.png';
                 }
                 else if(localStorage.sound == "on") {
+                    soundOn = true;
                     document.getElementById("toggle-sound").style.opacity = '1';
                     document.getElementById("toggle-sound").src = '../../images/icons/sound_icon.png';
                 }
                 else {
+                    soundOn = true;
                     localStorage.sound = "on";
                 }
 
                 if(localStorage.showTimer == "off") {
                     document.getElementById('base-timer-label').style.opacity = '0';
+                    document.getElementById('main-button').innerHTML = "○";
                 }
                 else {
                     document.getElementById("base-timer-label").style.opacity = '1';
+                    document.getElementById('main-button').innerHTML = "●";
                 }
             }
 
@@ -323,10 +326,12 @@
                 if(localStorage.showTimer == "off") {
                     localStorage.showTimer = "on";
                     document.getElementById('base-timer-label').style.opacity = '1';
+                    document.getElementById('main-button').innerHTML = "●";
                 }
                 else {
                     localStorage.showTimer = "off";
                     document.getElementById("base-timer-label").style.opacity = '0';
+                    document.getElementById('main-button').innerHTML = "○";
                 }
             }
 
