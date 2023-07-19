@@ -127,6 +127,18 @@ sup {
 .current-projects h4 {
     color: #263959;  margin-top: 2px;
 }
+.current-projects p {
+    font-family: "GmarketMedium", sans-serif;
+    margin-top: 8px;
+    font-size: 10pt;
+}
+.current-projects .project-subtitle {
+    font-family: "GmarketMedium", sans-serif;
+    font-style: italic;
+    margin-top: 4px;
+    font-size: 9.5pt;
+    color: #555555;
+}
 .current-projects ul {
     margin: 0; margin-top: 6px; margin-bottom: 9px;
 }
@@ -423,3 +435,41 @@ sup {
     padding: 4px; 
 }
 
+
+
+/* Filter */
+#portfolio-filter-box {
+    font-family: "GmarketMedium", sans-serif;
+    font-size: 10pt;
+    vertical-align: center; 
+    margin-bottom: 4px;
+}
+#portfolio-filter-box a {
+    color: white;
+}
+#portfolio-filter-box h4 {
+    display: inline-block;
+    margin-right: 6px;
+    font-family: "GmarketMedium", "GmarketBold", sans-serif;
+    height: 20px; vertical-align: bottom;
+}
+.filter-item {
+    display: inline-block;
+    background-color: #295943;
+    transition: 0.15s;
+    padding: 4px 8px 0px 8px;
+    border-radius: 4px;
+}
+.filter-item:hover {
+    opacity: 0.9;
+}
+.filter-item span {
+    display: inline-block;
+    height: 21px !important;
+    vertical-align: bottom;
+}
+.filter-item .left-float-image {
+    width: 20px; height: 20px;
+    margin-right: 4px;
+    display: inline-block;
+}

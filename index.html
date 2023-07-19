@@ -11,7 +11,7 @@
         <meta name="keywords" content="Seung-Gu Lee, 이승구">
         <meta name="author" content="Seung-Gu Lee">
         
-        <link rel="stylesheet" type="text/css" href="css/main.css?v=1.2.1"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css?v=1.2.2"/>
         <link rel="stylesheet" type="text/css" href="css/infobox.css"/>
         <link rel="stylesheet" type="text/css" href="css/buttons.css"/>
         <link rel='icon' href='images/emoji.png'>
@@ -66,7 +66,7 @@
                         </div>
                     </a>
 
-                    <!-- Resume -->
+                    <!-- Education -->
                     <a href="javascript:resumeNavigate('r-education')">
                         <div class="nav-item">
                             <img class='left-float-image' src='images/icons/education_icon.png'>
@@ -74,11 +74,11 @@
                         </div>
                     </a>
 
-                    <!-- Links -->
-                    <a href="javascript:resumeNavigate('r-links')">
+                    <!-- Experience -->
+                    <a href="javascript:resumeNavigate('r-experience')">
                         <div class="nav-item">
-                            <img class='left-float-image' src='images/icons/link_icon.png'>
-                            <span class='nav-name'>Links</span>
+                            <img class='left-float-image' src='images/icons/experience_icon.png'>
+                            <span class='nav-name'>Experience</span>
                         </div>
                     </a>
                     
@@ -86,7 +86,7 @@
                     <a href="/resume" target="_blank">
                         <div class="nav-item" style="margin-right: 0px !important">
                             <img class='left-float-image' src='images/icons/file_icon.png'>
-                            <span class='nav-name'>Resume&nbsp;
+                            <span class='nav-name'>PDF&nbsp;
                                 <img class='right-float-image' src='images/icons/small_popup_icon.png'>
                             </span>
                         </div>
@@ -143,12 +143,12 @@
                         <h2>Education</h2>
                         
                         <p>
-                            <b>University of Michigan (UMich)</b> - Ann Arbor<br/>
+                            <b>University of Michigan</b> - Ann Arbor, MI<br/>
                             B.S.E. in Computer Science
                         </p>
                         <ul>
-                            <li>Major GPA: 4.00 &nbsp;|&nbsp; Cumulative GPA: 3.84</li>
-                            <li>Expected Graduation: Apr. 2025</li>
+                            <li>GPA: 3.84</li>
+                            <li>Expected Graduation: May 2025</li>
                             <li>Minor in Civil Engineering (Mobility Systems Engineering)</li>
                         </ul>
 
@@ -164,13 +164,14 @@
                         <hr/>
 
                         <h3 style="margin-bottom: 16px">Coursework</h3>
-                        <p style="margin-bottom: -6px"><b>Computer Science (UMich):</b></p>
+                        <p style="margin-bottom: -6px"><b>Computer Science:</b></p>
                         <ul>
                             <li>Data Structures and Algorithms (EECS 281)</li>
+                            <li>Intro to Computer Organization (EECS 370)</li>
                             <li>Foundations of Computer Science (EECS 376)</li>
+                            <li>Intro to Computer Security (EECS 388)</li>
+                            <li>Computer Vision (EECS 442)</li>
                             <li>Computer Science Pragmatics (EECS 201)</li>
-                            <li>Programming & Data Structures (EECS 280)</li>
-                            <li>Discrete Math (EECS 203)</li>
                         </ul>
                         <p style="margin-bottom: -6px"><b>Math & Engineering:</b></p>
                         <ul>
@@ -178,18 +179,72 @@
                             <li>Linear Algebra (KAMS)</li>
                             <li>Intro to Engineering: Robotics Mechanisms (ENGR 100)</li>
                         </ul>
-                        <p style="margin-bottom: -6px"><b>Computer Science (High School):</b></p>
+                        <p style="margin-bottom: -6px"><b>Civil Engineering:</b></p>
                         <ul>
-                            <li>Data Structures</li>
-                            <li>Foundations of Computing</li>
-                            <li>Computer Science II</li>
-                            <li>Web Applications</li>
-                            <li>Intro to Computer Science</li>
+                            <li>Intro to Transportation Engineering (CEE 450)</li>
+                            <li>Traffic Science (CEE 551)</li>
                         </ul>
                         <p class='small-text'>
-                            * As of Jan. 2023
+                            * As of Aug. 2023
                         </p>
+                    </div>
 
+                    <!-- Experience -->
+                    <div class='resume-content' id='r-experience'>
+                        <h2>Experience</h2>
+                        
+                        <p>
+                            <b>Dynamic Project Management (DPM) Lab</b> (Apr 2023 - current)<br/>
+                            Research Assistant
+                        </p>
+                        <ul>
+                            <li>
+                                <b>SafeSteps</b>:
+                                Developed an iOS frontend application using 
+                                <span class="highlight">Swift</span> and 
+                                <span class="highlight">Firebase</span> that automatically collects 
+                                data from external IMU sensors when walking, 
+                                detects fall risks, and prompts live feedback 
+                                integrating <span class="highlight">Agile</span> methodology
+                            </li>
+                            <li>
+                                <b>SafeConnect</b>: 
+                                Improved an existing iOS application by addressing 
+                                bugs, redesigning UI/UX, and adding new features
+                                and created admin-side web app using 
+                                <span class="highlight">React</span>
+                            </li>
+                            <li>
+                                <b>Server</b>:
+                                Developed the <span class="highlight">Node.js</span> backend 
+                                using <span class="highlight">Express.js</span> and deployed it on an 
+                                <span class="highlight">Ubuntu</span>
+                                server on <span class="highlight">GCP</span> to run machine learning models,
+                                send remote push notifications, etc.
+                            </li>
+                            <li>
+                                <b>Datathon</b>:
+                                Developed web scrapers and data processors with 
+                                <span class="highlight">Python</span> to create 
+                                training datasets for the computer vision model 
+                                and assisted researchers with training the AI 
+                                model. Model won <span class="highlight">1st place</span> 
+                                nationally in ASCE (American Society of Civil Engineers) 
+                                VIMS Datathon 2023.
+                            </li>
+                        </ul>
+
+                        <p>
+                            <b>DesignOC</b> (Jun 2020 - Jul 2020)<br/>
+                            Web Developer Intern
+                        </p>
+                        <ul>
+                            <li>Maintained/upgraded the company website using 
+                                <span class="highlight">HTML, CSS, and JavaScript</span>
+                                and increased visibility on search engines</li>
+                            <li>Collaborated with other engineers to assist with automating repetitive tasks</li>
+                        </ul>
+                        
                     </div>
 
                     <!-- Skills -->
@@ -198,25 +253,40 @@
 
                         <h4>Programming</h4>
                         <ul>
-                            <li><b>C-style Languages</b>: C++, Java</li>
-                            <li><b>Web</b>: HTML*, CSS, JavaScript, Java Web</li>
-                            <li><b>Mobile</b>: Android (Java), Flutter (Dart)</li>
-                            <li><b>Game Development</b>: Unity (C#)</li>
-                            <li><b>Robotics</b>: Arduino, Vex</li>
-                            <li>Misc: Git, Unix shell</li>
-                        </ul>
-                        <h4>Tools</h4>
-                        <ul>
-                            <li>Notion</li>
-                            <li>Microsoft Office (Word, PowerPoint, Excel)</li>
-                            <li>Google Workspace (Docs, Slides, Sheets)</li>
-                        </ul>
-                        <h4>Interpersonal</h4>
-                        <ul>
-                            <li>Teamwork & Communication</li>
-                            <li>Leadership</li>
-                            <li>Problem-solving</li>
-                            <li>Fast-learner</li>
+                            <li>
+                                <b>General</b>: 
+                                <img class="icon" src="images/icons/cpp_icon.png" alt="C++">C++, 
+                                <img class="icon" src="images/icons/java_icon.png" alt="Java">Java, 
+                                <img class="icon" src="images/icons/python_icon.png" alt="Python">Python
+                            </li>
+                            <li>
+                                <b>Web</b>: 
+                                <img class="icon" src="images/icons/js_icon.png" alt="JavaScript">JavaScript, 
+                                <img class="icon" src="images/icons/react_icon.png" alt="React">React, 
+                                <img class="icon" src="images/icons/html_icon.png" alt="HTML">HTML/CSS*
+                            </li>
+                            <li>
+                                <b>Mobile</b>: 
+                                <img class="icon" src="images/icons/apple_black.png" alt="Apple">Swift (iOS), 
+                                <img class="icon" src="images/icons/android_black.png" alt="Android">Java (Android)
+                            </li>
+                            <li>
+                                <b>Backend</b>: 
+                                <img class="icon" src="images/icons/node_icon.png" alt="Node.js">Node.js, 
+                                <img class="icon" src="images/icons/mysql_icon.png" alt="MySQL">MySQL, 
+                                <img class="icon" src="images/icons/firebase_icon.png" alt="Firebase">Firebase, 
+                                <img class="icon" src="images/icons/linux_icon.png" alt="Linux">Linux (Ubuntu)
+                            </li>
+                            <li>
+                                <b>Other</b>: 
+                                <img class="icon" src="images/icons/unity_black.png" alt="Unity">Unity (C#), 
+                                <img class="icon" src="images/icons/arduino_icon.png" alt="Arduino">Arduino
+                            </li>
+                            <li>
+                                Misc: 
+                                <img class="icon" src="images/icons/github_black.png" alt="Github">Git, 
+                                Unix shell
+                            </li>
                         </ul>
                         <h4>Design</h4>
                         <ul>
@@ -224,7 +294,7 @@
                             <li>Affinity Photo / Publisher</li>
                             <li>Figma</li>
                         </ul>
-                        <p class='small-text'>* HTML is not a programming language</p>
+                        <p class='small-text'>* Not a programming language</p>
                     </div>
 
                     <!-- Awards -->
@@ -268,12 +338,90 @@
             <!-- PORTFOLIO SHOWCASE
             -------------------------------------------------------------->
 
+            <div style='text-align: center'>
+                <h2>Current Projects</h2>
+                <br>
+                <!-- DPM -->
+                <div class="current-projects">
+                    <h4>DPM SafeSteps</h4>
+                    <p class="project-subtitle">
+                        DPM Lab &#183; Mobile App
+                    </p>
+                    <p>Developed an iOS application that:</p>
+                    <ul>
+                        <li>
+                            Detects walking using iPhone's motion
+                            data
+                        </li>
+                        <li>
+                            Collects gyroscope and location data from wrist IMU 
+                            sensor and iPhone's GPS sensor on Firebase
+                            for research
+                        </li>
+                        <li>
+                            Allows users to report a fall hazard: type, 
+                            intensity, location, photo, comments
+                        </li>
+                        <li>
+                            Visualizes hazards and walking path on a map
+                        </li>
+                    </ul>
+                    <div class="portfolio-icons">
+                        <img src="images/icons/apple_black.png" title="iOS" alt="iOS">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/swift_icon.png" title="Swift" alt="Swift">
+                        <img src="images/icons/firebase_icon.png" title="Firebase" alt="Firebase">
+                    </div>
+                </div>
+                <!-- SafeConnect -->
+                <div class="current-projects">
+                    <h4>DPM SafeConnect</h4>
+                    <p class="project-subtitle">
+                        DPM Lab &#183; Multiple Platforms
+                    </p>
+                    <ul>
+                        <li>
+                            Improved the existing iOS app: adding new features,
+                            fixing bugs, improving UI, etc.
+                        </li>
+                        <li>
+                            Developed online dashboard for construction site 
+                            managers to monitor workers' fatigue levels and 
+                            remind workers to take some rest
+                        </li>
+                        <li>
+                            Developed and deployed a Node.js backend server for
+                            remote notifications
+                        </li>
+                        <li>
+                            Wrote a Python script that retrieves data from 
+                            Firebase in CSV or JSON format
+                        </li>
+                    </ul>
+                    <div class="portfolio-icons">
+                        <img src="images/icons/apple_black.png" title="iOS" alt="iOS">
+                        <img src="images/icons/web_black.png" title='Web' alt="Web">
+                        <img src="images/icons/desktop_black.png" title="Desktop" alt="Desktop">
+                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
+                        <img src="images/icons/swift_icon.png" title="Swift" alt="Swift">
+                        <img src="images/icons/react_icon.png" title="React" alt="React">
+                        <img src="images/icons/firebase_icon.png" title="Firebase" alt="Firebase">
+                        <img src="images/icons/node_icon.png" title="Node.js" alt="Node.js">
+                        <img src="images/icons/python_icon.png" title="Python" alt="Python">
+                    </div>
+                </div>
+            </div>
+            <br/>
+
             <div id='box-portfolio'>
-                <h2>Portfolio</h2>
+                <h2>Previous Projects</h2>
                 <br>
                 <!-- Hexagon Defense -->
                 <div class='portfolio-item'>
                     <h4>Hexagon Defense</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Video Game
+                    </p>
                     <img src='images/projects/hd_fg_nx.png' alt='Hexagon Defense'>
 
                     <div class="portfolio-icons">
@@ -297,6 +445,9 @@
                 <!-- KAMS Hub -->
                 <div class='portfolio-item'>
                     <h4>KAMS Hub</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Web App
+                    </p>
                     <img src='images/projects/kamshub_fg.png' alt='KAMS Hub'>
 
                     <div class="portfolio-icons">
@@ -320,6 +471,9 @@
                 <!-- SAM -->
                 <div class='portfolio-item'>
                     <h4>Sauce Applicator Machine</h4>
+                    <p class="project-subtitle">
+                        Course Project (Group) &#183; Robot
+                    </p>
                     <img src='images/projects/sam_fg.png' alt='SAM'>
 
                     <div class="portfolio-icons">
@@ -347,59 +501,7 @@
             </div>
             <br/>
 
-            <div style='text-align: center'>
-                <h2>Current Projects</h2>
-                <br>
-                <!-- DPM -->
-                <div class="current-projects">
-                    <h4>Mobile App: Risk Sharing for Preventative Job Safety</h4>
-                    <ul>
-                        <li>
-                            Developing an iOS application that integrates with a 
-                            machine learning algorithm to automatically collect 
-                            data from wrist IMU sensors when walking, detect 
-                            fall risks, and prompt live feedback to help users 
-                            avoid the fall risks
-                        </li>
-                        <li>
-                            Dynamic Project Management (DPM) lab at the 
-                            University of Michigan, in partnership with Liberty
-                            Mutual Group
-                        </li>
-                    </ul>
-                    <div class="portfolio-icons">
-                        <img src="images/icons/apple_black.png" title="iOS" alt="iOS">
-                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                        <img src="images/icons/swift_icon.png" title="Swift" alt="Swift">
-                        <img src="images/icons/firebase_icon.png" title="Firebase" alt="Firebase">
-                    </div>
-                </div>
-                <!-- M&B Cupboard -->
-                <div class="current-projects">
-                    <h4>Maize and Blue Cupboard</h4>
-                    <ul>
-                        <li>
-                            Mobile app & web for the university food bank with
-                            push notifications features
-                        </li>
-                        <li>Project of Tech for Social Good (T4SG) @ UMich</li>
-                        <li>Role: Software Developer</li>
-                    </ul>
-                    <div class="portfolio-icons">
-                        <img src="images/icons/apple_black.png" title="iOS" alt="iOS">
-                        <img src="images/icons/android_black.png" title="Android" alt="Android">
-                        <img src="images/icons/web_black.png" title="Web" alt="Web">
-                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                        <img src="images/icons/flutter_icon.png" title="Flutter" alt="Flutter">
-                        <img src="images/icons/firebase_icon.png" title="Firebase" alt="Firebease">
-                    </div>
-                </div>
-            </div>
-
-           
-
-            
-
+        
             <!-- END portfolio showcase
             ------------------------------------------------------------->
             
@@ -434,9 +536,43 @@
                 <h1>Portfolio</h1>
                 <br/>
 
+                <div id="portfolio-filter-box">
+                    <h4>Filter:</h4>
+                    <a href="javascript:toggleFilter('filter-item-web')">
+                        <div class="filter-item" id="filter-item-web">
+                            <img class='left-float-image' src='images/icons/web_white.png'>
+                            <span class='nav-name'>Web</span>
+                        </div>
+                    </a>
+                    <a href="javascript:toggleFilter('filter-item-mobile')">
+                        <div class="filter-item" id="filter-item-mobile">
+                            <img class='left-float-image' src='images/icons/mobile_white.png'>
+                            <span class='nav-name'>Mobile</span>
+                        </div>
+                    </a>
+                    <a href="javascript:toggleFilter('filter-item-desktop')">
+                        <div class="filter-item" id="filter-item-desktop">
+                            <img class='left-float-image' src='images/icons/desktop_white.png'>
+                            <span class='nav-name'>Desktop</span>
+                        </div>
+                    </a>
+                    <a href="javascript:toggleFilter('filter-item-other')">
+                        <div class="filter-item" id="filter-item-other">
+                            <img class='left-float-image' src='images/icons/robot_white.png'>
+                            <span class='nav-name'>Other</span>
+                        </div>
+                    </a>
+                    <!-- <p style="margin-top: 6px">
+                        Only past (completed) projects are shown here.
+                    </p> -->
+                </div>
+
                 <!-- Echo Dashboard -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-dashboard">
                     <h4>Custom Dashboard</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Web App &#183; Feb '23
+                    </p>
                     <img src='images/projects/dashboard_fg.jpg' alt='Dashboard'>
     
                     <div class="portfolio-icons">
@@ -456,8 +592,11 @@
                 </div>
     
                 <!-- SAM -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-sam">
                     <h4>Sauce Applicator Machine</h4>
+                    <p class="project-subtitle">
+                        Course Project (Group) &#183; Robot &#183; Dec '22
+                    </p>
                     <img src='images/projects/sam_fg.png' alt='SAM'>
     
                     <div class="portfolio-icons">
@@ -478,31 +617,12 @@
                     </a>
                 </div>
     
-                <!-- EECS 280 -->
-                <!--
-                <div class='portfolio-item'>
-                    <h4>EECS 280 Projects</h4>
-                    <img src='images/projects/eecs280_fg.png' alt='EECS 280'>
-    
-                    <a onclick='openMenu("p-eecs280")'>
-                        <div class='hover-over'>
-                            <button onclick=''>Learn More</button>
-                            <p class="hover-description">Course Projects for EECS 280 at the University of Michigan</p>
-                            <p class="hover-stack">Terminal | C++</p>
-                        </div>
-                    </a>
-    
-                    <div class="portfolio-icons">
-                        <img src="images/icons/terminal_black.png" alt="Terminal">
-                        <img src="images/icons/separator_black.png" class='separator' alt="Separator">
-                        <img src="images/icons/cpp_icon.png" alt="C++">
-                    </div>
-                </div>
-                -->
-                
                 <!-- KAMS Hub -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-kamshub">
                     <h4>KAMS Hub</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Web App &#183; Mar '22
+                    </p>
                     <img src='images/projects/kamshub_fg.png' alt='KAMS Hub'>
     
                     <div class="portfolio-icons">
@@ -524,8 +644,11 @@
                 </div>
     
                 <!-- Vex Robotics -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-vex22">
                     <h4>Vex Robot (KAMS, 2022)</h4>
+                    <p class="project-subtitle">
+                        Group Project &#183; Robot &#183; Mar '22
+                    </p>
                     <img src='images/projects/vex22_fg.png' alt='Vex Robotics'>
     
                     <div class="portfolio-icons">
@@ -544,8 +667,11 @@
                 </div>
     
                 <!-- ClassChat -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-classchat">
                     <h4>ClassChat</h4>
+                    <p class="project-subtitle">
+                        Group Project &#183; Web App &#183; Nov '21
+                    </p>
                     <img src='images/projects/classchat_fg.png' alt='ClassChat'>
     
                     <div class="portfolio-icons">
@@ -568,8 +694,11 @@
     
     
                 <!-- Hexagon Defense -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-hd">
                     <h4>Hexagon Defense</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Video Game &#183; May '21
+                    </p>
                     <img src='images/projects/hd_fg_nx.png' alt='Hexagon Defense'>
     
                     <div class="portfolio-icons">
@@ -590,8 +719,11 @@
                 </div>
     
                 <!-- KAMS Study Log -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-studylog">
                     <h4>KAMS Study Logger</h4>
+                    <p class="project-subtitle">
+                        Personal Project &#183; Web App &#183; Aug '20
+                    </p>
                     <img src='images/projects/studylog_fg.jpg' alt='KAMS Study Logger'>
     
                     <div class="portfolio-icons">
@@ -611,8 +743,11 @@
                 </div>
     
                 <!-- StudyCore -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-studycore">
                     <h4>StudyCore™</h4>
+                    <p class="project-subtitle">
+                        Course Project (Individual) &#183; Web App &#183; May '20
+                    </p>
                     <img src='images/projects/studycore_fg.png' alt='StudyCore'>
     
                     <div class="portfolio-icons">
@@ -633,8 +768,11 @@
                 </div>
     
                 <!-- Triangle Calculator -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-tricalc">
                     <h4>Triangle Calculator</h4>
+                    <p class="project-subtitle">
+                        Course Project (Individual) &#183; Web App &#183; 2019
+                    </p>
                     <img src='images/projects/tricalc_fg.png' alt='Triangle Calculator'>
     
                     <div class="portfolio-icons">
@@ -654,8 +792,11 @@
                 </div>
     
                 <!-- Force Calculator -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-fc">
                     <h4>Force Calculator</h4>
+                    <p class="project-subtitle">
+                        Course Project (Individual) &#183; Desktop App &#183; 2019
+                    </p>
                     <img src='images/projects/fc_fg.png' alt='Force Calculator'>
     
                     <div class="portfolio-icons">
@@ -674,8 +815,11 @@
                 </div>
     
                 <!-- Vector Calculator -->
-                <div class='portfolio-item'>
+                <div class='portfolio-item' id="portfolio-item-vector">
                     <h4>Vector Calculator</h4>
+                    <p class="project-subtitle">
+                        Course Project (Individual) &#183; Command Line &#183; 2018
+                    </p>
                     <img src='images/projects/vector_fg.png' alt='Vector Calculator'>
     
                     <div class="portfolio-icons">

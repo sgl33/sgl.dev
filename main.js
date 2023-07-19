@@ -1,5 +1,3 @@
-
-
 /**
  * @returns {Boolean} true if the user is on a mobile device
  */
@@ -48,8 +46,8 @@ function closeMenu(id)
  */
 function resumeNavigate(id)
 {
-    var contentIds = ['r-default', 'r-bio', 'r-education', 'r-skills', 
-        'r-awards', 'r-links', 'r-resume'];
+    var contentIds = ['r-default', 'r-bio', 'r-education', 'r-experience',
+        'r-skills', 'r-resume'];
 
     if(document.getElementById(id).style.display === 'block') 
     {
@@ -136,6 +134,54 @@ function closeSideMenu()
         var y = document.getElementsByClassName("menu-item");
         for(var i=0; i<y.length; i++)
             y[i].style.display = "none";
+    }
+}
+
+const filterButtons = {
+    "filter-item-web" : true,
+    "filter-item-mobile": true, 
+    "filter-item-desktop": true, 
+    "filter-item-other": true
+};
+const filterItems = {
+    "filter-item-web": ["dashboard", "kamshub", "classchat", "studylog", "studycore", "tricalc"],
+    "filter-item-mobile": ["hd", "sam"],
+    "filter-item-desktop": ["fc", "vector"],
+    "filter-item-other": ["sam", "vex22", "hd"]
+};
+/**
+ * Toggles filter option.
+ */
+function toggleFilter(id) 
+{
+    filterButtons[id] = !filterButtons[id];
+    hideBlocks();
+
+    // Update UI
+    for(var key in filterButtons) {
+        if(filterButtons[key] == true) 
+        {
+            document.getElementById(key).style.opacity = 1.0;
+            let arr = filterItems[key];
+            for(var index in arr) {
+                document.getElementById("portfolio-item-" + arr[index]).style.display = "inline-block";
+            }
+        }
+        else 
+        {
+            document.getElementById(key).style.opacity = 0.7;
+        }
+    }
+}
+
+function hideBlocks() 
+{
+    // Hide all blocks
+    for(var key in filterButtons) {
+        let arr = filterItems[key];
+        for(var index in arr) {
+            document.getElementById("portfolio-item-" + arr[index]).style.display = "none";
+        }
     }
 }
 
