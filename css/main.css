@@ -459,6 +459,7 @@ sup {
     transition: 0.15s;
     padding: 4px 8px 0px 8px;
     border-radius: 4px;
+    margin-bottom: 2px;
 }
 .filter-item:hover {
     opacity: 0.9;
