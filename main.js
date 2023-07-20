@@ -143,9 +143,11 @@ const filterButtons = {
     "filter-item-desktop": true, 
     "filter-item-other": true
 };
+var selectedFilter = "filter-item-all";
 const filterItems = {
+    "filter-item-all": ["dpmsafesteps", "dashboard", "sam", "kamshub", "vex22", "classchat", "hd", "studylog", "studycore", "tricalc", "fc", "vector"],
     "filter-item-web": ["dashboard", "kamshub", "classchat", "studylog", "studycore", "tricalc"],
-    "filter-item-mobile": ["hd", "sam"],
+    "filter-item-mobile": ["hd", "sam", "dpmsafesteps"],
     "filter-item-desktop": ["fc", "vector"],
     "filter-item-other": ["sam", "vex22", "hd"]
 };
@@ -154,12 +156,13 @@ const filterItems = {
  */
 function toggleFilter(id) 
 {
-    filterButtons[id] = !filterButtons[id];
+    // filterButtons[id] = !filterButtons[id];
+    selectedFilter = id;
     hideBlocks();
 
     // Update UI
-    for(var key in filterButtons) {
-        if(filterButtons[key] == true) 
+    for(var key in filterItems) {
+        if(selectedFilter === key) 
         {
             document.getElementById(key).style.opacity = 1.0;
             let arr = filterItems[key];
@@ -186,4 +189,5 @@ function hideBlocks()
 }
 
 closeSideMenu(); // init
+toggleFilter("filter-item-all");
 
